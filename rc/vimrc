@@ -163,3 +163,7 @@ map S diw"0P
 
 " autosave current buffer on switch to new buffer
 set autowriteall
+
+" no backups
+set noswapfile
+set nowritebackup 
