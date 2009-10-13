@@ -1,0 +1,2 @@
+cd /opt/eclipse/ 
+./eclipse -vm /opt/j2sdk1.4.2_05/jre/bin/java -vmargs -Xmx512M &

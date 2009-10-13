@@ -1,0 +1,8 @@
+#! /bin/sh
+echo ... replacing $1 with $2 in files '*.'$3
+FILES=`find $PWD -iname "*.$3" -type f -print`
+for f in $FILES ; do
+   sed "s.$1.$2.g" $f > temp
+   mv temp $f
+   echo '... found ' $f
+done

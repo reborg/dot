@@ -1,0 +1,13 @@
+#require 'irb/completion'
+#require 'map_by_method'
+#require 'what_methods'
+#require 'pp'
+#IRB.conf[:AUTO_INDENT]=true
+
+# load libraries
+require 'rubygems'
+require 'wirble'
+
+# start wirble (with color)
+Wirble.init
+Wirble.colorize

@@ -1,0 +1,1 @@
+cat bralley.com_ebooks.txt.old | grep bralley | xargs -i wget --mirror -p -P ./download/ebook {}

@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+mkdir ./unrarred
+cd unrarred
+find .. -type f -name "*.rar" -exec unrar x -ad {} \;

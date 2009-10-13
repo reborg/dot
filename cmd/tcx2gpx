@@ -1,0 +1,476 @@
+#!/usr/bin/perl
+
+# Copyright Jerry Nicholls - $Date: 2007/07/04 20:07:27 $
+# Run this script with -e to get my email address should you wish to contact me
+
+use Getopt::Long;
+use Pod::Usage;
+use strict;
+
+# Prototypes
+sub ParseTCX();
+
+sub GPXHeader($$);
+sub GPXTrackSegment($$);
+sub GPXTrackPoint($$);
+sub GPXFooter($);
+
+sub Activity();
+sub Lap($);
+sub TrackPoint($);
+
+sub SportOption($$);
+
+# Statics
+our $s_version = '$Revision: 1.18 $';
+our $s_address = '6a65727279406e6967687477617463682e6f72672e756b';
+
+# Globals
+our $g_help       = 0;
+our $g_email      = 0;
+our $g_list       = 0;
+our $g_one        = 0;
+our $g_multiTrack = 0;
+our $g_course     = 0;
+our $g_id         = '';
+our $g_pattern    = '';
+our $g_sport      = '"biking"';
+our $g_output     = 'tcx2gpx';
+
+GetOptions('help|?'     => \$g_help,
+           'email'      => \$g_email,
+           'list'       => \$g_list,
+           '1'          => \$g_one,
+           'multitrack' => \$g_multiTrack,
+           'course'     => \$g_course,
+           'id=s'       => \$g_id,
+           'pattern=s'  => \$g_pattern,
+           'sport=s'    => \&SportOption,
+           'output=s'   => \$g_output) or pod2usage(2);
+
+pod2usage(1) if $g_help;
+
+if ($g_email)
+   {
+    print "My email address is " . pack('H*', $s_address) . "\n";
+    exit;
+   }
+
+# Remove the .gpx extension to the filename, ensuring that there is one
+$g_output =~ s/\.gpx$//;
+$g_output .= 'tcx2gpx' if $g_output =~ m|[\/]$|;
+
+# Do we just want to parse the file for entries ?
+if ($g_list)
+{
+ my $wanted = 0;
+
+ if ($g_course)
+    {
+     while (<>)
+     {
+      if ($wanted && /<name>([^<]+)<\/name>/oi)
+         {
+          print "$1\n";
+          $wanted = 0;
+         }
+
+      $wanted = 1 if /<course>/i;
+     }
+    }
+ else
+    {
+     while (<>)
+     {
+      print "$1\n"   if ($wanted && /<id>([^<]+)<\/id>/oi);
+      $wanted = 1 if /<activity\s+sport=${g_sport}/i;
+      $wanted = 0 if /<\/activity/oi;
+     }
+    }
+
+ exit;
+}
+
+ParseTCX();
+
+#==============================================================================
+# The main routine
+
+sub ParseTCX()
+{
+ my @activities = ();
+ my $filename   = '';
+
+ # Parse the file.
+ while (<>)
+ {
+  # Parse either activities or courses as selected
+  if ($g_course ? /<course>/oi : /<activity\s+sport=${g_sport}/i)
+     {
+      my $activity = Activity();
+
+      push @activities, $activity if defined $activity;
+     }
+ }
+
+ # If we only want one file then work out the bounds of all the tracks.
+ # We'll mark the time as the earliest.
+ if ($g_one)
+    {
+     my $time   = undef;
+     my $minLon =  180.0;
+     my $minLat =  180.0;
+     my $maxLon = -180.0;
+     my $maxLat = -180.0;
+
+     $filename = $g_output . '.gpx';
+
+     foreach my $activity (@activities)
+     {
+      my ($tmpID, $bounds, $laps) = @{$activity}[0..2];
+
+      $time = $tmpID if (!defined $time || $tmpID lt $time);
+
+      $minLon = $bounds->{minLon} if $bounds->{minLon} < $minLon;
+      $minLat = $bounds->{minLat} if $bounds->{minLat} < $minLat;
+      $maxLon = $bounds->{maxLon} if $bounds->{maxLon} > $maxLon;
+      $maxLat = $bounds->{maxLat} if $bounds->{maxLat} > $maxLat;
+     }
+
+     open FH, "> $filename" or die "$0: $filename - $!\n";
+
+     GPXHeader(\*FH, { time   => $time,
+                       minLon => $minLon,
+                       minLat => $minLat,
+                       maxLon => $maxLon,
+                       maxLat => $maxLat });
+    }
+
+ # Now go through the activities that we were interested in.
+ foreach my $activity (@activities)
+ {
+  my ($tmpID, $bounds, $laps) = @{$activity}[0..2];
+
+  if (! $g_one)
+     {
+      $filename = $g_output . ($g_id ? '.gpx' : "_$tmpID.gpx");
+
+      open FH, "> $filename" or die "$0: $filename - $!\n";
+
+      GPXHeader(\*FH, { time   => $tmpID,
+                        minLon => $bounds->{minLon},
+                        minLat => $bounds->{minLat},
+                        maxLon => $bounds->{maxLon},
+                        maxLat => $bounds->{maxLat} });
+     }
+
+  if ($g_multiTrack)
+     {
+      my $i = 0;
+
+      foreach my $lap (@{$laps})
+      {
+       $i++;
+       print FH " <trk>\n  <name>$tmpID($i)</name>\n";
+
+       GPXTrackSegment(\*FH, $lap);
+
+       print FH " </trk>\n";
+      }
+     }
+  else
+     {
+      print FH " <trk>\n  <name>$tmpID</name>\n";
+      foreach my $lap (@{$laps})
+      {
+       GPXTrackSegment(\*FH, $lap);
+      }
+      print FH " </trk>\n";
+     }
+
+  if (! $g_one)
+     {
+      GPXFooter(\*FH);
+      close FH;
+     }
+ }
+
+ if ($g_one)
+    {
+     GPXFooter(\*FH);
+     close FH;
+    }
+}
+
+#==============================================================================
+# GPX related functions
+
+#------------------------------------------------------------------------------
+# Output a suitable GPX header chunk. Takes a fileRef and a hashRef.
+sub GPXHeader($$)
+{
+ my $file = shift;
+ my $args = shift;
+
+ print {$file} << "EOF";
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<gpx creator="Jander's TCX to GPX Converter"
+     xmlns="http://www.topografix.com/GPX/1/1"
+     version="1.1"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+
+ <metadata>
+  <link href="http://www.garmin.com/">
+   <text>Garmin International</text>
+  </link>
+  <time>$args->{time}</time>
+  <bounds maxlat="$args->{maxLat}" maxlon="$args->{maxLon}" minlat="$args->{minLat}" minlon="$args->{minLon}"/>
+ </metadata>
+
+EOF
+}
+
+#------------------------------------------------------------------------------
+# Output a suitable GPX track segment. Takes a fileref and an arrayref.
+sub GPXTrackSegment($$)
+{
+ my $file = shift;
+ my $lap  = shift;
+
+ print {$file} "  <trkseg>\n";
+
+ foreach my $trackPoint (@{$lap})
+ {
+  GPXTrackPoint($file, $trackPoint);
+ }
+
+ print {$file} "  </trkseg>\n";
+}
+
+#------------------------------------------------------------------------------
+# Output a suitable GPX trackpoint. Takes a fileref and an arrayref.
+sub GPXTrackPoint($$)
+{
+ my $file = shift;
+ my $args = shift;
+
+ print {$file} << "EOF";
+   <trkpt lat="$args->[1]" lon="$args->[0]">
+    <ele>$args->[2]</ele>
+    <time>$args->[3]</time>
+   </trkpt>
+EOF
+}
+
+#------------------------------------------------------------------------------
+# Output a suitable GPX footer chunk. Takes a fileRef.
+sub GPXFooter($)
+{
+ my $file = shift;
+
+ print {$file} <<"EOF";
+
+</gpx>
+EOF
+}
+
+#==============================================================================
+# TCX related functions
+
+#------------------------------------------------------------------------------
+# Scan for all the laps in an activity
+sub Activity()
+{
+ my $tmpID  = '';
+ my @laps   = ();
+ my $bounds = { minLon =>  180.0,
+                minLat =>  180.0,
+                maxLon => -180.0,
+                maxLat => -180.0 };
+
+ while (<>)
+ {
+  last if /<\/activity>/oi;
+  last if /<\/course>/oi;
+
+  # New ID ?
+  if (! $tmpID && $g_course ? /<name>([^<]+)/oi : /<id>([^<]+)/oi)
+     {
+      $tmpID = $1;
+
+      # Skip this ID if it's not the one we're looking for
+      last if ($g_id && $tmpID ne $g_id);
+      last if ($g_pattern && $tmpID !~ /${g_pattern}/);
+     }
+
+  # Tally the laps
+  if ($g_course ? /<track>/oi : /<lap>/oi)
+     {
+      my $lap = Lap($bounds);
+
+      push @laps, $lap if defined $lap;
+     }
+ }
+
+ return @laps ? [$tmpID, $bounds, \@laps] : undef;
+}
+
+#------------------------------------------------------------------------------
+# Scan for all the trackpoints in a lap
+sub Lap($)
+{
+ my $bounds      = shift;
+ my @trackPoints = ();
+
+ while (<>)
+ {
+  # End of lap ?
+  last if /<\/lap>/oi;
+  last if /<\/track>/oi;
+
+  # We're only interested in trackpoints
+  if (/<trackpoint>/oi)
+     {
+      my $trackPoint = TrackPoint($bounds);
+
+      push @trackPoints, $trackPoint if defined $trackPoint;
+     }
+ }
+
+ return @trackPoints ? \@trackPoints : undef;
+}
+
+#------------------------------------------------------------------------------
+# Scan for a trackpoint's details.
+sub TrackPoint($)
+{
+ my $bounds    = shift;
+
+ my $latitude  = undef;
+ my $longitude = undef;
+ my $elevation = undef;
+ my $time      = undef;
+
+ while (<>)
+ {
+  last if /<\/trackpoint>/oi;
+
+  if (/<latitudedegrees>([^<]+)/oi)
+     {
+      $latitude         = $1;
+      $bounds->{minLat} = $1 if $1 < $bounds->{minLat};
+      $bounds->{maxLat} = $1 if $1 > $bounds->{maxLat};
+     }
+
+  if (/<longitudedegrees>([^<]+)/oi)
+     {
+      $longitude        = $1;
+      $bounds->{minLon} = $1 if $1 < $bounds->{minLon};
+      $bounds->{maxLon} = $1 if $1 > $bounds->{maxLon};
+     }
+
+  $elevation = $1 if /<altitudemeters>([^<]+)/oi;
+  $time      = $1 if /<time>([^<]+)/oi;
+ }
+
+ return (defined $latitude  &&
+         defined $longitude &&
+         defined $elevation &&
+         defined $time)
+        ?  [ $longitude, $latitude, $elevation, $time ] : undef;
+}
+
+#==============================================================================
+# Options handlers
+
+#------------------------------------------------------------------------------
+# Check that the sport option is sane
+sub SportOption($$)
+{
+ my $name  = shift;
+ my $value = lc shift;
+ my $ok    = '';
+
+ foreach my $allowed (qw/biking running other any/)
+ {
+  if (substr($allowed, 0, length($value)) eq $value)
+     {
+      $ok = $allowed;
+      last;
+     }
+ }    
+
+ die "Unknown activity type '$value'\n" if ! $ok;
+
+ $g_sport = $ok eq 'any' ? '' : "\"$ok\"";
+}
+
+__END__
+
+=head1 NAME
+
+tcx2gpx - A Garmin Training Centre TCX to GPX format converter.
+
+=head1 SYNOPSIS
+
+  tcx2gpx history.tcx
+  tcx2gpx -p 2007-04 -m -1 -o ~/output.gpx history.tcx
+
+=head1 ARGUMENTS
+
+B<tcx2gpx> may be given one or more control options, along with a list of 
+tcx files to be scanned. If no arguments are given then all the biking
+activities in the given tcx files will be extracted and placed in individual
+files.
+
+=over 4
+
+=item B<-help> or B<-?>
+
+Prints a brief help message and exit.
+
+=item B<-list>
+
+Scan the given files and just list the timestamps for each activity. This is
+useful for identification purposes.
+
+=item B<-sport> biking | running | other | any
+
+Specify the type of sporting activity that is to be parsed. The type may be
+shortened for ease, e.g. '-sport b' for biking.
+
+=item B<-id>
+
+Provide an explicit activity ID to match on.
+
+=item B<-pattern>
+
+Provide a regular expression to match against the activity IDs. Depending on
+what other options are in use this may result in more than one output file.
+
+=item B<-multitrack>
+
+Treat each lap as a separate track rather than the usual of merging all laps
+within a single activity into a single track.
+
+=item B<-course>
+
+Extract courses rather than the default of activities, ie history. This 
+argument needs to be used whenever you wish to list or extract course related
+data.
+
+=item B<-1> (one)
+
+Puts all matching tracks into a single file.
+
+=item B<-output>
+
+Specify the filename to write to. If not supplied the default filename is
+'./tcx2gpx.gpx'. The .gpx extension will be added if missing. If more than one
+file is to be generated the timestamp of the track will be appended to the 
+basename of the file.
+
+=back
+
+=cut

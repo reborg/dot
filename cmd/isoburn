@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+cdrecord dev=ATAPI:0,0,0 speed=8 $1

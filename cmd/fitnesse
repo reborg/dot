@@ -1,0 +1,3 @@
+#!/bin/sh
+cd /opt/fitnesse
+./run.sh -p 8000 -r ./wikiroot

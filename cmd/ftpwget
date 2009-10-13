@@ -1,0 +1,7 @@
+#! /bin/sh
+# -w 3: waits for 3 seconds between each request
+# -p  : waits for all resources in the page to be downloaded correctly
+# -P  : put the result tree in this foler
+# $1  : the directory name where the download should be saved
+# $2  : the complete ftp address (ftp://username:pwd@host:port)
+wget -mirror -w 3 -p -P $1 $2

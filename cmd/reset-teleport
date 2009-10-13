@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+rm -rf /Users/reborg/Library/Preferences/com.abyssoft.teleport.plist
+sudo rm -rf /Library/Preferences/com.abyssoft.teleport.plist
+rm -rf /Users/reborg/Library/PreferencePanes/teleport.prefPane
+sudo rm -rf /Library/PreferencePanes/teleport.prefPane

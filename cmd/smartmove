@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+mkdir ~/bookshelf/$1
+find $PWD -iname "*$1*" -exec mv {} ~/bookshelf/$1 \;
+cd ~/bookshelf/$1
+open -a finder .

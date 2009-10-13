@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+mkdir decoded
+find . -name "*.mpc" -exec mppdec --aiff {} ./decoded \;

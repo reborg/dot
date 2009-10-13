@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+for (( c=1; c<=$2; c++ ))
+do
+  gs -sDEVICE=pdfwrite -dNOPAUSE -dQUIET -dBATCH -dFirstPage=$c -dLastPage=$c -sOutputFile=$c.pdf $1
+done

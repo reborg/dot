@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+mkdir $PWD/'640x480'
+for i in $PWD/*.jpg
+do
+   echo ... resizing $i
+   b=$(basename $i .jpg)
+   convert -scale 640x480 $i $b'_640x480.jpg'
+   mv $b'_640x480.jpg' $PWD/'640x480'
+done
+
+cd $PWD/'640x480'
+jar cvf 640x480.zip *
+mv '640x480.zip' ..

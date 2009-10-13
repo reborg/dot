@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#echo Searching for $1 inside all '*.'$2 file starting from $PWD
+find $PWD -iname "*.$1" -print | xargs grep $2

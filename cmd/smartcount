@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+cat $2 | tr -cs "[A-Z][a-z]\'\-" "[\012*]" | grep $1 | wc -l

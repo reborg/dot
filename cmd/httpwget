@@ -1,0 +1,8 @@
+#! /bin/sh
+# -w  : waits for n seconds between each request
+# -p  : waits for all resources in the page to be downloaded correctly
+# -P  : put the result tree in this foler
+# $1  : the directory name where the download should be saved
+# $2  : the http address 
+wget --mirror -w 2 -p --HTML-extension --convert-links -P $1 $2
+

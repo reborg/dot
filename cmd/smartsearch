@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+mkdir ~/tmp/$1
+find "$PWD" -iname "*$1*" -exec ln -s {} ~/tmp/$1 \;
+cd ~/tmp/$1
+open -a finder .
