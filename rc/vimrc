@@ -133,10 +133,6 @@ set matchpairs+=<:>
 " turn off the bell
 set vb t_vb= 
 
-" map F5 to show buffers and make a selection on number
-" Install the qbuf.vim plugin to have better bufs stuff
-" :nnoremap <F5> :buffers<CR>:buffer<Space>
-
 " ,/ C/C++/C#/Java // comments
 map ,/ :s/^/\/\//<CR>
 " ,< HTML comment
@@ -164,3 +160,6 @@ map ,w :call Browser ()<CR>
 
 " press S to replace the current word with the last-yanked text
 map S diw"0P
+
+" autosave current buffer on switch to new buffer
+set autowriteall
