@@ -46,6 +46,7 @@ alias spike='cd ~/Documents/projects/spike'
 alias pomodori='cd ~/Documents/projects/my/pomodori'
 alias pomohub='cd ~/Documents/projects/my/pomohub'
 alias tracking='cd /Users/reborg/Documents/projects/tracking'
+alias dot='cd /Users/reborg/Documents/projects/my/dot'
 
 # SSH server access
 alias askbeta='ssh askbetauser@askbeta.agilepartners.com'
