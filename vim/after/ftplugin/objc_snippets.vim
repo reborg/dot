@@ -51,3 +51,8 @@ exec "Snippet classi @interface ".st."ClassName".et." : ".st."NSObject".et."<CR>
 exec "Snippet array NSMutableArray *".st."array".et." = [NSMutableArray array];".st.et
 exec "Snippet getprefs [[NSUserDefaults standardUserDefaults] objectForKey:<key>];".st.et
 exec "Snippet cati @interface ".st."NSObject".et." (".st."Category".et.")<CR><CR>".st.et."<CR><CR>@end<CR>".st.et
+
+" create a SenTestKit interface plus class stub
+exec "Snippet testc #import <SenTestingKit/SenTestingKit.h><CR>#import \"".st."myClass:UpFirst()".et.".h\"<CR><CR>@interface ".st."myClass:UpFirst()".et."Test : SenTestCase<CR>{<CR>".st."myClass:UpFirst()".et."* ".st."myClass".et.";<CR>}<CR>@end<CR><CR>@implementation ".st."myClass:UpFirst()".et."Test<CR><CR>- (void) setUp<CR>{<CR>".st."myClass".et." = [[".st."myClass:UpFirst()".et." alloc] init];<CR>}<CR><CR>- (void) test".st."myClass:UpFirst()".et.st.et."<CR>{<CR>".st.et.";<CR>STAssertEquals(10, 10, nil);<CR>STAssertEqualObjects(@\"some string\", @\"Haml and Sass\", nil);<CR>}<CR><CR>@end"
+exec "Snippet test - (void) test".st.et."<CR>{<CR>".st.et.";<CR>STAssertEquals(10, 10, nil);<CR>STAssertEqualObjects(@\"some string\", @\"Haml and Sass\", nil);<CR>}<CR>"
+
