@@ -168,3 +168,7 @@ set autowriteall
 " no backups
 set noswapfile
 set nowritebackup 
+
+" rspec shortcuts
+map ,s :call RunSpec ()<CR>
+map ,S :call RunSpecs ()<CR>
