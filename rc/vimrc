@@ -172,3 +172,7 @@ set nowritebackup
 " rspec shortcuts
 map ,s :call RunSpec ()<CR>
 map ,S :call RunSpecs ()<CR>
+
+" I prefer this over crtl+Wq to close window
+map ,q :<C-W>q<CR>
+
