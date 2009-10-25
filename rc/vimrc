@@ -190,3 +190,14 @@ augroup mkd
 autocmd BufRead,BufNewFile *.mkd set ai formatoptions=tcroqn2 comments=n:>
 autocmd BufRead,BufNewFile *.markdown set ai formatoptions=tcroqn2 comments=n:>
 augroup END
+
+" going hard core, disabling arrows
+noremap  <Up> ""
+noremap! <Up> <Esc>
+noremap  <Down> ""
+noremap! <Down> <Esc>
+noremap  <Left> ""
+noremap! <Left> <Esc>
+noremap  <Right> ""
+noremap! <Right> <Esc>
+
