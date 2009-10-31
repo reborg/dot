@@ -55,8 +55,9 @@ alias askbeta='ssh askbetauser@askbeta.agilepartners.com'
 alias support='ssh deploy@support.agilepartners.com'
 
 # PATH
-export PATH="/Users/reborg/Downloads/apache-maven-2.2.1/bin:/Users/reborg/projects/my/dot/cmd:/Users/reborg/Documents/cmd:/opt/local/bin:/sw/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/cuda/bin:$PATH:/usr/local/bin"
-export DYLD_LIBRARY_PATH=/usr/local/cuda/lib:$DYLD_LIBRARY_PATH
+export PATH="/Users/reborg/Downloads/apache-maven-2.2.1/bin:/Users/reborg/projects/my/dot/cmd:/Users/reborg/Documents/cmd:/opt/local/bin:/sw/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/bin:$PATH"
+
+#export DYLD_LIBRARY_PATH=/usr/local/cuda/lib:$DYLD_LIBRARY_PATH
 
 ### RUBY
 export RUBYOPT=rubygems
@@ -65,6 +66,6 @@ RDOCOPT="-S -f html -T hanna"
 #export GEM_PATH=$GEM_HOME:"/Users/reborg/.gem/ruby/1.8"
 
 # Load the Ruby Switcher
-source ~/Documents/cmd/ruby_switcher.sh
+#source ~/Documents/cmd/ruby_switcher.sh
 
 export PROMPT_COMMAND='PS1="\[\033[0;33m\][\!]\`if [[ \$? = "0" ]]; then echo "\\[\\033[32m\\]"; else echo "\\[\\033[31m\\]"; fi\`[\u.\h: \`if [[ `pwd|wc -c|tr -d " "` > 18 ]]; then echo "\\W"; else echo "\\w"; fi\`]\$\[\033[0m\] "; echo -ne "\033]0;`hostname -s`:`pwd`\007"'

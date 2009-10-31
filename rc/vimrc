@@ -117,6 +117,7 @@ set expandtab
 
 " Useful expansions
 imap hh <Space>=><Space>
+imap jj <Esc>
 
 " highlight line with cursor
 set cursorline
@@ -201,3 +202,5 @@ noremap! <Left> <Esc>
 noremap  <Right> ""
 noremap! <Right> <Esc>
 
+" display cursor line
+set cursorline
