@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# usage stich Desktop/mypic1.jpg Desktop/mypic2.jpg
+montage -mode concatenate -tile x1 $1 $2 Desktop/stich.jpg
