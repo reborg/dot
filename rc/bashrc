@@ -14,6 +14,8 @@ alias ls='ls -G'
 alias s='cd ..'
 alias finder='open -a finder .'
 alias vvi='mvim'
+alias tailf='tail -f'
+alias yy='pwd | tr -d "\n" | pbcopy' # will copy current dir to clipboard
 
 # SVN
 alias sign='export SVN_EDITOR=vi; svn propedit svn:ignore .'
@@ -29,6 +31,7 @@ alias rs='rake spec'
 alias lorem='Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
 alias rails_restart='touch ./tmp/restart.txt'
 alias apache_restart='sudo apachectl restart'
+alias repl='java -cp ~/Downloads/jline-0_9_5.jar:~/Documents/projects/3rdparties/clojure/clojure.jar jline.ConsoleRunner clojure.main'
 
 # GIT
 alias gst='git st'
@@ -42,7 +45,6 @@ alias weddingbook='cd /Users/reborg/Documents/projects/ap/weddingbook'
 alias proj='cd ~/Documents/projects'
 alias apsupp='cd ~/Documents/projects/ap/AgileSupport'
 alias ask='cd ~/Documents/projects/ap/ask/server'
-alias spike='cd ~/Documents/projects/spike'
 alias pomodori='cd ~/Documents/projects/my/pomodori'
 alias pomohub='cd ~/Documents/projects/my/pomohub'
 alias tracking='cd /Users/reborg/Documents/projects/tracking'
@@ -54,9 +56,6 @@ alias notes='cd /Users/reborg/Documents/notes'
 alias askbeta='ssh askbetauser@askbeta.agilepartners.com'
 alias support='ssh deploy@support.agilepartners.com'
 
-# PATH
-export PATH="/Users/reborg/Downloads/apache-maven-2.2.1/bin:/Users/reborg/projects/my/dot/cmd:/Users/reborg/Documents/cmd:/opt/local/bin:/sw/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/bin:$PATH"
-
 #export DYLD_LIBRARY_PATH=/usr/local/cuda/lib:$DYLD_LIBRARY_PATH
 
 ### RUBY
@@ -65,7 +64,17 @@ RDOCOPT="-S -f html -T hanna"
 #export GEM_HOME="/System/Library/Frameworks/Ruby.framework/Versions/Current/usr/lib/ruby/gems/1.8/gems"
 #export GEM_PATH=$GEM_HOME:"/Users/reborg/.gem/ruby/1.8"
 
+### JAVA
+export JAVA_HOME=/Library/Java/Home
+export GROOVY_HOME=/Users/reborg/Downloads/groovy-1.6.5
+export GRAILS_HOME=/Users/reborg/Downloads/grails-1.1.1
+
 # Load the Ruby Switcher
 #source ~/Documents/cmd/ruby_switcher.sh
 
 export PROMPT_COMMAND='PS1="\[\033[0;33m\][\!]\`if [[ \$? = "0" ]]; then echo "\\[\\033[32m\\]"; else echo "\\[\\033[31m\\]"; fi\`[\u.\h: \`if [[ `pwd|wc -c|tr -d " "` > 18 ]]; then echo "\\W"; else echo "\\w"; fi\`]\$\[\033[0m\] "; echo -ne "\033]0;`hostname -s`:`pwd`\007"'
+
+# PATH
+export PATH="/Users/reborg/Downloads/spring-roo-1.0.0.RC3/bin:$GRAILS_HOME/bin:$GROOVY_HOME/bin:/Users/reborg/Downloads/apache-maven-2.2.1/bin:/Users/reborg/projects/my/dot/cmd:/Users/reborg/Documents/cmd:/opt/local/bin:/sw/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/bin:$PATH"
+
+export CLASSPATH="$CLASSPATH:~/Downloads/jline-0_9_5.jar"
