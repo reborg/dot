@@ -14,7 +14,7 @@ exec "Snippet collect collect { |".st."element".et."| ".st."element".et.".".st.e
 exec "Snippet forin for ".st."element".et." in ".st."collection".et."<CR>".st."element".et.".".st.et."<CR>end<CR>".st.et
 exec "Snippet doo do |".st."object".et."|<CR>".st.et."<CR>end<CR>".st.et
 exec "Snippet : :".st."key".et." => \"".st."value".et."\"".st.et."<CR>".st.et
-exec "Snippet def def ".st."methodName".et."<CR>".st.et."<CR>end<CR>".st.et
+exec "Snippet def def ".st."methodName".et.st.et."<CR>end"
 exec "Snippet case case ".st."object".et."<CR>when ".st."condition".et."<CR>".st.et."<CR>end<CR>".st.et
 exec "Snippet collecto collect do |".st."element".et."|<CR>".st."element".et.".".st.et."<CR>end<CR>".st.et
 exec "Snippet each each { |".st."element".et."| ".st."element".et.".".st.et." }<CR>".st.et
