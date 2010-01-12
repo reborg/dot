@@ -55,6 +55,7 @@ Snippet ase assert_equal <{expected}>, <{actual}><CR><{}>
 Snippet asne assert_not_equal <{unexpected}>, <{actual}><CR><{}>
 
 " RSpec
+Snippet macspec require File.dirname(__FILE__) + '/../spec_helper'<CR><CR>class <{class}>Spec < Test::Unit::TestCase<CR>def setup<CR>end<CR><CR>it "<{}>" do<CR>end<CR><CR>def teardown<CR>end<CR>end
 Snippet des describe '<{description}>' do<CR>it 'should <{}>' do<CR><{}><CR>end<CR>end
 Snippet desct describe <{Type}> do<CR>it 'should <{}>' do<CR><{}><CR>end<CR>end
   
