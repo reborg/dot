@@ -44,7 +44,7 @@ alias sweetyhigh='cd /Users/reborg/Documents/projects/ap/sweetyhigh'
 alias weddingbook='cd /Users/reborg/Documents/projects/ap/weddingbook'
 alias proj='cd ~/Documents/projects'
 alias apsupp='cd ~/Documents/projects/ap/AgileSupport'
-alias ask='cd ~/Documents/projects/ap/ask/server'
+alias ask='cd /Users/reborg/Documents/projects/ap/ask-server/trunk'
 alias pomodori='cd ~/Documents/projects/my/pomodori'
 alias pomohub='cd ~/Documents/projects/my/pomohub'
 alias tracking='cd /Users/reborg/Documents/projects/tracking'
@@ -53,24 +53,25 @@ alias spikes='cd /Users/reborg/Documents/projects/spikes'
 alias notes='cd /Users/reborg/Documents/notes'
 
 # SSH server access
+alias askstaging='ssh rails@staging.secondopinion.agile.managedmachine.com'
 alias askbeta='ssh askbetauser@askbeta.agilepartners.com'
 alias support='ssh deploy@support.agilepartners.com'
 
 #export DYLD_LIBRARY_PATH=/usr/local/cuda/lib:$DYLD_LIBRARY_PATH
 
 ### RUBY
-export RUBYOPT=rubygems
+#export RUBYOPT=rubygems
 RDOCOPT="-S -f html -T hanna"
 #export GEM_HOME="/System/Library/Frameworks/Ruby.framework/Versions/Current/usr/lib/ruby/gems/1.8/gems"
 #export GEM_PATH=$GEM_HOME:"/Users/reborg/.gem/ruby/1.8"
+#if [[ -s /Users/reborg/.rvm/scripts/rvm ]] ; then source /Users/reborg/.rvm/scripts/rvm ; fi
+# Load the Ruby Switcher
+#source ~/Documents/cmd/ruby_switcher.sh
 
 ### JAVA
 export JAVA_HOME=/Library/Java/Home
 export GROOVY_HOME=/Users/reborg/Downloads/groovy-1.6.5
 export GRAILS_HOME=/Users/reborg/Downloads/grails-1.1.1
-
-# Load the Ruby Switcher
-#source ~/Documents/cmd/ruby_switcher.sh
 
 export PROMPT_COMMAND='PS1="\[\033[0;33m\][\!]\`if [[ \$? = "0" ]]; then echo "\\[\\033[32m\\]"; else echo "\\[\\033[31m\\]"; fi\`[\u.\h: \`if [[ `pwd|wc -c|tr -d " "` > 18 ]]; then echo "\\W"; else echo "\\w"; fi\`]\$\[\033[0m\] "; echo -ne "\033]0;`hostname -s`:`pwd`\007"'
 

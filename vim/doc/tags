@@ -5110,6 +5110,7 @@ creating-menus	gui.txt	/*creating-menus*
 creating-snippets	snippets_emu.txt	/*creating-snippets*
 credits	intro.txt	/*credits*
 crontab	options.txt	/*crontab*
+cs	surround.txt	/*cs*
 cs-find	if_cscop.txt	/*cs-find*
 cs7-problem	term.txt	/*cs7-problem*
 cscope	if_cscop.txt	/*cscope*
@@ -5278,6 +5279,7 @@ dp	diff.txt	/*dp*
 drag-n-drop	gui.txt	/*drag-n-drop*
 drag-n-drop-win32	gui_w32.txt	/*drag-n-drop-win32*
 drag-status-line	term.txt	/*drag-status-line*
+ds	surround.txt	/*ds*
 dtd.vim	syntax.txt	/*dtd.vim*
 dtd2vim	insert.txt	/*dtd2vim*
 dying-variable	eval.txt	/*dying-variable*
@@ -6229,8 +6231,10 @@ i_CTRL-G_<Down>	insert.txt	/*i_CTRL-G_<Down>*
 i_CTRL-G_<Up>	insert.txt	/*i_CTRL-G_<Up>*
 i_CTRL-G_CTRL-J	insert.txt	/*i_CTRL-G_CTRL-J*
 i_CTRL-G_CTRL-K	insert.txt	/*i_CTRL-G_CTRL-K*
+i_CTRL-G_S	surround.txt	/*i_CTRL-G_S*
 i_CTRL-G_j	insert.txt	/*i_CTRL-G_j*
 i_CTRL-G_k	insert.txt	/*i_CTRL-G_k*
+i_CTRL-G_s	surround.txt	/*i_CTRL-G_s*
 i_CTRL-G_u	insert.txt	/*i_CTRL-G_u*
 i_CTRL-H	insert.txt	/*i_CTRL-H*
 i_CTRL-I	insert.txt	/*i_CTRL-I*
@@ -7768,6 +7772,14 @@ subscribe-maillist	intro.txt	/*subscribe-maillist*
 substitute()	eval.txt	/*substitute()*
 substitute-CR	version6.txt	/*substitute-CR*
 suffixes	cmdline.txt	/*suffixes*
+surround	surround.txt	/*surround*
+surround-author	surround.txt	/*surround-author*
+surround-customizing	surround.txt	/*surround-customizing*
+surround-issues	surround.txt	/*surround-issues*
+surround-mappings	surround.txt	/*surround-mappings*
+surround-replacements	surround.txt	/*surround-replacements*
+surround-targets	surround.txt	/*surround-targets*
+surround.txt	surround.txt	/*surround.txt*
 suspend	starting.txt	/*suspend*
 sw	clojure.txt	/*sw*
 swap-file	recover.txt	/*swap-file*
@@ -8446,6 +8458,7 @@ vote-for-features	sponsor.txt	/*vote-for-features*
 votes-counted	sponsor.txt	/*votes-counted*
 votes-for-changes	todo.txt	/*votes-for-changes*
 vreplace-mode	insert.txt	/*vreplace-mode*
+vs	surround.txt	/*vs*
 vt100-cursor-keys	term.txt	/*vt100-cursor-keys*
 vt100-function-keys	term.txt	/*vt100-function-keys*
 w	motion.txt	/*w*
@@ -8575,10 +8588,14 @@ xterm-screens	tips.txt	/*xterm-screens*
 xterm-scroll-region	term.txt	/*xterm-scroll-region*
 xterm-shifted-keys	term.txt	/*xterm-shifted-keys*
 y	change.txt	/*y*
+yS	surround.txt	/*yS*
+ySS	surround.txt	/*ySS*
 yank	change.txt	/*yank*
 ye-option-gone	version4.txt	/*ye-option-gone*
 year-2000	intro.txt	/*year-2000*
 your-runtime-dir	usr_43.txt	/*your-runtime-dir*
+ys	surround.txt	/*ys*
+yss	surround.txt	/*yss*
 yy	change.txt	/*yy*
 z	index.txt	/*z*
 z+	scroll.txt	/*z+*
