@@ -809,6 +809,7 @@ $VIMRUNTIME	starting.txt	/*$VIMRUNTIME*
 'smc'	options.txt	/*'smc'*
 'smd'	options.txt	/*'smd'*
 'sn'	options.txt	/*'sn'*
+'snippets'	snipMate.txt	/*'snippets'*
 'so'	options.txt	/*'so'*
 'softtabstop'	options.txt	/*'softtabstop'*
 'sol'	options.txt	/*'sol'*
@@ -1351,6 +1352,8 @@ $VIMRUNTIME	starting.txt	/*$VIMRUNTIME*
 .dic	spell.txt	/*.dic*
 .exrc	starting.txt	/*.exrc*
 .gvimrc	gui.txt	/*.gvimrc*
+.snippet	snipMate.txt	/*.snippet*
+.snippets	snipMate.txt	/*.snippets*
 .vimrc	starting.txt	/*.vimrc*
 /	pattern.txt	/*\/*
 /$	pattern.txt	/*\/$*
@@ -4184,6 +4187,8 @@ EvalParagraph	clojure.txt	/*EvalParagraph*
 EvalToplevel	clojure.txt	/*EvalToplevel*
 Ex	intro.txt	/*Ex*
 Ex-mode	intro.txt	/*Ex-mode*
+ExtractSnips()	snipMate.txt	/*ExtractSnips()*
+ExtractSnipsFile()	snipMate.txt	/*ExtractSnipsFile()*
 Exuberant_ctags	tagsrch.txt	/*Exuberant_ctags*
 F	motion.txt	/*F*
 FAQ	intro.txt	/*FAQ*
@@ -4202,6 +4207,7 @@ FileType	autocmd.txt	/*FileType*
 FileWriteCmd	autocmd.txt	/*FileWriteCmd*
 FileWritePost	autocmd.txt	/*FileWritePost*
 FileWritePre	autocmd.txt	/*FileWritePre*
+Filename()	snipMate.txt	/*Filename()*
 FilterReadPost	autocmd.txt	/*FilterReadPost*
 FilterReadPre	autocmd.txt	/*FilterReadPre*
 FilterWritePost	autocmd.txt	/*FilterWritePost*
@@ -4425,6 +4431,7 @@ Replace	insert.txt	/*Replace*
 Replace-mode	insert.txt	/*Replace-mode*
 RequireFile	clojure.txt	/*RequireFile*
 RequireFileAll	clojure.txt	/*RequireFileAll*
+ResetSnippets()	snipMate.txt	/*ResetSnippets()*
 Root	mbyte.txt	/*Root*
 Ruby	if_ruby.txt	/*Ruby*
 Russian	russian.txt	/*Russian*
@@ -5827,6 +5834,8 @@ g:rails_statusline	rails.txt	/*g:rails_statusline*
 g:rails_syntax	rails.txt	/*g:rails_syntax*
 g:rails_tabstop	rails.txt	/*g:rails_tabstop*
 g:rails_url	rails.txt	/*g:rails_url*
+g:snippets_dir	snipMate.txt	/*g:snippets_dir*
+g:snips_author	snipMate.txt	/*g:snips_author*
 g:speckyBannerKey	specky.txt	/*g:speckyBannerKey*
 g:speckyQuoteSwitcherKey	specky.txt	/*g:speckyQuoteSwitcherKey*
 g:speckyRunRdocCmd	specky.txt	/*g:speckyRunRdocCmd*
@@ -6247,6 +6256,7 @@ i_CTRL-O	insert.txt	/*i_CTRL-O*
 i_CTRL-P	insert.txt	/*i_CTRL-P*
 i_CTRL-Q	insert.txt	/*i_CTRL-Q*
 i_CTRL-R	insert.txt	/*i_CTRL-R*
+i_CTRL-R_<Tab>	snipMate.txt	/*i_CTRL-R_<Tab>*
 i_CTRL-R_CTRL-O	insert.txt	/*i_CTRL-R_CTRL-O*
 i_CTRL-R_CTRL-P	insert.txt	/*i_CTRL-R_CTRL-P*
 i_CTRL-R_CTRL-R	insert.txt	/*i_CTRL-R_CTRL-R*
@@ -6456,6 +6466,7 @@ list-identity	eval.txt	/*list-identity*
 list-index	eval.txt	/*list-index*
 list-modification	eval.txt	/*list-modification*
 list-repeat	windows.txt	/*list-repeat*
+list-snippets	snipMate.txt	/*list-snippets*
 lite.vim	syntax.txt	/*lite.vim*
 literal-string	eval.txt	/*literal-string*
 lnum-variable	eval.txt	/*lnum-variable*
@@ -6658,6 +6669,7 @@ mswin.vim	gui_w32.txt	/*mswin.vim*
 multi-byte	mbyte.txt	/*multi-byte*
 multi-lang	mlang.txt	/*multi-lang*
 multi-repeat	repeat.txt	/*multi-repeat*
+multi_snip	snipMate.txt	/*multi_snip*
 multibyte	mbyte.txt	/*multibyte*
 multibyte-ime	mbyte.txt	/*multibyte-ime*
 multibyte-input	mbyte.txt	/*multibyte-input*
@@ -7572,7 +7584,28 @@ snip-snippet-commands	snippets_emu.txt	/*snip-snippet-commands*
 snip-special-vars	snippets_emu.txt	/*snip-special-vars*
 snip-start-end-tags	snippets_emu.txt	/*snip-start-end-tags*
 snip-tag-name-syntax	snippets_emu.txt	/*snip-tag-name-syntax*
+snipMate	snipMate.txt	/*snipMate*
+snipMate-$#	snipMate.txt	/*snipMate-$#*
+snipMate-${#:}	snipMate.txt	/*snipMate-${#:}*
+snipMate-${#}	snipMate.txt	/*snipMate-${#}*
+snipMate-author	snipMate.txt	/*snipMate-author*
+snipMate-commands	snipMate.txt	/*snipMate-commands*
+snipMate-contact	snipMate.txt	/*snipMate-contact*
+snipMate-description	snipMate.txt	/*snipMate-description*
+snipMate-disadvantages	snipMate.txt	/*snipMate-disadvantages*
+snipMate-expandtab	snipMate.txt	/*snipMate-expandtab*
+snipMate-features	snipMate.txt	/*snipMate-features*
+snipMate-filename	snipMate.txt	/*snipMate-filename*
+snipMate-indenting	snipMate.txt	/*snipMate-indenting*
+snipMate-placeholders	snipMate.txt	/*snipMate-placeholders*
+snipMate-remap	snipMate.txt	/*snipMate-remap*
+snipMate-settings	snipMate.txt	/*snipMate-settings*
+snipMate-usage	snipMate.txt	/*snipMate-usage*
+snipMate.txt	snipMate.txt	/*snipMate.txt*
+snippet	snipMate.txt	/*snippet*
 snippet-commands	snippets_emu.txt	/*snippet-commands*
+snippet-syntax	snipMate.txt	/*snippet-syntax*
+snippets	snipMate.txt	/*snippets*
 snippets_emu-bugs	snippets_emu.txt	/*snippets_emu-bugs*
 snippets_emu-features	snippets_emu.txt	/*snippets_emu-features*
 snippets_emu-options	snippets_emu.txt	/*snippets_emu-options*

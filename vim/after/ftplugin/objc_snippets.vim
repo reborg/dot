@@ -53,6 +53,8 @@ exec "Snippet getprefs [[NSUserDefaults standardUserDefaults] objectForKey:<key>
 exec "Snippet cati @interface ".st."NSObject".et." (".st."Category".et.")<CR><CR>".st.et."<CR><CR>@end<CR>".st.et
 
 " create a SenTestKit interface plus class stub
-exec "Snippet testc #import <SenTestingKit/SenTestingKit.h><CR>#import \"".st."myClass:UpFirst()".et.".h\"<CR><CR>@interface ".st."myClass:UpFirst()".et."Test : SenTestCase<CR>{<CR>".st."myClass:UpFirst()".et."* ".st."myClass".et.";<CR>}<CR>@end<CR><CR>@implementation ".st."myClass:UpFirst()".et."Test<CR><CR>- (void) setUp<CR>{<CR>".st."myClass".et." = [[".st."myClass:UpFirst()".et." alloc] init];<CR>}<CR><CR>- (void) test".st."myClass:UpFirst()".et.st.et."<CR>{<CR>".st.et.";<CR>STAssertEquals(10, 10, nil);<CR>STAssertEqualObjects(@\"some string\", @\"Haml and Sass\", nil);<CR>}<CR><CR>- (void) tearDown<CR>{<CR>[".st."myClass".et." release];<CR>}<CR><CR>@end"
-exec "Snippet test - (void) test".st.et."<CR>{<CR>".st.et.";<CR>STAssertEquals(10, 10, nil);<CR>STAssertEqualObjects(@\"some string\", @\"Haml and Sass\", nil);<CR>}<CR>"
+exec "Snippet testc #import <SenTestingKit/SenTestingKit.h><CR>#import \"".st."myClass:UpFirst()".et.".h\"<CR><CR>@interface ".st."myClass:UpFirst()".et."Test : SenTestCase<CR>{<CR>".st."myClass:UpFirst()".et."* ".st."myClass".et.";<CR>}<CR>@end<CR><CR>@implementation ".st."myClass:UpFirst()".et."Test<CR><CR>- (void) setUp<CR>{<CR>".st."myClass".et." = [[".st."myClass:UpFirst()".et." alloc] init];<CR>}<CR><CR>- (void) test".st."myClass:UpFirst()".et.st.et."<CR>{<CR>STAssertEquals(10, 10, nil);<CR>STAssertEqualObjects(@\"some string\", @\"Haml and Sass\", nil);<CR>}<CR><CR>- (void) tearDown<CR>{<CR>[".st."myClass".et." release];<CR>}<CR><CR>@end"
 
+exec "Snippet test - (void) test".st.et."<CR>{<CR>".st.et."<CR>}"
+
+exec "Snippet initbody if (self = [super init])<CR>{<CR>".st.et."<CR>}<CR>return self;"
