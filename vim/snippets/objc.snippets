@@ -176,6 +176,8 @@ snippet except
 	                             reason:@"${3}"
 	                           userInfo:nil];
 	[$1 raise];
+snippet raise
+	[NSException raise:@"DEBUG" format:@"##### %@", ${1:object}];
 snippet prag
 	#pragma mark ${1:foo}
 snippet cl
