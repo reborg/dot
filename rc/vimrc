@@ -95,6 +95,111 @@ if !exists(":DiffOrig")
 		  \ | wincmd p | diffthis
 endif
 
-" Reborg's Customizations
-"set t_Co=256
+" ##################################################################  
+" ##################################################################  
+"                  Start Renzo's Customizations
+" ##################################################################  
+" ##################################################################  
+
+" Set the color scheme for plain vi
 colorscheme desert
+
+" Associate pom files to taskpaper plugin
+augroup taskpaper
+  au! BufRead,BufNewFile *.pom   setfiletype taskpaper
+augroup END
+
+" Use softtabs
+set softtabstop=2
+set shiftwidth=2
+set tabstop=2
+set expandtab
+
+" Useful expansions
+imap hh <Space>=><Space>
+imap jj <Esc>
+
+" highlight line with cursor
+set cursorline
+
+" inserts new line without going into insert mode
+map <S-Enter> O<ESC> 
+map <Enter> o<ESC>
+
+" Show line numbers
+set number
+
+" highlight matching brackets
+set matchpairs+=<:>
+
+" turn off the bell
+set vb t_vb= 
+
+" Invoke a web browser
+function! Browser ()
+  let line0 = getline (".")
+  let line = matchstr (line0, "http[^ ]*")
+  :if line==""
+  let line = matchstr (line0, "ftp[^ ]*")
+  :endif
+  :if line==""
+  let line = matchstr (line0, "file[^ ]*")
+  :endif
+  let line = escape (line, "#?&;|%")
+  ":if line==""
+  " let line = "\"" . (expand("%:p")) . "\""
+  ":endif
+  exec ':silent !open ' . "\"" . line . "\""
+endfunction
+map ,w :call Browser ()<CR>
+
+" no backups
+set noswapfile
+set nowritebackup 
+
+" Some initial folding settings
+" Then you can toggle folding with za. You can fold everything with zM and unfold 
+" everything with zR. zm and zr can be used to get those folds just right
+set foldmethod=indent   "fold based on indent
+set foldnestmax=10      "deepest fold is 10 levels
+set foldlevelstart=1
+
+" markdown support
+" http://plasticboy.com/markdown-vim-mode/
+augroup mkd
+autocmd BufRead,BufNewFile *.mkd set ai formatoptions=tcroqn2 comments=n:>
+autocmd BufRead,BufNewFile *.markdown set ai formatoptions=tcroqn2 comments=n:>
+augroup END
+
+" going hard core, disabling arrows
+noremap  <Up> ""
+noremap! <Up> <Esc>
+noremap  <Down> ""
+noremap! <Down> <Esc>
+noremap  <Left> ""
+noremap! <Left> <Esc>
+noremap  <Right> ""
+noremap! <Right> <Esc>
+
+" display cursor line
+set cursorline
+
+" Specky configuration
+" http://www.vim.org/scripts/script.php?script_id=2286
+let g:speckyBannerKey = "<C-S>b"
+let g:speckyQuoteSwitcherKey = "<C-S>'"
+let g:speckyRunRdocKey = "<C-S>r"
+let g:speckySpecSwitcherKey = "<C-S>x"
+let g:speckyRunSpecKey = "<C-S>s"
+let g:speckyRunSpecCmd = "spec -fs"
+let g:speckyRunRdocCmd = "fri -L -f plain"
+let g:speckyWindowType = 2
+
+" Run single test mapping
+" http://www.vim.org/scripts/script.php?script_id=2869
+nmap <silent> <leader>t <Plug>ExecuteRubyTest
+set makeprg=spec
+
+" toggle paste without indentation for
+" copy pasting from other application
+set pastetoggle=<F2>
