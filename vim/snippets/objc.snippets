@@ -33,6 +33,13 @@ snippet int
 	}
 	${4}
 	@end
+# Protocol
+snippet proto
+	@protocol ${1:Foo}Delegate <${2:NSObject}>
+	{
+	 - (void) ${3:}DidSomething:(id)sender;
+	}
+	@end
 # Class Implementation
 snippet impl
 	@implementation ${1:`Filename('', 'someClass')`}
@@ -189,3 +196,9 @@ snippet cl
 	@class ${1:Foo};${2}
 snippet color
 	[[NSColor ${1:blackColor}] set];
+snippet dea
+	- (void) dealloc
+	{
+		[${1:something} dealloc];
+		[super dealloc];
+	}	
