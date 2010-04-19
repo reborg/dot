@@ -40,6 +40,7 @@ alias gci='git ci -a'
 alias gup='git pull'
 
 # Aliased directories
+alias camphone='cd /Users/reborg/Documents/projects/my/CamPhone'
 alias sweetyhigh='cd /Users/reborg/Documents/projects/ap/sweetyhigh'
 alias weddingbook='cd /Users/reborg/Documents/projects/ap/weddingbook'
 alias proj='cd ~/Documents/projects'

@@ -198,3 +198,17 @@ set makeprg=spec
 " toggle paste without indentation for
 " copy pasting from other application
 set pastetoggle=<F2>
+
+" softwrap enable me
+set linebreak
+
+" with ,ew will open file using current file folder as root
+let mapleader=','
+map <leader>ew :e <C-R>=expand("%:p:h") . "/" <CR>
+
+" don't bother alert me when unsaved buffers
+set hidden
+
+" Turn on smartcase for searches
+set smartcase
+set ignorecase

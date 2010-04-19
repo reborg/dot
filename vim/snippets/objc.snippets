@@ -48,7 +48,10 @@ snippet impl
 snippet init
 	- (id)init
 	{
-		[super init];
+		if (self = [super init]) 
+		{
+			${1}
+		}
 		return self;
 	}
 snippet ifself
@@ -82,6 +85,8 @@ snippet dictw
 	NSDictionary* ${1:dict} = [NSDictionary dictionaryWithObjectsAndKeys: 
 		${2}@"value1", @"key1",
 		@"value2", @"key2", nil];
+snippet data
+	NSMutableData* data = [NSMutableData dataWithCapacity:${1:0}];
 # NSBezierPath
 snippet bez
 	NSBezierPath *${1:path} = [NSBezierPath bezierPath];${2}
@@ -146,7 +151,8 @@ snippet objacc
 	}${4}
 # for (object in array)
 snippet forin
-	for (${1:Class} *${2:some$1} in ${3:array}) {
+	for (${1:Class}* ${2:a$1} in ${3:array})
+	{
 		${4}
 	}
 snippet forarray
@@ -202,3 +208,59 @@ snippet dea
 		[${1:something} dealloc];
 		[super dealloc];
 	}	
+snippet testc
+	#import "${1:TargetClass}.h"
+
+	@interface $1Test : SenTestCase
+	{
+		$1* ${2:targetClass};
+	}
+	@end
+
+	@implementation $1Test
+
+	- (void) setUp
+	{
+		$2 = [[$1 alloc] init];
+	}
+
+	- (void) testShould${3}
+	{
+		${4}
+		//STAssertFalse(NO, nil);
+		//STAssertEqualsObject(first, second, nil);
+	}
+
+	- (void) tearDown
+	{
+		[$2 release];
+	}
+
+	@end
+	//#define STAssertNil(a1, description, ...)
+	//#define STAssertNotNil(a1, description, ...)
+	//#define STAssertTrue(expression, description, ...)
+	//#define STAssertFalse(expression, description, ...)
+	//#define STAssertEqualObjects(a1, a2, description, ...)
+	//#define STAssertEquals(a1, a2, description, ...)
+	//#define STAssertEqualsWithAccuracy(left, right, accuracy, description, ...)
+	//#define STAssertThrows(expression, description, ...)
+	//#define STAssertThrowsSpecific(expression, specificException, description, ...)
+	//#define STAssertThrowsSpecificNamed(expr, specificException, aName, description, ...)
+	//#define STAssertNoThrow(expression, description, ...)
+	//#define STAssertNoThrowSpecific(expression, specificException, description, ...)
+	//#define STAssertNoThrowSpecificNamed(expr, specificException, aName, description, ...)
+	//#define STFail(description, ...)
+	//#define STAssertTrueNoThrow(expression, description, ...)
+	//#define STAssertFalseNoThrow(expression, description, ...)
+
+snippet test
+	- (void) testShould${1}
+	{
+		${2}
+	}
+snippet invoc
+	NSMethodSignature* sig = [[self class] instanceMethodSignatureForSelector:@selector(${1:methodName})];
+	NSInvocation* invocation = [NSInvocation invocationWithMethodSignature:sig];
+	[invocation setTarget:self];
+	[invocation setSelector:@selector($1)];
