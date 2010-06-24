@@ -12,7 +12,7 @@ snippet s
 	@"${1}"${2}
 # Object
 snippet o
-	${1:NSObject} *${2:foo} = [${3:$1 alloc}]${4};${5}
+	${1:NSObject}* a${2:$1} = [[${3:$1 alloc}] init];${4}
 # NSLog(...)
 snippet log
 	NSLog(@"${1:%@}"${2});${3}
@@ -76,7 +76,7 @@ snippet cath
 	@end
 # NSArray
 snippet array
-	NSMutableArray *${1:array} = [NSMutable array];${2}
+	NSMutableArray *${1:array} = [NSMutableArray array];${2}
 # NSDictionary
 snippet dict
 	NSMutableDictionary* ${1:dict} = [NSMutableDictionary dictionary];${2}
@@ -205,7 +205,7 @@ snippet color
 snippet dea
 	- (void) dealloc
 	{
-		[${1:something} dealloc];
+		[${1:something} release];
 		[super dealloc];
 	}	
 snippet testc
@@ -264,3 +264,7 @@ snippet invoc
 	NSInvocation* invocation = [NSInvocation invocationWithMethodSignature:sig];
 	[invocation setTarget:self];
 	[invocation setSelector:@selector($1)];
+snippet logs
+	BTLogString(2,@"start");
+snippet loge
+	BTLogString(2,@"end");

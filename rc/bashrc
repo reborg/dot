@@ -32,6 +32,7 @@ alias lorem='Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do ei
 alias rails_restart='touch ./tmp/restart.txt'
 alias apache_restart='sudo apachectl restart'
 alias repl='java -cp ~/Downloads/jline-0_9_5.jar:~/Documents/projects/3rdparties/clojure/clojure.jar jline.ConsoleRunner clojure.main'
+alias m='open -a textmate .'
 
 # GIT
 alias gst='git st'
@@ -41,6 +42,7 @@ alias gup='git pull'
 
 # Aliased directories
 alias camphone='cd /Users/reborg/Documents/projects/my/CamPhone'
+alias epistore='cd /Users/reborg/Documents/projects/sourcesense/episrl/epistore/trunk'
 alias sweetyhigh='cd /Users/reborg/Documents/projects/ap/sweetyhigh'
 alias weddingbook='cd /Users/reborg/Documents/projects/ap/weddingbook'
 alias proj='cd ~/Documents/projects'
@@ -54,11 +56,13 @@ alias spikes='cd /Users/reborg/Documents/projects/spikes'
 alias notes='cd /Users/reborg/Documents/notes'
 
 # SSH server access
-alias askstaging='ssh rails@staging.secondopinion.agile.managedmachine.com'
+alias askstag='ssh rails@sostage.agilepartners.com'
+alias askprod='ssh rails@so.agilepartners.com'
 alias askbeta='ssh askbetauser@askbeta.agilepartners.com'
-alias support='ssh deploy@support.agilepartners.com'
+alias apsuppprod='ssh deploy@support.agilepartners.com'
+alias camphonep='ssh zoot@109.168.127.45'
 
-#export DYLD_LIBRARY_PATH=/usr/local/cuda/lib:$DYLD_LIBRARY_PATH
+#export DYLD_LIBRARY_PATH=/opt/local/lib:/usr/local/spidermonkey/lib:$DYLD_LIBRARY_PATH
 
 ### RUBY
 #export RUBYOPT=rubygems
@@ -80,3 +84,4 @@ export PROMPT_COMMAND='PS1="\[\033[0;33m\][\!]\`if [[ \$? = "0" ]]; then echo "\
 export PATH="/Users/reborg/Downloads/spring-roo-1.0.0.RC3/bin:$GRAILS_HOME/bin:$GROOVY_HOME/bin:/Users/reborg/Downloads/apache-maven-2.2.1/bin:/Users/reborg/projects/my/dot/cmd:/Users/reborg/Documents/cmd:/opt/local/bin:/sw/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/bin:$PATH"
 
 export CLASSPATH="$CLASSPATH:~/Downloads/jline-0_9_5.jar"
+if [[ -s /Users/reborg/.rvm/scripts/rvm ]] ; then source /Users/reborg/.rvm/scripts/rvm ; fi
