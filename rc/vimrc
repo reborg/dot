@@ -202,9 +202,9 @@ set pastetoggle=<F2>
 " softwrap enable me
 set linebreak
 
-" with ,ew will open file using current file folder as root
-let mapleader=','
-map <leader>ew :e <C-R>=expand("%:p:h") . "/" <CR>
+" map ack to \f
+" let mapleader=","
+map <leader>f :Ack 
 
 " don't bother alert me when unsaved buffers
 set hidden
