@@ -212,3 +212,7 @@ set hidden
 " Turn on smartcase for searches
 set smartcase
 set ignorecase
+
+" Fuzzy File Finder
+nmap <leader>t :FufFile **/<CR>
+nmap <leader>b :FufBuffer<CR>

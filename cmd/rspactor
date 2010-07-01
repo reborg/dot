@@ -1,0 +1,3 @@
+#!/bin/bash
+RSPACTOR=/Users/reborg/Documents/projects/3rdparties/rspactor
+ruby -I$RSPACTOR/lib $RSPACTOR/bin/rspactor $*
