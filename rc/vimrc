@@ -216,3 +216,7 @@ set ignorecase
 " Fuzzy File Finder
 nmap <leader>t :FufFile **/<CR>
 nmap <leader>b :FufBuffer<CR>
+
+" Tell easytags to create the tag file on
+" the vim root
+:let g:easytags_file = '~/.vim/tags'
