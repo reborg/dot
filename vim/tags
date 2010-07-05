@@ -4,15 +4,42 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
+<C-V>%	/Users/reborg/Documents/projects/my/dot/vim/plugin/ragtag.vim	/^  imap     <C-V>%      <Plug>ragtagUrlV$/;"	m	language:Vim
+<C-V>&	/Users/reborg/Documents/projects/my/dot/vim/plugin/ragtag.vim	/^  imap     <C-V>&      <Plug>ragtagXmlV$/;"	m	language:Vim
+<C-X>%	/Users/reborg/Documents/projects/my/dot/vim/plugin/ragtag.vim	/^  imap     <C-X>%      <Plug>ragtagUrlEncode$/;"	m	language:Vim
+<C-X>&	/Users/reborg/Documents/projects/my/dot/vim/plugin/ragtag.vim	/^  imap     <C-X>&      <Plug>ragtagXmlEncode$/;"	m	language:Vim
+<C-X>/	/Users/reborg/Documents/projects/my/dot/vim/plugin/ragtag.vim	/^  imap     <C-X>\/    <\/<Plug>ragtagHtmlComplete$/;"	m	language:Vim
+<C-X>H	/Users/reborg/Documents/projects/my/dot/vim/plugin/ragtag.vim	/^  imap     <C-X>H      <Plug>ragtagHtmlComplete$/;"	m	language:Vim
+<Plug>ragtagBSUrl	/Users/reborg/Documents/projects/my/dot/vim/plugin/ragtag.vim	/^inoremap <silent> <Plug>ragtagBSUrl     <C-R>=<SID>bspattern('%\\x\\x\\=\\<Bar>&amp;')<CR>$/;"	m	language:Vim
+<Plug>ragtagBSXml	/Users/reborg/Documents/projects/my/dot/vim/plugin/ragtag.vim	/^inoremap <silent> <Plug>ragtagBSXml     <C-R>=<SID>bspattern('&#\\=\\w*;\\<Bar><[^><]*>\\=')<CR>$/;"	m	language:Vim
+<Plug>ragtagHtmlComplete	/Users/reborg/Documents/projects/my/dot/vim/plugin/ragtag.vim	/^inoremap <silent> <Plug>ragtagHtmlComplete <C-R>=<SID>htmlEn()<CR><C-X><C-O><C-P><C-R>=<SID>htmlDis()<CR><C-N>$/;"	m	language:Vim
+<Plug>ragtagUrlEncode	/Users/reborg/Documents/projects/my/dot/vim/plugin/ragtag.vim	/^inoremap <silent> <Plug>ragtagUrlEncode <C-R>=<SID>toggleurlescape()<CR>$/;"	m	language:Vim
+<Plug>ragtagUrlV	/Users/reborg/Documents/projects/my/dot/vim/plugin/ragtag.vim	/^inoremap <silent> <Plug>ragtagUrlV      <C-R>=<SID>urlv()<CR>$/;"	m	language:Vim
+<Plug>ragtagXmlEncode	/Users/reborg/Documents/projects/my/dot/vim/plugin/ragtag.vim	/^inoremap <silent> <Plug>ragtagXmlEncode <C-R>=<SID>togglexmlescape()<CR>$/;"	m	language:Vim
+<Plug>ragtagXmlV	/Users/reborg/Documents/projects/my/dot/vim/plugin/ragtag.vim	/^inoremap <silent> <Plug>ragtagXmlV      <C-R>="&#".getchar().";"<CR>$/;"	m	language:Vim
+<SID>ragtagUrlEncode	/Users/reborg/Documents/projects/my/dot/vim/plugin/ragtag.vim	/^inoremap <silent>  <SID>ragtagUrlEncode <C-R>=<SID>toggleurlescape()<CR>$/;"	m	language:Vim
+<SID>ragtagXmlEncode	/Users/reborg/Documents/projects/my/dot/vim/plugin/ragtag.vim	/^inoremap <silent>  <SID>ragtagXmlEncode <C-R>=<SID>togglexmlescape()<CR>$/;"	m	language:Vim
+<SID>urlspace	/Users/reborg/Documents/projects/my/dot/vim/plugin/ragtag.vim	/^inoremap <silent> <SID>urlspace <C-R>=<SID>getinput()=~?'\\%([?&]\\<Bar>&amp;\\)[%a-z0-9._~+-]*=[%a-z0-9._~+-]*$'?'+':'%20'<CR>$/;"	m	language:Vim
 ActiveRecord	/Users/reborg/Documents/projects/ap/mtea/vendor/plugins/acts_as_taggable/lib/acts_as_taggable.rb	/^module ActiveRecord$/;"	m	language:Ruby
 Acts	/Users/reborg/Documents/projects/ap/mtea/vendor/plugins/acts_as_taggable/lib/acts_as_taggable.rb	/^  module Acts #:nodoc:$/;"	m	language:Ruby	class:ActiveRecord
+AllmlInit	/Users/reborg/Documents/projects/my/dot/vim/plugin/ragtag.vim	/^function! AllmlInit()$/;"	f	language:Vim
+ApplicationController	/Users/reborg/Documents/projects/ap/AgileSupport/app/controllers/application_controller.rb	/^class ApplicationController < ActionController::Base$/;"	c	language:Ruby
+ApplicationController	/Users/reborg/Documents/projects/spikes/rails/blueridge2/app/controllers/application_controller.rb	/^class ApplicationController < ActionController::Base$/;"	c	language:Ruby
+ApplicationHelper	/Users/reborg/Documents/projects/ap/mtea/app/helpers/application_helper.rb	/^module ApplicationHelper$/;"	m	language:Ruby
 BinariesController	/Users/reborg/Documents/projects/ap/mtea/app/controllers/binaries_controller.rb	/^class BinariesController < ApplicationController$/;"	c	language:Ruby
+Book	/Users/reborg/Documents/projects/spikes/rails/blueridge2/app/models/book.rb	/^class Book < ActiveRecord::Base$/;"	c	language:Ruby
+CampaignHelper	/Users/reborg/Documents/projects/sourcesense/episrl/epistore/trunk/app/helpers/campaign_helper.rb	/^module CampaignHelper$/;"	m	language:Ruby
 ClassMethods	/Users/reborg/Documents/projects/ap/mtea/vendor/plugins/acts_as_taggable/lib/acts_as_taggable.rb	/^      module ClassMethods$/;"	m	language:Ruby	class:ActiveRecord.Acts.Taggable
+Init	/Users/reborg/Documents/projects/my/dot/vim/plugin/ragtag.vim	/^function! s:Init()$/;"	f	language:Vim
 InstanceMethods	/Users/reborg/Documents/projects/ap/mtea/vendor/plugins/acts_as_taggable/lib/acts_as_taggable.rb	/^      module InstanceMethods$/;"	m	language:Ruby	class:ActiveRecord.Acts.Taggable
+Leave	/Users/reborg/Documents/projects/my/dot/vim/plugin/ragtag.vim	/^function! s:Leave()$/;"	f	language:Vim
+MoviesController	/Users/reborg/Documents/projects/spikes/rails/blueridge2/app/controllers/movies_controller.rb	/^class MoviesController < ApplicationController$/;"	c	language:Ruby
 Post	/Users/reborg/Documents/projects/ap/mtea/app/models/post.rb	/^class Post < ActiveRecord::Base$/;"	c	language:Ruby
 PostsController	/Users/reborg/Documents/projects/ap/mtea/app/controllers/posts_controller.rb	/^class PostsController < ApplicationController$/;"	c	language:Ruby
+RagtagInit	/Users/reborg/Documents/projects/my/dot/vim/plugin/ragtag.vim	/^function! RagtagInit()$/;"	f	language:Vim
 SessionStore	/Users/reborg/Documents/projects/ap/AgileSupport/app/models/session_store.rb	/^class SessionStore$/;"	c	language:Ruby
 SingletonMethods	/Users/reborg/Documents/projects/ap/mtea/vendor/plugins/acts_as_taggable/lib/acts_as_taggable.rb	/^      module SingletonMethods$/;"	m	language:Ruby	class:ActiveRecord.Acts.Taggable
+Tag	/Users/reborg/Documents/projects/ap/AgileSupport/vendor/gems/thinking-sphinx-1.3.16/features/support/models/tag.rb	/^class Tag < ActiveRecord::Base$/;"	c	language:Ruby
 Taggable	/Users/reborg/Documents/projects/ap/mtea/vendor/plugins/acts_as_taggable/lib/acts_as_taggable.rb	/^    module Taggable #:nodoc:$/;"	m	language:Ruby	class:ActiveRecord.Acts
 Ticket	/Users/reborg/Documents/projects/ap/AgileSupport/app/models/ticket.rb	/^class Ticket < ActiveRecord::Base$/;"	c	language:Ruby
 TicketsController	/Users/reborg/Documents/projects/ap/AgileSupport/app/controllers/tickets_controller.rb	/^class TicketsController < ApplicationController$/;"	c	language:Ruby
@@ -23,81 +50,159 @@ add_search	/Users/reborg/Documents/projects/ap/AgileSupport/app/models/session_s
 after_save_redirect	/Users/reborg/Documents/projects/ap/mtea/app/controllers/posts_controller.rb	/^  def after_save_redirect$/;"	f	language:Ruby	class:PostsController
 all_tickets	/Users/reborg/Documents/projects/ap/AgileSupport/app/models/ticket.rb	/^  def self.all_tickets(app = nil, limit = nil)$/;"	F	language:Ruby	class:Ticket
 as_feed_item	/Users/reborg/Documents/projects/ap/mtea/app/models/post.rb	/^  def as_feed_item(request)$/;"	f	language:Ruby	class:Post
+asset_comments_link	/Users/reborg/Documents/projects/ap/mtea/app/helpers/application_helper.rb	/^  def asset_comments_link(entity)$/;"	f	language:Ruby	class:ApplicationHelper
+authorize	/Users/reborg/Documents/projects/ap/AgileSupport/app/controllers/application_controller.rb	/^  def authorize$/;"	f	language:Ruby	class:ApplicationController
 before_save	/Users/reborg/Documents/projects/ap/mtea/app/models/post.rb	/^  def before_save$/;"	f	language:Ruby	class:Post
+binary_document_type	/Users/reborg/Documents/projects/ap/mtea/app/helpers/application_helper.rb	/^  def binary_document_type(file_type, file_name)$/;"	f	language:Ruby	class:ApplicationHelper
+binary_icon	/Users/reborg/Documents/projects/ap/mtea/app/helpers/application_helper.rb	/^  def binary_icon(file_type,file_name)$/;"	f	language:Ruby	class:ApplicationHelper
+bookmark_people	/Users/reborg/Documents/projects/ap/mtea/app/helpers/application_helper.rb	/^  def bookmark_people(b)$/;"	f	language:Ruby	class:ApplicationHelper
+bookmark_people_count	/Users/reborg/Documents/projects/ap/mtea/app/helpers/application_helper.rb	/^  def bookmark_people_count(b)$/;"	f	language:Ruby	class:ApplicationHelper
 browse_group_results_by_tag	/Users/reborg/Documents/projects/ap/mtea/vendor/plugins/acts_as_taggable/lib/acts_as_taggable.rb	/^        def browse_group_results_by_tag(tags,models,user,page,group)$/;"	f	language:Ruby	class:ActiveRecord.Acts.Taggable.SingletonMethods
+browse_item_person_photo	/Users/reborg/Documents/projects/ap/mtea/app/helpers/application_helper.rb	/^  def browse_item_person_photo(p)$/;"	f	language:Ruby	class:ApplicationHelper
 browse_results_by_tag	/Users/reborg/Documents/projects/ap/mtea/vendor/plugins/acts_as_taggable/lib/acts_as_taggable.rb	/^        def browse_results_by_tag(tags,models,user,page)$/;"	f	language:Ruby	class:ActiveRecord.Acts.Taggable.SingletonMethods
 browse_results_by_tag_rss	/Users/reborg/Documents/projects/ap/mtea/vendor/plugins/acts_as_taggable/lib/acts_as_taggable.rb	/^        def browse_results_by_tag_rss(tags,models)$/;"	f	language:Ruby	class:ActiveRecord.Acts.Taggable.SingletonMethods
+bspattern	/Users/reborg/Documents/projects/my/dot/vim/plugin/ragtag.vim	/^function! s:bspattern(pattern)$/;"	f	language:Vim
 by_attribute	/Users/reborg/Documents/projects/ap/mtea/vendor/plugins/acts_as_taggable/lib/acts_as_taggable.rb	/^            def by_attribute(attr)$/;"	f	language:Ruby	class:ActiveRecord.Acts.Taggable.ClassMethods.acts_as_taggable
 by_pirate?	/Users/reborg/Documents/projects/ap/AgileSupport/app/models/ticket.rb	/^  def by_pirate?$/;"	f	language:Ruby	class:Ticket
+charset	/Users/reborg/Documents/projects/my/dot/vim/plugin/ragtag.vim	/^function! s:charset()$/;"	f	language:Vim
 closed?	/Users/reborg/Documents/projects/ap/AgileSupport/app/models/ticket.rb	/^  def closed?$/;"	f	language:Ruby	class:Ticket
 closed_tickets	/Users/reborg/Documents/projects/ap/AgileSupport/app/models/ticket.rb	/^  def self.closed_tickets(app = nil, limit = nil)$/;"	F	language:Ruby	class:Ticket
+closetag	/Users/reborg/Documents/projects/my/dot/vim/plugin/ragtag.vim	/^function! s:closetag()$/;"	f	language:Vim
+closetagback	/Users/reborg/Documents/projects/my/dot/vim/plugin/ragtag.vim	/^function! s:closetagback()$/;"	f	language:Vim
+comments_text	/Users/reborg/Documents/projects/ap/mtea/app/helpers/application_helper.rb	/^  def comments_text(entity)$/;"	f	language:Ruby	class:ApplicationHelper
 count_messages	/Users/reborg/Documents/projects/ap/AgileSupport/app/models/ticket.rb	/^  def count_messages$/;"	f	language:Ruby	class:Ticket
 count_notes	/Users/reborg/Documents/projects/ap/AgileSupport/app/models/ticket.rb	/^  def count_notes$/;"	f	language:Ruby	class:Ticket
 create	/Users/reborg/Documents/projects/ap/AgileSupport/app/controllers/tickets_controller.rb	/^  def create$/;"	f	language:Ruby	class:TicketsController
 create	/Users/reborg/Documents/projects/ap/mtea/app/controllers/binaries_controller.rb	/^  def create$/;"	f	language:Ruby	class:BinariesController
 create	/Users/reborg/Documents/projects/ap/mtea/app/controllers/posts_controller.rb	/^  def create$/;"	f	language:Ruby	class:PostsController
+create	/Users/reborg/Documents/projects/spikes/rails/blueridge2/app/controllers/movies_controller.rb	/^  def create$/;"	f	language:Ruby	class:MoviesController
+create_group_link	/Users/reborg/Documents/projects/ap/mtea/app/helpers/application_helper.rb	/^  def create_group_link$/;"	f	language:Ruby	class:ApplicationHelper
 current_app	/Users/reborg/Documents/projects/ap/AgileSupport/app/models/session_store.rb	/^  def current_app$/;"	f	language:Ruby	class:SessionStore
 current_search	/Users/reborg/Documents/projects/ap/AgileSupport/app/models/session_store.rb	/^  def current_search$/;"	f	language:Ruby	class:SessionStore
 current_status	/Users/reborg/Documents/projects/ap/AgileSupport/app/models/session_store.rb	/^  def current_status$/;"	f	language:Ruby	class:SessionStore
+current_tab	/Users/reborg/Documents/projects/ap/mtea/app/helpers/application_helper.rb	/^  def current_tab$/;"	f	language:Ruby	class:ApplicationHelper
+date_display_format	/Users/reborg/Documents/projects/ap/mtea/app/helpers/application_helper.rb	/^  def date_display_format(d)$/;"	f	language:Ruby	class:ApplicationHelper
+deauthorize	/Users/reborg/Documents/projects/ap/AgileSupport/app/controllers/application_controller.rb	/^  def deauthorize$/;"	f	language:Ruby	class:ApplicationController
+default_group_icon_image	/Users/reborg/Documents/projects/ap/mtea/app/helpers/application_helper.rb	/^  def default_group_icon_image$/;"	f	language:Ruby	class:ApplicationHelper
+default_photo	/Users/reborg/Documents/projects/ap/mtea/app/helpers/application_helper.rb	/^  def default_photo(classname)$/;"	f	language:Ruby	class:ApplicationHelper
 destroy	/Users/reborg/Documents/projects/ap/AgileSupport/app/controllers/tickets_controller.rb	/^  def destroy$/;"	f	language:Ruby	class:TicketsController
 destroy	/Users/reborg/Documents/projects/ap/mtea/app/controllers/binaries_controller.rb	/^  def destroy$/;"	f	language:Ruby	class:BinariesController
+destroy	/Users/reborg/Documents/projects/spikes/rails/blueridge2/app/controllers/movies_controller.rb	/^  def destroy$/;"	f	language:Ruby	class:MoviesController
 diff	/Users/reborg/Documents/projects/ap/AgileSupport/app/models/ticket.rb	/^  def diff(old_ticket)$/;"	f	language:Ruby	class:Ticket
+disableescape	/Users/reborg/Documents/projects/my/dot/vim/plugin/ragtag.vim	/^function! s:disableescape()$/;"	f	language:Vim
+doctypeSeek	/Users/reborg/Documents/projects/my/dot/vim/plugin/ragtag.vim	/^function! s:doctypeSeek()$/;"	f	language:Vim
 edit	/Users/reborg/Documents/projects/ap/AgileSupport/app/controllers/tickets_controller.rb	/^  def edit$/;"	f	language:Ruby	class:TicketsController
 edit	/Users/reborg/Documents/projects/ap/mtea/app/controllers/binaries_controller.rb	/^  def edit$/;"	f	language:Ruby	class:BinariesController
 edit	/Users/reborg/Documents/projects/ap/mtea/app/controllers/posts_controller.rb	/^  def edit$/;"	f	language:Ruby	class:PostsController
+edit	/Users/reborg/Documents/projects/spikes/rails/blueridge2/app/controllers/movies_controller.rb	/^  def edit$/;"	f	language:Ruby	class:MoviesController
 error_message	/Users/reborg/Documents/projects/ap/AgileSupport/app/controllers/tickets_controller.rb	/^  def error_message(msg)$/;"	f	language:Ruby	class:TicketsController
+error_messages_for_campaign	/Users/reborg/Documents/projects/sourcesense/episrl/epistore/trunk/app/helpers/campaign_helper.rb	/^  def error_messages_for_campaign(*params)$/;"	f	language:Ruby	class:CampaignHelper
 extract_tags	/Users/reborg/Documents/projects/ap/mtea/vendor/plugins/acts_as_taggable/lib/acts_as_taggable.rb	/^        def extract_tags(arr)$/;"	f	language:Ruby	class:ActiveRecord.Acts.Taggable.SingletonMethods
+feed_date_display_format	/Users/reborg/Documents/projects/ap/mtea/app/helpers/application_helper.rb	/^  def feed_date_display_format(d)$/;"	f	language:Ruby	class:ApplicationHelper
 filter	/Users/reborg/Documents/projects/ap/AgileSupport/app/models/ticket.rb	/^  def self.filter(session_store)$/;"	F	language:Ruby	class:Ticket
 filter_results_for_intersection	/Users/reborg/Documents/projects/ap/mtea/vendor/plugins/acts_as_taggable/lib/acts_as_taggable.rb	/^        def filter_results_for_intersection(results, list)$/;"	f	language:Ruby	class:ActiveRecord.Acts.Taggable.SingletonMethods
 find_all_tagged_with	/Users/reborg/Documents/projects/ap/mtea/vendor/plugins/acts_as_taggable/lib/acts_as_taggable.rb	/^        def find_all_tagged_with(list, models, options = {})$/;"	f	language:Ruby	class:ActiveRecord.Acts.Taggable.SingletonMethods
 find_tagged_with	/Users/reborg/Documents/projects/ap/mtea/vendor/plugins/acts_as_taggable/lib/acts_as_taggable.rb	/^        def find_tagged_with(list, options = {})$/;"	f	language:Ruby	class:ActiveRecord.Acts.Taggable.SingletonMethods
+flag_icon	/Users/reborg/Documents/projects/ap/mtea/app/helpers/application_helper.rb	/^  def flag_icon(country)$/;"	f	language:Ruby	class:ApplicationHelper
 force_ie_to_request_html	/Users/reborg/Documents/projects/ap/AgileSupport/app/controllers/tickets_controller.rb	/^  def force_ie_to_request_html$/;"	f	language:Ruby	class:TicketsController
+g:loaded_ragtag	/Users/reborg/Documents/projects/my/dot/vim/plugin/ragtag.vim	/^let g:loaded_ragtag = 1$/;"	v	language:Vim
 get_post	/Users/reborg/Documents/projects/ap/mtea/app/models/post.rb	/^  def Post.get_post(slug, username, current_user)$/;"	F	language:Ruby	class:Post
+getinput	/Users/reborg/Documents/projects/my/dot/vim/plugin/ragtag.vim	/^function! s:getinput()$/;"	f	language:Vim
+group_link	/Users/reborg/Documents/projects/ap/mtea/app/helpers/application_helper.rb	/^  def group_link(group)$/;"	f	language:Ruby	class:ApplicationHelper
+group_logo	/Users/reborg/Documents/projects/ap/mtea/app/helpers/application_helper.rb	/^  def group_logo(g)$/;"	f	language:Ruby	class:ApplicationHelper
+hidden_submit	/Users/reborg/Documents/projects/ap/mtea/app/helpers/application_helper.rb	/^  def hidden_submit$/;"	f	language:Ruby	class:ApplicationHelper
+htmlDis	/Users/reborg/Documents/projects/my/dot/vim/plugin/ragtag.vim	/^function! s:htmlDis()$/;"	f	language:Vim
+htmlEn	/Users/reborg/Documents/projects/my/dot/vim/plugin/ragtag.vim	/^function! s:htmlEn()$/;"	f	language:Vim
+identify_user	/Users/reborg/Documents/projects/ap/AgileSupport/app/controllers/application_controller.rb	/^  def identify_user$/;"	f	language:Ruby	class:ApplicationController
 ignored_tickets	/Users/reborg/Documents/projects/ap/AgileSupport/app/models/ticket.rb	/^  def self.ignored_tickets(app = nil, limit = nil)$/;"	F	language:Ruby	class:Ticket
+im_info	/Users/reborg/Documents/projects/ap/mtea/app/helpers/application_helper.rb	/^  def im_info(person)$/;"	f	language:Ruby	class:ApplicationHelper
 included	/Users/reborg/Documents/projects/ap/mtea/vendor/plugins/acts_as_taggable/lib/acts_as_taggable.rb	/^      def self.included(base)$/;"	F	language:Ruby	class:ActiveRecord.Acts.Taggable
 index	/Users/reborg/Documents/projects/ap/AgileSupport/app/controllers/tickets_controller.rb	/^  def index$/;"	f	language:Ruby	class:TicketsController
+index	/Users/reborg/Documents/projects/spikes/rails/blueridge2/app/controllers/movies_controller.rb	/^  def index$/;"	f	language:Ruby	class:MoviesController
 initialize	/Users/reborg/Documents/projects/ap/AgileSupport/app/models/session_store.rb	/^  def initialize(session)$/;"	f	language:Ruby	class:SessionStore
+insertTag	/Users/reborg/Documents/projects/my/dot/vim/plugin/ragtag.vim	/^function! s:insertTag(tag)$/;"	f	language:Vim
 is_commentable?	/Users/reborg/Documents/projects/ap/mtea/app/models/post.rb	/^  def is_commentable?$/;"	f	language:Ruby	class:Post
+javascriptIncludeTag	/Users/reborg/Documents/projects/my/dot/vim/plugin/ragtag.vim	/^function! s:javascriptIncludeTag()$/;"	f	language:Vim
 last_opened	/Users/reborg/Documents/projects/ap/AgileSupport/app/models/ticket.rb	/^  def last_opened$/;"	f	language:Ruby	class:Ticket
+length	/Users/reborg/Documents/projects/my/dot/vim/plugin/ragtag.vim	/^function! s:length(str)$/;"	f	language:Vim
 list	/Users/reborg/Documents/projects/ap/mtea/app/controllers/binaries_controller.rb	/^  def list$/;"	f	language:Ruby	class:BinariesController
+list_suggested_tags	/Users/reborg/Documents/projects/ap/mtea/app/helpers/application_helper.rb	/^  def list_suggested_tags(tags)$/;"	f	language:Ruby	class:ApplicationHelper
+list_tags	/Users/reborg/Documents/projects/ap/mtea/app/helpers/application_helper.rb	/^  def list_tags(tags, options = {})$/;"	f	language:Ruby	class:ApplicationHelper
+max_string_lenght_for	/Users/reborg/Documents/projects/sourcesense/episrl/epistore/trunk/app/helpers/campaign_helper.rb	/^  def max_string_lenght_for string_array$/;"	f	language:Ruby	class:CampaignHelper
+medium_person_photo	/Users/reborg/Documents/projects/ap/mtea/app/helpers/application_helper.rb	/^  def medium_person_photo(p)$/;"	f	language:Ruby	class:ApplicationHelper
+medium_person_photo_zoomable	/Users/reborg/Documents/projects/ap/mtea/app/helpers/application_helper.rb	/^  def medium_person_photo_zoomable(p)$/;"	f	language:Ruby	class:ApplicationHelper
+medium_photo_dimensions	/Users/reborg/Documents/projects/ap/mtea/app/helpers/application_helper.rb	/^  def medium_photo_dimensions$/;"	f	language:Ruby	class:ApplicationHelper
 mock_app	/Users/reborg/Documents/projects/ap/AgileSupport/spec/controllers/tickets_controller_spec.rb	/^  def mock_app(stubs={})$/;"	f	language:Ruby
 mock_ticket	/Users/reborg/Documents/projects/ap/AgileSupport/spec/controllers/tickets_controller_spec.rb	/^  def mock_ticket(stubs={})$/;"	f	language:Ruby
 new	/Users/reborg/Documents/projects/ap/AgileSupport/app/controllers/tickets_controller.rb	/^  def new$/;"	f	language:Ruby	class:TicketsController
 new	/Users/reborg/Documents/projects/ap/mtea/app/controllers/binaries_controller.rb	/^  def new$/;"	f	language:Ruby	class:BinariesController
 new	/Users/reborg/Documents/projects/ap/mtea/app/controllers/posts_controller.rb	/^  def new$/;"	f	language:Ruby	class:PostsController
+new	/Users/reborg/Documents/projects/spikes/rails/blueridge2/app/controllers/movies_controller.rb	/^  def new$/;"	f	language:Ruby	class:MoviesController
 new_tickets	/Users/reborg/Documents/projects/ap/AgileSupport/app/models/ticket.rb	/^  def self.new_tickets(app = nil, limit = nil)$/;"	F	language:Ruby	class:Ticket
 no_search!	/Users/reborg/Documents/projects/ap/AgileSupport/app/models/session_store.rb	/^  def no_search!$/;"	f	language:Ruby	class:SessionStore
 no_search?	/Users/reborg/Documents/projects/ap/AgileSupport/app/models/session_store.rb	/^  def no_search?$/;"	f	language:Ruby	class:SessionStore
 open	/Users/reborg/Documents/projects/ap/AgileSupport/app/models/ticket.rb	/^  def open$/;"	f	language:Ruby	class:Ticket
 open?	/Users/reborg/Documents/projects/ap/AgileSupport/app/models/ticket.rb	/^  def open?$/;"	f	language:Ruby	class:Ticket
 open_tickets	/Users/reborg/Documents/projects/ap/AgileSupport/app/models/ticket.rb	/^  def self.open_tickets(app = nil, limit = nil)$/;"	F	language:Ruby	class:Ticket
+options_for_select_group	/Users/reborg/Documents/projects/ap/mtea/app/helpers/application_helper.rb	/^  def options_for_select_group(asset, user)$/;"	f	language:Ruby	class:ApplicationHelper
 ordered_history	/Users/reborg/Documents/projects/ap/AgileSupport/app/models/ticket.rb	/^  def ordered_history$/;"	f	language:Ruby	class:Ticket
 outstanding_tickets	/Users/reborg/Documents/projects/ap/AgileSupport/app/models/ticket.rb	/^  def self.outstanding_tickets(app = nil)$/;"	F	language:Ruby	class:Ticket
+page_link	/Users/reborg/Documents/projects/ap/mtea/app/helpers/application_helper.rb	/^  def page_link(page)$/;"	f	language:Ruby	class:ApplicationHelper
+payment_type_checkboxes	/Users/reborg/Documents/projects/sourcesense/episrl/epistore/trunk/app/helpers/campaign_helper.rb	/^  def payment_type_checkboxes$/;"	f	language:Ruby	class:CampaignHelper
+person_link	/Users/reborg/Documents/projects/ap/mtea/app/helpers/application_helper.rb	/^  def person_link(targ_person)$/;"	f	language:Ruby	class:ApplicationHelper
 popular	/Users/reborg/Documents/projects/ap/mtea/app/models/post.rb	/^  def Post.popular$/;"	F	language:Ruby	class:Post
+possessify	/Users/reborg/Documents/projects/ap/mtea/app/helpers/application_helper.rb	/^  def possessify(s)$/;"	f	language:Ruby	class:ApplicationHelper
+post_link	/Users/reborg/Documents/projects/ap/mtea/app/helpers/application_helper.rb	/^  def post_link(post)$/;"	f	language:Ruby	class:ApplicationHelper
 pubDate	/Users/reborg/Documents/projects/ap/mtea/app/models/post.rb	/^  def pubDate$/;"	f	language:Ruby	class:Post
+ragtag	/Users/reborg/Documents/projects/my/dot/vim/plugin/ragtag.vim	/^  augroup ragtag$/;"	a	language:Vim
 raw_heat_score	/Users/reborg/Documents/projects/ap/mtea/app/models/post.rb	/^  def raw_heat_score$/;"	f	language:Ruby	class:Post
+recent_action_stub_add_comment	/Users/reborg/Documents/projects/ap/mtea/app/helpers/application_helper.rb	/^  def recent_action_stub_add_comment(asset)$/;"	f	language:Ruby	class:ApplicationHelper
+recent_action_stub_string	/Users/reborg/Documents/projects/ap/mtea/app/helpers/application_helper.rb	/^  def recent_action_stub_string(asset,comments_count)$/;"	f	language:Ruby	class:ApplicationHelper
+repeat	/Users/reborg/Documents/projects/my/dot/vim/plugin/ragtag.vim	/^function! s:repeat(str,cnt)$/;"	f	language:Vim
+request_group_access_link	/Users/reborg/Documents/projects/ap/mtea/app/helpers/application_helper.rb	/^  def request_group_access_link(group)$/;"	f	language:Ruby	class:ApplicationHelper
+request_group_access_sidebar	/Users/reborg/Documents/projects/ap/mtea/app/helpers/application_helper.rb	/^  def request_group_access_sidebar(group)$/;"	f	language:Ruby	class:ApplicationHelper
 rss_tags_list_html	/Users/reborg/Documents/projects/ap/mtea/vendor/plugins/acts_as_taggable/lib/acts_as_taggable.rb	/^        def rss_tags_list_html(request)$/;"	f	language:Ruby	class:ActiveRecord.Acts.Taggable.InstanceMethods
 same_author	/Users/reborg/Documents/projects/ap/AgileSupport/app/models/ticket.rb	/^  def same_author$/;"	f	language:Ruby	class:Ticket
 searches	/Users/reborg/Documents/projects/ap/AgileSupport/app/models/session_store.rb	/^  def searches$/;"	f	language:Ruby	class:SessionStore
+session_store	/Users/reborg/Documents/projects/ap/AgileSupport/app/controllers/application_controller.rb	/^  def session_store$/;"	f	language:Ruby	class:ApplicationController
+set_user	/Users/reborg/Documents/projects/ap/AgileSupport/app/controllers/application_controller.rb	/^  def set_user(user = @user)$/;"	f	language:Ruby	class:ApplicationController
 show	/Users/reborg/Documents/projects/ap/AgileSupport/app/controllers/tickets_controller.rb	/^  def show$/;"	f	language:Ruby	class:TicketsController
 show	/Users/reborg/Documents/projects/ap/mtea/app/controllers/binaries_controller.rb	/^  def show$/;"	f	language:Ruby	class:BinariesController
 show	/Users/reborg/Documents/projects/ap/mtea/app/controllers/posts_controller.rb	/^  def show$/;"	f	language:Ruby	class:PostsController
+show	/Users/reborg/Documents/projects/spikes/rails/blueridge2/app/controllers/movies_controller.rb	/^  def show$/;"	f	language:Ruby	class:MoviesController
+show_bookmark_url	/Users/reborg/Documents/projects/ap/mtea/app/helpers/application_helper.rb	/^  def show_bookmark_url(b)$/;"	f	language:Ruby	class:ApplicationHelper
+sidebar_spacer	/Users/reborg/Documents/projects/ap/mtea/app/helpers/application_helper.rb	/^  def sidebar_spacer$/;"	f	language:Ruby	class:ApplicationHelper
+small_person_photo	/Users/reborg/Documents/projects/ap/mtea/app/helpers/application_helper.rb	/^  def small_person_photo(p)$/;"	f	language:Ruby	class:ApplicationHelper
+small_photo_dimensions	/Users/reborg/Documents/projects/ap/mtea/app/helpers/application_helper.rb	/^  def small_photo_dimensions$/;"	f	language:Ruby	class:ApplicationHelper
 status_as_int	/Users/reborg/Documents/projects/ap/AgileSupport/app/models/ticket.rb	/^  def self.status_as_int(status_name)$/;"	F	language:Ruby	class:Ticket
 status_as_string	/Users/reborg/Documents/projects/ap/AgileSupport/app/models/ticket.rb	/^  def status_as_string$/;"	f	language:Ruby	class:Ticket
 status_filter_sql	/Users/reborg/Documents/projects/ap/mtea/vendor/plugins/acts_as_taggable/lib/acts_as_taggable.rb	/^        def status_filter_sql(options = {})$/;"	f	language:Ruby	class:ActiveRecord.Acts.Taggable.SingletonMethods
 store	/Users/reborg/Documents/projects/ap/AgileSupport/app/models/ticket.rb	/^  def store(params)$/;"	f	language:Ruby	class:Ticket
+stylesheetTag	/Users/reborg/Documents/projects/my/dot/vim/plugin/ragtag.vim	/^function! s:stylesheetTag()$/;"	f	language:Vim
 subscribe_newsletter	/Users/reborg/Documents/projects/ap/AgileSupport/app/models/ticket.rb	/^  def self.subscribe_newsletter(opts)$/;"	F	language:Ruby	class:Ticket
+subtype	/Users/reborg/Documents/projects/my/dot/vim/plugin/ragtag.vim	/^function! s:subtype()$/;"	f	language:Vim
+tag_cloud	/Users/reborg/Documents/projects/ap/mtea/app/helpers/application_helper.rb	/^  def tag_cloud(tags, classes)$/;"	f	language:Ruby	class:ApplicationHelper
 tag_list	/Users/reborg/Documents/projects/ap/mtea/vendor/plugins/acts_as_taggable/lib/acts_as_taggable.rb	/^        def tag_list$/;"	f	language:Ruby	class:ActiveRecord.Acts.Taggable.InstanceMethods
 tag_with	/Users/reborg/Documents/projects/ap/mtea/vendor/plugins/acts_as_taggable/lib/acts_as_taggable.rb	/^        def tag_with(list)$/;"	f	language:Ruby	class:ActiveRecord.Acts.Taggable.InstanceMethods
 tag_with_attribute	/Users/reborg/Documents/projects/ap/mtea/vendor/plugins/acts_as_taggable/lib/acts_as_taggable.rb	/^        def tag_with_attribute(list,att)$/;"	f	language:Ruby	class:ActiveRecord.Acts.Taggable.InstanceMethods
+tagextras	/Users/reborg/Documents/projects/my/dot/vim/plugin/ragtag.vim	/^function! s:tagextras()$/;"	f	language:Vim
 text	/Users/reborg/Documents/projects/ap/AgileSupport/app/models/ticket.rb	/^  def text$/;"	f	language:Ruby	class:Ticket
 ticket_from_message	/Users/reborg/Documents/projects/ap/AgileSupport/app/models/ticket.rb	/^  def self.ticket_from_message(tmail_message)$/;"	F	language:Ruby	class:Ticket
 ticket_query	/Users/reborg/Documents/projects/ap/AgileSupport/app/models/ticket.rb	/^  def self.ticket_query(app = nil, limit = nil, status = nil)$/;"	F	language:Ruby	class:Ticket
 title	/Users/reborg/Documents/projects/ap/AgileSupport/app/models/ticket.rb	/^  def title$/;"	f	language:Ruby	class:Ticket
 to_s	/Users/reborg/Documents/projects/ap/AgileSupport/app/models/ticket.rb	/^  def to_s$/;"	f	language:Ruby	class:Ticket
+toggleurlescape	/Users/reborg/Documents/projects/my/dot/vim/plugin/ragtag.vim	/^function! s:toggleurlescape()$/;"	f	language:Vim
+togglexmlescape	/Users/reborg/Documents/projects/my/dot/vim/plugin/ragtag.vim	/^function! s:togglexmlescape()$/;"	f	language:Vim
 touch	/Users/reborg/Documents/projects/ap/AgileSupport/app/models/ticket.rb	/^  def touch$/;"	f	language:Ruby	class:Ticket
+tz_convert	/Users/reborg/Documents/projects/ap/mtea/app/helpers/application_helper.rb	/^  def tz_convert(utc_datetime)$/;"	f	language:Ruby	class:ApplicationHelper
 update	/Users/reborg/Documents/projects/ap/AgileSupport/app/controllers/tickets_controller.rb	/^  def update$/;"	f	language:Ruby	class:TicketsController
 update	/Users/reborg/Documents/projects/ap/mtea/app/controllers/binaries_controller.rb	/^  def update$/;"	f	language:Ruby	class:BinariesController
 update	/Users/reborg/Documents/projects/ap/mtea/app/controllers/posts_controller.rb	/^  def update$/;"	f	language:Ruby	class:PostsController
+update	/Users/reborg/Documents/projects/spikes/rails/blueridge2/app/controllers/movies_controller.rb	/^  def update$/;"	f	language:Ruby	class:MoviesController
 upload	/Users/reborg/Documents/projects/ap/mtea/app/controllers/binaries_controller.rb	/^  def upload $/;"	f	language:Ruby	class:BinariesController
+urlencode	/Users/reborg/Documents/projects/my/dot/vim/plugin/ragtag.vim	/^function! s:urlencode(char)$/;"	f	language:Vim
+urlmap	/Users/reborg/Documents/projects/my/dot/vim/plugin/ragtag.vim	/^function! s:urlmap(char)$/;"	f	language:Vim
+urltab	/Users/reborg/Documents/projects/my/dot/vim/plugin/ragtag.vim	/^function! s:urltab(htmlesc)$/;"	f	language:Vim
+urlv	/Users/reborg/Documents/projects/my/dot/vim/plugin/ragtag.vim	/^function! s:urlv()$/;"	f	language:Vim
 valid_status	/Users/reborg/Documents/projects/ap/AgileSupport/app/models/ticket.rb	/^  def self.valid_status?(status)$/;"	F	language:Ruby	class:Ticket
+windowed_pagination_links	/Users/reborg/Documents/projects/ap/mtea/app/helpers/application_helper.rb	/^  def windowed_pagination_links(pagingEnum, options)$/;"	f	language:Ruby	class:ApplicationHelper
