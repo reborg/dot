@@ -1,4 +1,7 @@
 require 'rubygems'
+require 'irb/completion'
+require 'irb/ext/save-history'
+
 begin
   require "ap"
   IRB::Irb.class_eval do
@@ -7,5 +10,13 @@ begin
     end
   end
 rescue LoadError => e
-  puts "ap gem not found.  Try typing 'gem install awesome_print' to get super-fancy output."
+  puts "IRB .irbrc error: " + e.inspect
+end
+
+
+class Object
+  # Return only the methods not present on basic objects
+  def mm
+    (self.methods - Object.new.methods).sort
+  end
 end
