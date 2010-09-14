@@ -104,4 +104,5 @@ hi Ignore	cterm=bold ctermfg=7
 hi Ignore	ctermfg=darkgrey
 hi Error	cterm=bold ctermfg=7 ctermbg=1
 hi MatchParen ctermfg=8 ctermbg=0
+hi Pmenu guifg=#ffffff guibg=#cb2f27
 "vim: sw=4
