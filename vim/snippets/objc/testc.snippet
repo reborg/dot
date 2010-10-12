@@ -1,46 +1,44 @@
-snippet testc
-	#import "${1:TargetClass}.h"
+#import "${1:TargetClass}.h"
 
-	@interface $1Test : SenTestCase
-	{
-		$1* ${2:targetClass};
-	}
-	@end
+@interface $1Test : SenTestCase
+{
+	$1* ${2:targetClass};
+}
+@end
 
-	@implementation $1Test
+@implementation $1Test
 
-	- (void) setUp
-	{
-		$2 = [[$1 alloc] init];
-	}
+- (void) setUp
+{
+	$2 = [[$1 alloc] init];
+}
 
-	- (void) testShould${3}
-	{
-		${4}
-		//STAssertFalse(NO, nil);
-		//STAssertEqualsObject(first, second, nil);
-	}
+- (void) testShould${3}
+{
+	${4}
+	//STAssertFalse(NO, nil);
+	//STAssertEqualsObject(first, second, nil);
+}
 
-	- (void) tearDown
-	{
-		[$2 release];
-	}
+- (void) tearDown
+{
+	[$2 release];
+}
 
-	@end
-	//#define STAssertNil(a1, description, ...)
-	//#define STAssertNotNil(a1, description, ...)
-	//#define STAssertTrue(expression, description, ...)
-	//#define STAssertFalse(expression, description, ...)
-	//#define STAssertEqualObjects(a1, a2, description, ...)
-	//#define STAssertEquals(a1, a2, description, ...)
-	//#define STAssertEqualsWithAccuracy(left, right, accuracy, description, ...)
-	//#define STAssertThrows(expression, description, ...)
-	//#define STAssertThrowsSpecific(expression, specificException, description, ...)
-	//#define STAssertThrowsSpecificNamed(expr, specificException, aName, description, ...)
-	//#define STAssertNoThrow(expression, description, ...)
-	//#define STAssertNoThrowSpecific(expression, specificException, description, ...)
-	//#define STAssertNoThrowSpecificNamed(expr, specificException, aName, description, ...)
-	//#define STFail(description, ...)
-	//#define STAssertTrueNoThrow(expression, description, ...)
-	//#define STAssertFalseNoThrow(expression, description, ...)
-
+@end
+//#define STAssertNil(a1, description, ...)
+//#define STAssertNotNil(a1, description, ...)
+//#define STAssertTrue(expression, description, ...)
+//#define STAssertFalse(expression, description, ...)
+//#define STAssertEqualObjects(a1, a2, description, ...)
+//#define STAssertEquals(a1, a2, description, ...)
+//#define STAssertEqualsWithAccuracy(left, right, accuracy, description, ...)
+//#define STAssertThrows(expression, description, ...)
+//#define STAssertThrowsSpecific(expression, specificException, description, ...)
+//#define STAssertThrowsSpecificNamed(expr, specificException, aName, description, ...)
+//#define STAssertNoThrow(expression, description, ...)
+//#define STAssertNoThrowSpecific(expression, specificException, description, ...)
+//#define STAssertNoThrowSpecificNamed(expr, specificException, aName, description, ...)
+//#define STFail(description, ...)
+//#define STAssertTrueNoThrow(expression, description, ...)
+//#define STAssertFalseNoThrow(expression, description, ...)
