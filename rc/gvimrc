@@ -58,4 +58,37 @@ if version >= 500
 
 endif
 
-colorscheme ir_black
+colorscheme desert
+
+" OS Specific *****************************************************************
+if has("gui_macvim")
+
+  set fuoptions=maxvert,maxhorz " fullscreen options (MacVim only), resized window when changed to fullscreen
+  set guifont=Monaco:h13
+  set guioptions-=T  " remove toolbar
+  set guioptions-=l " remove scrollbars
+  set guioptions-=r " remove scrollbars
+  set guioptions-=b " remove scrollbars
+
+elseif has("gui_gtk2")
+
+  set guifont=Monaco
+  set guioptions-=T  " remove toolbar
+
+elseif has("x11")
+elseif has("gui_win32")
+end
+
+" General *********************************************************************
+set anti " Antialias font
+
+"set transparency=0
+
+" Default size of window
+"set columns=120
+"set lines=30
+set columns=140
+set lines=42
+
+" Tab headings 
+set gtl=%t gtt=%F

@@ -3189,6 +3189,7 @@ A	insert.txt	/*A*
 ACL	editing.txt	/*ACL*
 ATTENTION	usr_11.txt	/*ATTENTION*
 Abbreviations	map.txt	/*Abbreviations*
+AddToLispWords	clojure.txt	/*AddToLispWords*
 Aleph	options.txt	/*Aleph*
 Amiga	os_amiga.txt	/*Amiga*
 Arabic	arabic.txt	/*Arabic*
@@ -4354,6 +4355,7 @@ RequireFileAll	clojure.txt	/*RequireFileAll*
 ResetSnippets()	snipMate.txt	/*ResetSnippets()*
 Root	mbyte.txt	/*Root*
 Ruby	if_ruby.txt	/*Ruby*
+RunTests	clojure.txt	/*RunTests*
 Russian	russian.txt	/*Russian*
 S	change.txt	/*S*
 SHELL	starting.txt	/*SHELL*
@@ -4371,6 +4373,7 @@ SourceLookupInteractive	clojure.txt	/*SourceLookupInteractive*
 SourceLookupWord	clojure.txt	/*SourceLookupWord*
 SourcePre	autocmd.txt	/*SourcePre*
 SpellFileMissing	autocmd.txt	/*SpellFileMissing*
+StartLocalRepl	clojure.txt	/*StartLocalRepl*
 StartRepl	clojure.txt	/*StartRepl*
 StdinReadPost	autocmd.txt	/*StdinReadPost*
 StdinReadPre	autocmd.txt	/*StdinReadPre*
@@ -4670,6 +4673,7 @@ autocommand-pattern	autocmd.txt	/*autocommand-pattern*
 autoload	eval.txt	/*autoload*
 autoload-functions	eval.txt	/*autoload-functions*
 avoid-hit-enter	version5.txt	/*avoid-hit-enter*
+aw	clojure.txt	/*aw*
 aw	motion.txt	/*aw*
 a{	motion.txt	/*a{*
 a}	motion.txt	/*a}*
@@ -7447,6 +7451,7 @@ riscos-temp-files	os_risc.txt	/*riscos-temp-files*
 rot13	change.txt	/*rot13*
 round()	eval.txt	/*round()*
 rsync	pi_netrw.txt	/*rsync*
+rt	clojure.txt	/*rt*
 ruby	if_ruby.txt	/*ruby*
 ruby-buffer	if_ruby.txt	/*ruby-buffer*
 ruby-command	if_ruby.txt	/*ruby-command*
@@ -7491,6 +7496,7 @@ s/\~	change.txt	/*s\/\\~*
 s:netrw_passwd	pi_netrw.txt	/*s:netrw_passwd*
 s:var	eval.txt	/*s:var*
 s<CR>	change.txt	/*s<CR>*
+sR	clojure.txt	/*sR*
 sandbox	eval.txt	/*sandbox*
 sandbox-option	eval.txt	/*sandbox-option*
 save-file	editing.txt	/*save-file*

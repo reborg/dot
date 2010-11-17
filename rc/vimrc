@@ -220,5 +220,6 @@ nmap <leader>b :FufBuffer<CR>
 :let g:easytags_file = '~/.vim/tags'
 
 " Setup nailgun server for vimclojure
-let vimclojure#NailgunClient = "/Users/reborg/Downloads/vimclojure-2.1.2/ng"
-let clj_want_gorilla = 1
+let vimclojure#WantNailgun = 1
+let vimclojure#NailgunClient = "/Users/reborg/Downloads/vimclojure-nailgun-client/ng"
+"let clj_want_gorilla = 1
