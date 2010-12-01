@@ -58,7 +58,7 @@ if version >= 500
 
 endif
 
-colorscheme desert
+colorscheme desert256
 
 " OS Specific *****************************************************************
 if has("gui_macvim")
