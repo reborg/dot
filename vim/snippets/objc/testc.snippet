@@ -1,6 +1,14 @@
+//
+//  $1 
+//  PrometeiaMobile
+//
+//  Created by Renzo Borgatti
+//  Copyright 2010 Prometeia. All rights reserved.
+//
+
 #import "${1:TargetClass}.h"
 
-@interface $1Test : SenTestCase
+@interface $1Test : GHTestCase
 {
 	$1* ${2:targetClass};
 }
@@ -16,8 +24,6 @@
 - (void) testShould${3}
 {
 	${4}
-	//STAssertFalse(NO, nil);
-	//STAssertEqualsObject(first, second, nil);
 }
 
 - (void) tearDown
@@ -26,19 +32,37 @@
 }
 
 @end
-//#define STAssertNil(a1, description, ...)
-//#define STAssertNotNil(a1, description, ...)
-//#define STAssertTrue(expression, description, ...)
-//#define STAssertFalse(expression, description, ...)
-//#define STAssertEqualObjects(a1, a2, description, ...)
-//#define STAssertEquals(a1, a2, description, ...)
-//#define STAssertEqualsWithAccuracy(left, right, accuracy, description, ...)
-//#define STAssertThrows(expression, description, ...)
-//#define STAssertThrowsSpecific(expression, specificException, description, ...)
-//#define STAssertThrowsSpecificNamed(expr, specificException, aName, description, ...)
-//#define STAssertNoThrow(expression, description, ...)
-//#define STAssertNoThrowSpecific(expression, specificException, description, ...)
-//#define STAssertNoThrowSpecificNamed(expr, specificException, aName, description, ...)
-//#define STFail(description, ...)
-//#define STAssertTrueNoThrow(expression, description, ...)
-//#define STAssertFalseNoThrow(expression, description, ...)
+
+// EXAMPLES:
+//GHAssertNoErr(a1, description, ...)
+//GHAssertErr(a1, a2, description, ...)
+//GHAssertNotNULL(a1, description, ...)
+//GHAssertNULL(a1, description, ...)
+//GHAssertNotEquals(a1, a2, description, ...)
+//GHAssertNotEqualObjects(a1, a2, desc, ...)
+//GHAssertOperation(a1, a2, op, description, ...)
+//GHAssertGreaterThan(a1, a2, description, ...)
+//GHAssertGreaterThanOrEqual(a1, a2, description, ...)
+//GHAssertLessThan(a1, a2, description, ...)
+//GHAssertLessThanOrEqual(a1, a2, description, ...)
+//GHAssertEqualStrings(a1, a2, description, ...)
+//GHAssertNotEqualStrings(a1, a2, description, ...)
+//GHAssertEqualCStrings(a1, a2, description, ...)
+//GHAssertNotEqualCStrings(a1, a2, description, ...)
+//GHAssertEqualObjects(a1, a2, description, ...)
+//GHAssertEquals(a1, a2, description, ...)
+//GHAbsoluteDifference(left,right) (MAX(left,right)-MIN(left,right
+//GHAssertEqualsWithAccuracy(a1, a2, accuracy, description, ...)
+//GHFail(description, ...)
+//GHAssertNil(a1, description, ...)
+//GHAssertNotNil(a1, description, ...)
+//GHAssertTrue(expr, description, ...)
+//GHAssertTrueNoThrow(expr, description, ...)
+//GHAssertFalse(expr, description, ...)
+//GHAssertFalseNoThrow(expr, description, ...)
+//GHAssertThrows(expr, description, ...)
+//GHAssertThrowsSpecific(expr, specificException, description, ...)
+//GHAssertThrowsSpecificNamed(expr, specificException, aName, description, ...)
+//GHAssertNoThrow(expr, description, ...)
+//GHAssertNoThrowSpecific(expr, specificException, description, ...)
+//GHAssertNoThrowSpecificNamed(expr, specificException, aName, description, ...)
