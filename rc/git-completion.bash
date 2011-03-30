@@ -1263,36 +1263,3 @@ complete -o default -o nospace -F _git_log git-show-branch.exe
 complete -o default -o nospace -F _git_tag git-tag.exe
 complete -o default -o nospace -F _git_log git-whatchanged.exe
 fi
-
-function minutes_since_last_commit {
-    now=`date +%s`
-    last_commit=`git log --pretty=format:'%at' -1`
-    seconds_since_last_commit=$((now-last_commit))
-    minutes_since_last_commit=$((seconds_since_last_commit/60))
-    echo $minutes_since_last_commit
-}
-
-LIGHT_RED="\033[1;31m"
-LIGHT_GREEN="\033[1;32m"
-YELLOW="\033[0;33m"
-LIGHT_GRAY="\033[0;37m"
-COLOR_NONE="\e[0m"
-
-git_prompt() {
-  local g="$(__gitdir)"
-  if [ -n "$g" ]; then
-    local MINUTES_SINCE_LAST_COMMIT=`minutes_since_last_commit`
-    if [ "$MINUTES_SINCE_LAST_COMMIT" -gt 30 ]; then
-        local COLOR=${LIGHT_RED}
-    elif [ "$MINUTES_SINCE_LAST_COMMIT" -gt 10 ]; then
-        local COLOR=${YELLOW}
-    else
-        local COLOR=${LIGHT_GREEN}
-    fi
-    local SINCE_LAST_COMMIT="${COLOR}$(minutes_since_last_commit)m${COLOR_NONE}"
-    # The __git_ps1 function inserts the current git branch where %s is
-    #local GIT_PROMPT=`__git_ps1 "(%s|${SINCE_LAST_COMMIT})"`
-    local GIT_PROMPT=`__git_ps1 "[${SINCE_LAST_COMMIT}]"`
-    echo ${GIT_PROMPT}
-  fi
-}
