@@ -1,0 +1,4 @@
+// #import "TouchXML.h"
+NSError* theError = null;
+CXMLDocument* doc = [[CXMLDocument alloc] initWithXMLString:${1:validXml} options:0 error:&theError];
+CXMLElement* first = [[doc nodesForXPath:@"//${2:tag}" error:&theError] objectAtIndex:0];
