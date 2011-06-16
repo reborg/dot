@@ -1,8 +1,12 @@
-- (id)init
+- (id) initWith${1:YourStuff}:(${2:GoodClass}*) the${2}
 {
-	if (self = [super init]) 
-	{
-		${1}
-	}
-	return self;
+  if (self = [super init]) 
+  {
+		${3} 
+  }
+  else
+  {
+    [NSException raise:@"ERROR" format:@"##### super could not initialize"];
+  }
+  return self;
 }
