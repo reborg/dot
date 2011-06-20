@@ -18,6 +18,7 @@
 
 - (void) setUp
 {
+	[super setUp];
 	$2 = [[$1 alloc] init];
 }
 
@@ -28,6 +29,7 @@
 
 - (void) tearDown
 {
+	[super tearDown];
 	[$2 release];
 }
 

@@ -1,2 +1,2 @@
-PMPortfolio* portfolio = [OCMockObject mockForClass:[PMPortfolio class]];
-[[[portfolio expect] andReturn:@"something"]] callMeNot];
+${1:Type}* ${2:type} = [OCMockObject mockForClass:[$1 class]];
+[[[$2 expect] andReturn:${3:value}]] ${4:methodCall}];
