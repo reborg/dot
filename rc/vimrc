@@ -95,7 +95,11 @@ endif
 " ##################################################################  
 
 " Set the color scheme for plain vi
-colorscheme desert
+syntax enable
+set background=dark
+set t_Co=16
+let g:solarized_termcolors=16
+colorscheme ir_black
 
 " Associate pom files to taskpaper plugin
 augroup taskpaper
@@ -103,9 +107,9 @@ augroup taskpaper
 augroup END
 
 " Use softtabs
-set softtabstop=2
-set shiftwidth=2
-set tabstop=2
+set softtabstop=4
+set shiftwidth=4
+set tabstop=4
 set expandtab
 
 " Useful expansions
@@ -114,6 +118,10 @@ imap jj <Esc>
 
 " highlight line with cursor
 set cursorline
+hi CursorLine cterm=underline
+
+" fix fuzzyfinder color scheme
+hi Pmenu guifg=lightgray guibg=darkgrey gui=NONE ctermfg=yellow ctermbg=darkgrey cterm=NONE
 
 " inserts new line without going into insert mode
 map <S-Enter> O<ESC> 
@@ -220,7 +228,7 @@ let g:fuf_dir_exclude = '\v(^|[/\\])\.(hg|git|bzr)($|[/\\])|[/\\])(log|build)($'
 
 " Tell easytags to create the tag file on
 " the vim root
-:let g:easytags_file = '~/.vim/tags'
+":let g:easytags_file = '~/.vim/tags'
 
 " Setup nailgun server for vimclojure
 let vimclojure#WantNailgun = 1
