@@ -96,9 +96,13 @@ endif
 
 " Set the color scheme for plain vi
 syntax enable
-set background=dark
-set t_Co=16
-let g:solarized_termcolors=16
+if has('gui_running')
+    set background=light
+else
+    set background=dark
+    set t_Co=16
+    let g:solarized_termcolors=16
+endif
 colorscheme ir_black
 
 " Associate pom files to taskpaper plugin
@@ -118,7 +122,7 @@ imap jj <Esc>
 
 " highlight line with cursor
 set cursorline
-hi CursorLine cterm=underline
+"hi CursorLine cterm=underline
 
 " fix fuzzyfinder color scheme
 hi Pmenu guifg=lightgray guibg=darkgrey gui=NONE ctermfg=yellow ctermbg=darkgrey cterm=NONE
