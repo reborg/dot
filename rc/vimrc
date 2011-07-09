@@ -245,3 +245,10 @@ map ,xml :%!xmllint --format --encode UTF-8 -<CR>
 " project specific vimrc load on matching folders
 autocmd BufRead,BufNewFile ~/prj/bbc/hydra/* so ~/prj/bbc/mps3/.vimrc
 autocmd BufRead,BufNewFile ~/prj/bbc/mps3/* so ~/prj/bbc/mps3/.vimrc
+
+" Additional custom specification for ctags regexp-es
+" http://stackoverflow.com/questions/2968522/alternatives-to-ctags-cscope-with-objective-c/5790832#5790832
+let tlist_objc_settings = 'ObjectiveC;P:protocols;i:interfaces;c:class;m:method'
+
+" Shortcut generation of ctags for objc projects
+map ,ta :! ctags -R . --language-force=ObjectiveC --sort=yes --exclude=.git --exclude=Resources --exclude=build --exclude=Vendors<CR>
