@@ -241,3 +241,7 @@ let vimclojure#NailgunClient = "/Users/reborg/Downloads/vimclojure-nailgun-clien
 
 " format xml file with xmllint
 map ,xml :%!xmllint --format --encode UTF-8 -<CR>
+
+" project specific vimrc load on matching folders
+autocmd BufRead,BufNewFile ~/prj/bbc/hydra/* so ~/prj/bbc/mps3/.vimrc
+autocmd BufRead,BufNewFile ~/prj/bbc/mps3/* so ~/prj/bbc/mps3/.vimrc
