@@ -1,0 +1,5 @@
+URL classUrl = this.getClass().getResource(this.getClass().getName() + ".class");
+if (!"file".equalsIgnoreCase(classUrl.getProtocol()))
+    throw new IllegalStateException("Class is not stored in a file.");
+File file = new File(classUrl.getPath());
+return file.getParent();${1}
