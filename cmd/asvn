@@ -1,0 +1,37 @@
+#!/usr/bin/python
+
+# show svn log as a summary with revision, username and comment on one line
+# with no extra lines
+import getopt
+import subprocess
+import sys
+
+# Start bulding the command line
+cmd = ["svn", "log"]
+
+# pass selected options straight through to svn log
+opts, args = getopt.getopt(sys.argv[1:],"l:", ["limit"]) 
+for opt, arg in opts:
+  cmd.append(opt + " " + arg);
+
+# Add path if given, default to top/src
+if len(args) > 0:
+  path = args[0]
+else:
+  path = "top/src"
+cmd.append(path)
+
+output = subprocess.Popen(cmd, stdout=subprocess.PIPE).communicate()[0]
+lines = output.splitlines()
+
+# Parse the output and reformat
+sep = "------------------------------------------------------------------------"
+for i in xrange(len(lines)):
+  line = lines[i]
+  if line == sep and i+3 <= len(lines):
+    info = lines[i+1]
+    comment = lines[i+3]
+    bar1 = info.find("|")
+    bar2 = info.find("|", bar1+1)
+    output = info[:bar2+2] + comment
+    print output

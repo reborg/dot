@@ -95,7 +95,15 @@ endif
 " ##################################################################  
 
 " Set the color scheme for plain vi
-colorscheme desert
+syntax enable
+if has('gui_running')
+    set background=light
+else
+    set background=dark
+    set t_Co=16
+    let g:solarized_termcolors=16
+endif
+colorscheme ir_black
 
 " Associate pom files to taskpaper plugin
 augroup taskpaper
@@ -114,6 +122,10 @@ imap jj <Esc>
 
 " highlight line with cursor
 set cursorline
+"hi CursorLine cterm=underline
+
+" fix fuzzyfinder color scheme
+hi Pmenu guifg=lightgray guibg=darkgrey gui=NONE ctermfg=yellow ctermbg=darkgrey cterm=NONE
 
 " inserts new line without going into insert mode
 map <S-Enter> O<ESC> 
@@ -214,18 +226,29 @@ set ignorecase
 " Fuzzy File Finder
 nmap <leader>t :FufFile **/<CR>
 nmap <leader>b :FufBuffer<CR>
-let g:fuf_file_exclude = '\v\.svn/$|\.git/$|\~$|\.o$|\.exe$|\.bak$|\.swp$|\.swo$|((^|[/\\])\.[/\\]$)'
+let g:fuf_file_exclude = '\v\.svn/$|\.git/$|\~$|\.o$|\.exe$|\.bak$|\.swp$|\.swo$|\.class$|((^|[/\\])\.[/\\]$)'
 "let g:fuf_dir_exclude = '\v(^|[/\\])\.(hg|git|bzr)($|[/\\])'
-let g:fuf_dir_exclude = '\v(^|[/\\])\.(hg|git|bzr)($|[/\\])|[/\\])(log|build)($'
+let g:fuf_dir_exclude = '\v(^|[/\\])\.(hg|git|bzr|svn)($|[/\\])|([/\\])(log|build|Vendors|target)'
 
 " Tell easytags to create the tag file on
 " the vim root
-:let g:easytags_file = '~/.vim/tags'
+":let g:easytags_file = '~/.vim/tags'
 
 " Setup nailgun server for vimclojure
 let vimclojure#WantNailgun = 1
-let vimclojure#NailgunClient = "/Users/reborg/Downloads/vimclojure-nailgun-client/ng"
+let vimclojure#NailgunClient = "/Users/borgar01/Downloads/vimclojure-nailgun-client/ng"
 "let clj_want_gorilla = 1
 
 " format xml file with xmllint
 map ,xml :%!xmllint --format --encode UTF-8 -<CR>
+
+" project specific vimrc load on matching folders
+autocmd BufRead,BufNewFile ~/prj/bbc/hydra/* so ~/prj/bbc/mps3/.vimrc
+autocmd BufRead,BufNewFile ~/prj/bbc/mps3/* so ~/prj/bbc/mps3/.vimrc
+
+" Additional custom specification for ctags regexp-es
+" http://stackoverflow.com/questions/2968522/alternatives-to-ctags-cscope-with-objective-c/5790832#5790832
+let tlist_objc_settings = 'ObjectiveC;P:protocols;c:class;m:method'
+
+" Shortcut generation of ctags for objc projects
+map <silent> ,ta :!ctags -R --language-force=ObjectiveC --sort=yes --exclude=.git --exclude=Resources --exclude=build --exclude=Vendors *<CR>
