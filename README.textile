@@ -3,3 +3,6 @@ h1. dot
 !http://www.infinitered.com/blog_extras/command_line_fx/kb_control_wide_short_bw2.jpg!
 
 Just my bash scripts, command line utils, vim settings and plugins.
+
+h3. Version 0.1
+Tons of small improvements.
