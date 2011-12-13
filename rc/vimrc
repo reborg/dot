@@ -118,7 +118,7 @@ set expandtab
 
 " Useful expansions
 imap hh <Space>=><Space>
-imap jj <Esc>
+imap jj <Esc>:w <cr>
 
 " highlight line with cursor
 set cursorline
@@ -177,14 +177,14 @@ autocmd BufRead,BufNewFile *.markdown set ai formatoptions=tcroqn2 comments=n:>
 augroup END
 
 " going hard core, disabling arrows
-noremap  <Up> ""
-noremap! <Up> <Esc>
-noremap  <Down> ""
-noremap! <Down> <Esc>
-noremap  <Left> ""
-noremap! <Left> <Esc>
-noremap  <Right> ""
-noremap! <Right> <Esc>
+"noremap  <Up> ""
+"noremap! <Up> <Esc>
+"noremap  <Down> ""
+"noremap! <Down> <Esc>
+"noremap  <Left> ""
+"noremap! <Left> <Esc>
+"noremap  <Right> ""
+"noremap! <Right> <Esc>
 
 " display cursor line
 set cursorline
