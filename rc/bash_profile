@@ -1,0 +1,107 @@
+test -r /sw/bin/init.sh && . /sw/bin/init.sh
+
+# different color scheme for the console
+#export CLICOLOR=1
+#export LSCOLORS=Gxfxcxdxbxegedabagacad
+#export SVN_EDITOR=vi
+
+# useful alias
+alias p='cd -'
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+alias l='ls -lartG'
+alias ls='ls -G'
+alias s='cd ..'
+alias finder='open -a finder .'
+alias tailf='tail -f'
+alias yy='pwd | tr -d "\n" | pbcopy' # yield current dir to clipboard
+
+# SVN
+alias sign='export SVN_EDITOR=vi; svn propedit svn:ignore .'
+alias sup='svn up'
+alias sst='svn st'
+sci(){ svn commit -m $1; }
+alias sci='svn commit -m'
+alias sadd="svn status | grep ? | sed -e 's/?      //g' | xargs -J% svn add %"
+alias srm="svn status | grep ! | sed -e 's/!      //g' | xargs -J% svn remove %"
+alias srev="svn status | grep M | sed -e 's/M      //g' | xargs -J% svn revert %"
+
+# MAVEN
+#mcuke(){ mvn -o -Pwithargs cuke4duke:cucumber -DcukeArgs="--tag $@"; }
+#alias mcuke="mvn -o -Pwithargs cuke4duke:cucumber -DcukeArgs=\"--tag $@\""
+alias mrun='mvn clean; mvn install'
+alias mtest='mvn -o surefire-report:report; open target/site/surefire-report.html'
+alias mcover='mvn -o cobertura:cobertura; open target/site/cobertura/index.html'
+alias mvn='/usr/share/java/maven-2.2.1/bin/mvn'
+
+# GIT
+feature(){ git flow feature start $1; }
+finish(){ git flow feature finish $1; }
+alias feature='git flow feature start'
+alias finish='git flow feature finish'
+alias gst='git status'
+alias gbr='git branch'
+alias gad='git add .'
+gci(){ git commit -a -m $1; }
+alias gci='git commit -a -m'
+alias glog='git log --oneline --decorate --graph'
+alias gi='git-info.sh'
+
+# Aliased personal projects
+alias prj='cd /me/prj'
+alias pomodori='cd /me/prj/pomodori'
+alias macaruby='cd /me/prj/macaruby'
+alias pomohub='cd /me/prj/pomohub'
+alias tracking='cd /me/tracking'
+alias dot='cd /me/prj/dot'
+alias spikes='cd /me/prj/spikes'
+alias notes='cd /me/notes'
+alias bookshelf='cd /me/bookshelf'
+alias talks='cd /me/talks'
+alias downloads='cd ~/Downloads'
+alias crash='cd ~/Library/Logs/DiagnosticReports'
+
+#export DYLD_LIBRARY_PATH=/opt/local/lib:/usr/local/spidermonkey/lib:$DYLD_LIBRARY_PATH
+
+### RUBY
+#export RUBYOPT=rubygems
+#RDOCOPT="-S -f html -T hanna"
+#export GEM_HOME="/System/Library/Frameworks/Ruby.framework/Versions/Current/usr/lib/ruby/gems/1.8/gems"
+#export GEM_PATH=$GEM_HOME:"/Users/reborg/.gem/ruby/1.8"
+# Load the Ruby Switcher
+#source ~/Documents/cmd/ruby_switcher.sh
+
+### JAVA
+export JAVA_HOME=/Library/Java/Home
+export GROOVY_HOME=~/Downloads/groovy-1.6.9 
+export ROO_HOME=~/Downloads/spring-roo-1.1.5
+
+export PROMPT_COMMAND='PS1="\[\033[0;33m\][\!]\`if [[ \$? = "0" ]]; then echo "\\[\\033[32m\\]"; else echo "\\[\\033[31m\\]"; fi\`[\u.\h: \`if [[ `pwd|wc -c|tr -d " "` > 18 ]]; then echo "\\W"; else echo "\\w"; fi\`]\$\[\033[0m\] "; echo -ne "\033]0;`hostname -s`:`pwd`\007"'
+
+# PATH
+export PATH="~/prj/my/dot/cmd:/opt/local/bin:/sw/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/bin:~/prj/my/dot/vim/bin:~/Downloads/vimclojure-nailgun-client:$GROOVY_HOME/bin:$ROO_HOME/bin:$PATH"
+
+#export CLASSPATH="$CLASSPATH:.:~/Downloads/jline-0_9_5.jar:/Users/reborg/Downloads/vimclojure-2.1.2/build/vimclojure.jar:/Users/reborg/Documents/projects/3rdparties/clojure/clojure.jar:/Users/reborg/Documents/projects/3rdparties/clojure-contrib/clojure-contrib.jar"
+
+#export CLOJURE_EXT=~/Downloads/clojure-1.2.1:~/Downloads/clojure-contrib-1.2.0:~/prj/my/dot/vim/bin
+export CLOJURE_EXT=~/Downloads/clojure-1.3.0:~/prj/my/dot/vim/bin
+
+source "/me/prj/dot/rc/git-completion.bash"
+#source "/Users/borgar01/prj/3rdparties/dev-bash-git-ps1/bash_git_ps1.sh"
+[[ -s "/Users/reborg/.rvm/scripts/rvm" ]] && source "/Users/reborg/.rvm/scripts/rvm"
+
+# Change to a directory given a full or partial name
+# You don't have to wrap directory names in quotes either
+# WIP
+chd() {
+  if [ -n "$@" ]; then
+    if [ -n "`ls *"$@"* 2>/dev/null`" ]; then
+      cd "$@"*
+    else
+      echo "-bash: chd: "$@": No directory could be extrapolated from partial name"
+    fi
+  fi
+}
+
+source ~/.bashrc
