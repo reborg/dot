@@ -228,7 +228,7 @@ nmap <leader>t :FufFile **/<CR>
 nmap <leader>b :FufBuffer<CR>
 let g:fuf_file_exclude = '\v\.svn/$|\.git/$|\~$|\.o$|\.exe$|\.bak$|\.swp$|\.swo$|\.class$|((^|[/\\])\.[/\\]$)'
 "let g:fuf_dir_exclude = '\v(^|[/\\])\.(hg|git|bzr)($|[/\\])'
-let g:fuf_dir_exclude = '\v(^|[/\\])\.(hg|git|bzr|svn)($|[/\\])|([/\\])(log|build|Vendors|target)'
+let g:fuf_dir_exclude = '\v(^|[/\\])\.(hg|git|bzr|svn)($|[/\\])|([/\\])(log|build|Vendors|target|Other)'
 
 " Tell easytags to create the tag file on
 " the vim root
@@ -236,7 +236,7 @@ let g:fuf_dir_exclude = '\v(^|[/\\])\.(hg|git|bzr|svn)($|[/\\])|([/\\])(log|buil
 
 " Setup nailgun server for vimclojure
 let vimclojure#WantNailgun = 1
-let vimclojure#NailgunClient = "/Users/borgar01/Downloads/vimclojure-nailgun-client/ng"
+let vimclojure#NailgunClient = "/Users/reborg/Downloads/nailgun-0.7.1/ng"
 "let clj_want_gorilla = 1
 
 " format xml file with xmllint
