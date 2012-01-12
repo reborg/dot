@@ -45,8 +45,10 @@
 #  .clojure     A file in the current directory. Every line names an item
 #               which will be added to the CLASSPATH.
 
+export CLASSPATH=$CLASSPATH:/me/prj/dot/vim/bin/server-2.2.0.jar
+
 set -o errexit
-#set -o nounset
+set -o nounset
 set -o xtrace
 
 if [ -n "${CLOJURE_EXT:-}" ]; then

@@ -236,7 +236,8 @@ let g:fuf_dir_exclude = '\v(^|[/\\])\.(hg|git|bzr|svn)($|[/\\])|([/\\])(log|buil
 
 " Setup nailgun server for vimclojure
 let vimclojure#WantNailgun = 1
-let vimclojure#NailgunClient = "/Users/reborg/Downloads/nailgun-0.7.1/ng"
+let vimclojure#NailgunClient = "/me/prj/vimclojure/client/ng"
+let vimclojure#ParenRainbow  = 1
 "let clj_want_gorilla = 1
 
 " format xml file with xmllint

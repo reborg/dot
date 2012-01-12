@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings 
+  xmlns="http://maven.apache.org/SETTINGS/1.0.0" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 
+  http://maven.apache.org/xsd/settings-1.0.0.xsd">
+
+  <profiles>
+    <profile>
+      <id>local-pc</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+        <!-- MPS2 CONF 
+      <properties>
+        <mps.user.name>BORGAR01</mps.user.name>
+        <mps.log.appender>FILE</mps.log.appender>
+        <mps.sql.osf.sendFTP>true</mps.sql.osf.sendFTP>
+        <mps.jdk.path>/Library/Java/Home</mps.jdk.path>
+        <mps-test-file-root>/Users/borgar01/prj/bbc/mps2-osx/MPS_TEST_FILES</mps-test-file-root>
+        <mps.base.dir>/Users/borgar01/prj/bbc/mps2-osx/MPS_BASE_DIR</mps.base.dir>
+      </properties>-->
+      <properties>
+        <mps.user.name>borgar01</mps.user.name>
+        <mps.log.appender>FILE</mps.log.appender>
+        <mps.sql.osf.sendFTP>true</mps.sql.osf.sendFTP>
+        <mps-test-file-root>\\noldev512\MPS_Test_Files</mps-test-file-root>
+        <mps.base.directory>/opt/Newsi/mps</mps.base.directory>
+        <mps.duration.MediaInfo.path>/usr/local/bin/mediainfo</mps.duration.MediaInfo.path>
+      </properties>
+    </profile>
+
+    <profile>
+      <id>default</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+
+      <properties>
+        <server.env>borgar01</server.env>
+        <server.host>localhost</server.host>
+        <server.port>8080</server.port>
+        <server.home>/usr/local/Cellar/tomcat/7.0.16</server.home>
+        <server.start>/usr/local/Cellar/tomcat/7.0.16/libexec/bin/startup.sh</server.start>
+        <server.stop>/usr/local/Cellar/tomcat/7.0.16/libexec/bin/shutdown.sh</server.stop>
+        <mps.tomcat.home.directory>/usr/local/Cellar/tomcat/7.0.16/libexec/</mps.tomcat.home.directory>
+        <mps.tomcat.service>NoService</mps.tomcat.service>
+        <props.site.deploy.url>/Users/borgar01/prj/bbc/mps2/trunk/HYDRA_SITE</props.site.deploy.url>
+      </properties>
+
+    </profile>
+  </profiles>
+  <mirrors>
+    <mirror>
+      <id>mps-repository-snapshots</id>
+      <name>MPS Repository</name>
+      <url>http://noldev31.newsonline.tc.nca.bbc.co.uk:8080/nexus/content/groups/public-snapshots</url>
+      <mirrorOf>bbc-plugin-snapshot, bbc-snapshots, av-development-snapshot, av-development-plugin-snapshot</mirrorOf>
+    </mirror>
+    <mirror>
+      <id>mps-repository</id>
+      <name>MPS Repository</name>
+      <url>http://noldev31.newsonline.tc.nca.bbc.co.uk:8080/nexus/content/groups/public</url>
+      <mirrorOf>central,!bbc-plugin-snapshot, !bbc-snapshots, !av-development-snapshot, !av-development-plugin-snapshot, eviwareRepository</mirrorOf>
+    </mirror>
+    <!--mirror>
+        <id>UK</id>
+        <name>UK Central</name>
+        <url>http://uk.maven.org/maven2</url>
+        <mirrorOf>central</mirrorOf>
+    </mirror-->
+  </mirrors>
+  <proxies>
+    <proxy>
+      <id>default</id>
+      <active>true</active>
+      <host>www-cache.reith.bbc.co.uk</host>
+      <protocol>http</protocol>
+      <port>80</port>
+      <nonProxyHosts>*.core.bbc.co.uk|*.local|169.254/16|*.nca.bbc.co.uk|localhost|127.0.0.1|noldev*|bbcws*|nolqa*|10.162.*|*.bbc.redbeemedia.net</nonProxyHosts>
+    </proxy>
+    <proxy>
+      <id>sniffer</id>
+      <active>false</active>
+      <host>localhost</host>
+      <protocol>http</protocol>
+      <port>9090</port>
+      <nonProxyHosts></nonProxyHosts>
+    </proxy>
+  </proxies>
+</settings>
