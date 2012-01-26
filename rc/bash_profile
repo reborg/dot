@@ -58,7 +58,7 @@ alias dot='cd /me/prj/dot'
 alias spikes='cd /me/prj/spikes'
 alias notes='cd /me/notes'
 alias bookshelf='cd /me/bookshelf'
-alias talks='cd /me/talks'
+alias talks='cd /me/prj/talks'
 alias downloads='cd ~/Downloads'
 alias crash='cd ~/Library/Logs/DiagnosticReports'
 
@@ -85,7 +85,7 @@ export PATH="/me/prj/dot/cmd:/opt/local/bin:/sw/bin:/usr/local/sbin:/usr/local/m
 #export CLASSPATH="$CLASSPATH:.:~/Downloads/jline-0_9_5.jar:/Users/reborg/Downloads/vimclojure-2.1.2/build/vimclojure.jar:/Users/reborg/Documents/projects/3rdparties/clojure/clojure.jar:/Users/reborg/Documents/projects/3rdparties/clojure-contrib/clojure-contrib.jar"
 
 #export CLOJURE_EXT=~/Downloads/clojure-1.2.1:~/Downloads/clojure-contrib-1.2.0:~/prj/my/dot/vim/bin
-#export CLOJURE_EXT=~/Downloads/clojure-1.3.0:/me/prj/dot/vim/bin
+export CLOJURE_EXT=~/Downloads/clojure-1.3.0:/me/prj/dot/vim/bin
 
 source "/me/prj/dot/rc/git-completion.bash"
 #source "/Users/borgar01/prj/3rdparties/dev-bash-git-ps1/bash_git_ps1.sh"
