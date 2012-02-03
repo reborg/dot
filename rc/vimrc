@@ -127,9 +127,8 @@ set cursorline
 " fix fuzzyfinder color scheme
 hi Pmenu guifg=lightgray guibg=darkgrey gui=NONE ctermfg=yellow ctermbg=darkgrey cterm=NONE
 
-" inserts new line without going into insert mode
-map <S-Enter> O<ESC> 
-map <Enter> o<ESC>
+" remove search highlighting on hit return command mode
+map <Enter> :nohlsearch<Enter>
 
 " Show line numbers
 set number
