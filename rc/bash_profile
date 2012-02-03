@@ -42,9 +42,9 @@ alias feature='git flow feature start'
 alias finish='git flow feature finish'
 alias gst='git status'
 alias gbr='git branch'
-alias gad='git add .'
-gci(){ git commit -a -m $1; }
-alias gci='git commit -a -m'
+alias gco='git checkout'
+gci(){ git commit -m $1; }
+alias gci='git commit -m'
 alias glog='git log --oneline --decorate --graph'
 alias gi='git-info.sh'
 
