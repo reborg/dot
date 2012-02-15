@@ -228,7 +228,7 @@ nmap <leader>t :FufFile **/<CR>
 nmap <leader>b :FufBuffer<CR>
 let g:fuf_file_exclude = '\v\.svn/$|\.git/$|\~$|\.o$|\.exe$|\.bak$|\.swp$|\.swo$|\.class$|((^|[/\\])\.[/\\]$)'
 "let g:fuf_dir_exclude = '\v(^|[/\\])\.(hg|git|bzr)($|[/\\])'
-let g:fuf_dir_exclude = '\v(^|[/\\])\.(hg|git|bzr|svn)($|[/\\])|([/\\])(log|build|Vendors|target)'
+let g:fuf_dir_exclude = '\v(^|[/\\])\.(hg|git|bzr|svn)($|[/\\])|([/\\])(log|build|Vendors|target|Services)'
 
 " Tell easytags to create the tag file on
 " the vim root
@@ -245,6 +245,7 @@ map ,xml :%!xmllint --format --encode UTF-8 -<CR>
 " project specific vimrc load on matching folders
 autocmd BufRead,BufNewFile ~/prj/bbc/hydra/* so ~/prj/bbc/mps3/.vimrc
 autocmd BufRead,BufNewFile ~/prj/bbc/mps3/* so ~/prj/bbc/mps3/.vimrc
+autocmd BufRead,BufNewFile ~/prj/bbc/pips-client/* so ~/prj/bbc/pips-client/.vimrc
 autocmd BufRead,BufNewFile ~/prj/bbc/libraries/directory-mounter/trunk/* so ~/prj/bbc/libraries/directory-mounter/trunk/.vimrc
 
 " Additional custom specification for ctags regexp-es
