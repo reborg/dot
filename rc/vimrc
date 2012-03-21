@@ -234,6 +234,10 @@ let g:fuf_dir_exclude = '\v(^|[/\\])\.(hg|git|bzr|svn)($|[/\\])|([/\\])(log|buil
 ":let g:easytags_file = '~/.vim/tags'
 
 " Setup nailgun server for vimclojure
+let vimclojure#FuzzyIndent=1
+let vimclojure#HighlightBuiltins=1
+let vimclojure#HighlightContrib=1
+let vimclojure#DynamicHighlighting=1
 let vimclojure#WantNailgun = 1
 let vimclojure#NailgunClient = "/me/prj/vimclojure/client/ng"
 let vimclojure#ParenRainbow  = 1
@@ -252,7 +256,8 @@ autocmd BufRead,BufNewFile ~/prj/bbc/libraries/directory-mounter/trunk/* so ~/pr
 let tlist_objc_settings = 'ObjectiveC;P:protocols;c:class;m:method'
 
 " Shortcut generation of ctags for objc projects
+" For this to work: brew install ctags --HEAD
 map <silent> ,tobj :!ctags -R --language-force=ObjectiveC --sort=yes --exclude=.git --exclude=Resources --exclude=build --exclude=Vendors *<CR>
 
 " Shortcut generation of ctags for Java projects
-map <silent> ,tjava :!ctags -R --language-force=Java --sort=yes --exclude=.git --exclude=.svn --exclude=target *<CR>
+map <silent> ,tjava :!ctags -R --language-force=Java --sort=yes --exclude=.git --exclude=.svn --exclude=**/target *<CR>
