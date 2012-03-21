@@ -1,0 +1,7 @@
+SEL theSelector = NSSelectorFromString(@"${1:targetMethodName}");
+NSInvocation* anInvocation = [NSInvocation invocationWithMethodSignature:
+						[${2:targetClassForInvocation} instanceMethodSignatureForSelector:theSelector]];
+[anInvocation setSelector:theSelector];
+[anInvocation setTarget:${3:instanceOfClassInvocationIsDirectedAt}];
+[anInvocation setArgument:&${4:referenceToArgumentToPassIn} atIndex:2];
+[anInvocation invoke];
