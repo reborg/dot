@@ -241,6 +241,7 @@ let vimclojure#DynamicHighlighting=1
 let vimclojure#WantNailgun = 1
 let vimclojure#NailgunClient = "/me/prj/vimclojure/client/ng"
 let vimclojure#ParenRainbow  = 1
+let vimclojure#SplitPos = "right"
 "let clj_want_gorilla = 1
 
 " format xml file with xmllint
