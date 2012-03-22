@@ -4405,6 +4405,7 @@ TabLeave	autocmd.txt	/*TabLeave*
 Tcl	if_tcl.txt	/*Tcl*
 TermChanged	autocmd.txt	/*TermChanged*
 TermResponse	autocmd.txt	/*TermResponse*
+ToggleParenRainbow	clojure.txt	/*ToggleParenRainbow*
 Transact-SQL	ft_sql.txt	/*Transact-SQL*
 U	undo.txt	/*U*
 UTF-8	mbyte.txt	/*UTF-8*
@@ -4538,6 +4539,7 @@ ZZ	editing.txt	/*ZZ*
 ]star	motion.txt	/*]star*
 ]z	fold.txt	/*]z*
 ]}	motion.txt	/*]}*
+^	clojure.txt	/*^*
 ^	motion.txt	/*^*
 _	motion.txt	/*_*
 _exrc	starting.txt	/*_exrc*
@@ -5250,12 +5252,6 @@ dtd2vim	insert.txt	/*dtd2vim*
 dying-variable	eval.txt	/*dying-variable*
 e	motion.txt	/*e*
 easy	starting.txt	/*easy*
-easytags.txt	easytags.txt	/*easytags.txt*
-easytags_always_enabled	easytags.txt	/*easytags_always_enabled*
-easytags_cmd	easytags.txt	/*easytags_cmd*
-easytags_file	easytags.txt	/*easytags_file*
-easytags_on_cursorhold	easytags.txt	/*easytags_on_cursorhold*
-easytags_resolve_links	easytags.txt	/*easytags_resolve_links*
 eb	clojure.txt	/*eb*
 edit-a-file	editing.txt	/*edit-a-file*
 edit-binary	editing.txt	/*edit-binary*
@@ -5538,6 +5534,7 @@ ft-ch-syntax	syntax.txt	/*ft-ch-syntax*
 ft-changelog-plugin	filetype.txt	/*ft-changelog-plugin*
 ft-changelog-syntax	syntax.txt	/*ft-changelog-syntax*
 ft-chill-syntax	syntax.txt	/*ft-chill-syntax*
+ft-clj-indent	clojure.txt	/*ft-clj-indent*
 ft-clj-syntax	clojure.txt	/*ft-clj-syntax*
 ft-cobol-syntax	syntax.txt	/*ft-cobol-syntax*
 ft-coldfusion-syntax	syntax.txt	/*ft-coldfusion-syntax*
@@ -8181,6 +8178,7 @@ toggle-revins	version4.txt	/*toggle-revins*
 tolower()	eval.txt	/*tolower()*
 toolbar-icon	gui.txt	/*toolbar-icon*
 toupper()	eval.txt	/*toupper()*
+tr	clojure.txt	/*tr*
 tr()	eval.txt	/*tr()*
 trojan-horse	starting.txt	/*trojan-horse*
 trunc()	eval.txt	/*trunc()*
@@ -8321,6 +8319,7 @@ v:val	eval.txt	/*v:val*
 v:var	eval.txt	/*v:var*
 v:version	eval.txt	/*v:version*
 v:warningmsg	eval.txt	/*v:warningmsg*
+vS	surround.txt	/*vS*
 v_!	change.txt	/*v_!*
 v_$	visual.txt	/*v_$*
 v_:	cmdline.txt	/*v_:*
@@ -8453,6 +8452,7 @@ version4.txt	version4.txt	/*version4.txt*
 version5.txt	version5.txt	/*version5.txt*
 version6.txt	version6.txt	/*version6.txt*
 version7.txt	version7.txt	/*version7.txt*
+vgS	surround.txt	/*vgS*
 vi	intro.txt	/*vi*
 vi-differences	vi_diff.txt	/*vi-differences*
 vi:	options.txt	/*vi:*
