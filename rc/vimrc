@@ -124,9 +124,6 @@ imap jj <Esc>:w <cr>
 set cursorline
 "hi CursorLine cterm=underline
 
-" fix fuzzyfinder color scheme
-hi Pmenu guifg=lightgray guibg=darkgrey gui=NONE ctermfg=yellow ctermbg=darkgrey cterm=NONE
-
 " remove search highlighting on hit return command mode
 map <Enter> :nohlsearch<Enter>
 
@@ -227,7 +224,10 @@ nmap <leader>t :FufFile **/<CR>
 nmap <leader>b :FufBuffer<CR>
 let g:fuf_file_exclude = '\v\.svn/$|\.git/$|\~$|\.o$|\.exe$|\.bak$|\.swp$|\.swo$|\.class$|((^|[/\\])\.[/\\]$)'
 "let g:fuf_dir_exclude = '\v(^|[/\\])\.(hg|git|bzr)($|[/\\])'
-let g:fuf_dir_exclude = '\v(^|[/\\])\.(hg|git|bzr|svn)($|[/\\])|([/\\])(log|build|Vendors|target|Other)'
+let g:fuf_dir_exclude = '\v(^|[/\\])\.(hg|git|bzr|svn)($|[/\\])|([/\\])(log|build|Vendors|target|Other|db)'
+" fix fuzzyfinder color scheme for buffer list
+hi Pmenu guifg=lightgray guibg=darkgrey gui=NONE ctermfg=yellow ctermbg=darkgrey cterm=NONE
+
 
 " Tell easytags to create the tag file on
 " the vim root
