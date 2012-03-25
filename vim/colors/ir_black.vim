@@ -27,7 +27,7 @@
 "
 "  brown: #E18964  good for special
 "
-"  lightpurpleish: #FFCCFF
+" lightpurpleish: #FFCCFF
 " 
 " Interface colors:
 "  background color: black
@@ -210,3 +210,15 @@ hi  link csXmlTag             Keyword
 
 
 " Special for PHP
+"
+"
+" vimdiff
+"highlight DiffAdd term=reverse cterm=bold ctermbg=darkgreen ctermfg=white 
+"highlight DiffChange term=reverse cterm=bold ctermbg=darkcyan ctermfg=black 
+"highlight DiffText term=reverse cterm=bold ctermbg=darkgray ctermfg=black 
+"highlight DiffDelete term=reverse cterm=bold ctermbg=darkred ctermfg=black
+
+highlight DiffAdd cterm=bold ctermfg=black ctermbg=lightgreen gui=none guifg=black guibg=lightgreen
+highlight DiffDelete cterm=bold ctermfg=black ctermbg=lightRed gui=none guifg=black guibg=lightRed 
+highlight DiffChange cterm=bold ctermfg=black ctermbg=Yellow gui=none guifg=black guibg=Yellow 
+highlight DiffText cterm=bold ctermfg=black ctermbg=lightMagenta gui=none guifg=black guibg=lightMagenta
