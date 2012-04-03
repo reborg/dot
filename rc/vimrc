@@ -222,9 +222,16 @@ set ignorecase
 " Fuzzy File Finder
 nmap <leader>t :FufFile **/<CR>
 nmap <leader>b :FufBuffer<CR>
-let g:fuf_file_exclude = '\v\.svn/$|\.git/$|\~$|\.o$|\.exe$|\.bak$|\.swp$|\.swo$|\.class$|((^|[/\\])\.[/\\]$)'
+
+let g:fuf_dir_exclude = '\v(^|[/\\])(\.(hg|git|bzr|svn)|CVS)($|[/\\])'
+let g:fuf_file_exclude = '\v\~$|\.(o|exe|dll|bak|orig|swp|wav)$|(^|[/\\])(\.(hg|git|bzr|svn)|CVS|db|target|Vendors|logs)($|[/\\])'
+
+"let g:fuf_file_exclude = '\v\~$|\.(o|exe|dll|bak|orig|sw[po]|pyc)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|.*/db/.*|.*template_c.*|node_modules'
+"let g:fuf_dir_exclude = '\v(^|[/\\])\.(hg|git|bzr)($|[/\\])|.*db.*|template_c|node_modules'
+"let g:fuf_file_exclude = '\v\db/$|\.git/$|\~$|\.o$|\.exe$|\.bak$|\.swp$|\.swo$|\.class$|((^|[/\\])\.[/\\]$)'
+"let g:fuf_file_exclude = '\v\.svn/$|\~$|\.o$|\.exe$|\.bak$|\.swp$|\.swo$|\.class$|((^|[/\\])\.[/\\]$)'
 "let g:fuf_dir_exclude = '\v(^|[/\\])\.(hg|git|bzr)($|[/\\])'
-let g:fuf_dir_exclude = '\v(^|[/\\])\.(hg|git|bzr|svn)($|[/\\])|([/\\])(log|build|Vendors|target|Other|db)'
+"let g:fuf_dir_exclude = '\v(^|[/\\])db($|[/\\])'
 " fix fuzzyfinder color scheme for buffer list
 hi Pmenu guifg=lightgray guibg=darkgrey gui=NONE ctermfg=yellow ctermbg=darkgrey cterm=NONE
 
