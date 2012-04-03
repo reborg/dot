@@ -124,12 +124,8 @@ imap jj <Esc>:w <cr>
 set cursorline
 "hi CursorLine cterm=underline
 
-" fix fuzzyfinder color scheme
-hi Pmenu guifg=lightgray guibg=darkgrey gui=NONE ctermfg=yellow ctermbg=darkgrey cterm=NONE
-
-" inserts new line without going into insert mode
-map <S-Enter> O<ESC> 
-map <Enter> o<ESC>
+" remove search highlighting on hit return command mode
+map <Enter> :nohlsearch<Enter>
 
 " Show line numbers
 set number
@@ -226,17 +222,26 @@ set ignorecase
 " Fuzzy File Finder
 nmap <leader>t :FufFile **/<CR>
 nmap <leader>b :FufBuffer<CR>
-let g:fuf_file_exclude = '\v\.svn/$|\.git/$|\~$|\.o$|\.exe$|\.bak$|\.swp$|\.swo$|\.class$|((^|[/\\])\.[/\\]$)'
-"let g:fuf_dir_exclude = '\v(^|[/\\])\.(hg|git|bzr)($|[/\\])'
-let g:fuf_dir_exclude = '\v(^|[/\\])\.(hg|git|bzr|svn)($|[/\\])|([/\\])(log|build|Vendors|target|Services)'
+
+let g:fuf_dir_exclude = '\v(^|[/\\])(\.(hg|git|bzr|svn)|CVS)($|[/\\])'
+let g:fuf_file_exclude = '\v\~$|\.(o|exe|dll|bak|orig|swp|wav)$|(^|[/\\])(\.(hg|git|bzr|svn)|CVS|db|target|Vendors|logs)($|[/\\])'
+
+" fix fuzzyfinder color scheme for buffer list
+hi Pmenu guifg=lightgray guibg=darkgrey gui=NONE ctermfg=yellow ctermbg=darkgrey cterm=NONE
 
 " Tell easytags to create the tag file on
 " the vim root
 ":let g:easytags_file = '~/.vim/tags'
 
 " Setup nailgun server for vimclojure
+let vimclojure#FuzzyIndent=1
+let vimclojure#HighlightBuiltins=1
+let vimclojure#HighlightContrib=1
+let vimclojure#DynamicHighlighting=1
 let vimclojure#WantNailgun = 1
-let vimclojure#NailgunClient = "/Users/borgar01/Downloads/vimclojure-nailgun-client/ng"
+let vimclojure#NailgunClient = "/me/prj/vimclojure/client/ng"
+let vimclojure#ParenRainbow  = 1
+let vimclojure#SplitPos = "right"
 "let clj_want_gorilla = 1
 
 " format xml file with xmllint
@@ -253,7 +258,14 @@ autocmd BufRead,BufNewFile ~/prj/bbc/libraries/directory-mounter/trunk/* so ~/pr
 let tlist_objc_settings = 'ObjectiveC;P:protocols;c:class;m:method'
 
 " Shortcut generation of ctags for objc projects
+" For this to work: brew install ctags --HEAD
 map <silent> ,tobj :!ctags -R --language-force=ObjectiveC --sort=yes --exclude=.git --exclude=Resources --exclude=build --exclude=Vendors *<CR>
 
 " Shortcut generation of ctags for Java projects
-map <silent> ,tjava :!ctags -R --language-force=Java --sort=yes --exclude=.git --exclude=.svn --exclude=target *<CR>
+map <silent> ,tjava :!ctags -R --language-force=Java --sort=yes --exclude=.git --exclude=.svn --exclude=**/target *<CR>
+
+" installing pathogen now I can:
+" cd ~/.vim/bundle
+" git clone git://github.com/tpope/vim-fugitive.git
+" to install what I need. Thanks tpope.
+call pathogen#infect('/me/prj/pathogen-bundles')

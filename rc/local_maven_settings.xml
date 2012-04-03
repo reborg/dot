@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings 
+  xmlns="http://maven.apache.org/SETTINGS/1.0.0" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 
+  http://maven.apache.org/xsd/settings-1.0.0.xsd">
+
+  <mirrors>
+    <mirror>
+        <id>UK</id>
+        <name>UK Central</name>
+        <url>http://uk.maven.org/maven2</url>
+        <mirrorOf>central</mirrorOf>
+    </mirror>
+  </mirrors>
+  <proxies>
+    <proxy>
+      <id>default</id>
+      <active>false</active>
+      <host>www-cache.reith.bbc.co.uk</host>
+      <protocol>http</protocol>
+      <port>80</port>
+      <nonProxyHosts>*.core.bbc.co.uk|*.local|169.254/16|*.nca.bbc.co.uk|localhost|127.0.0.1|noldev*|bbcws*|nolqa*|10.162.*|*.bbc.redbeemedia.net</nonProxyHosts>
+    </proxy>
+  </proxies>
+</settings>

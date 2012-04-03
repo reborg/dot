@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-export ANT_HOME=/Users/reborg/Downloads/apache-ant-1.7.1
-$ANT_HOME/bin/ant $1
