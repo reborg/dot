@@ -43,10 +43,7 @@ endif
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
-if &t_Co > 2 || has("gui_running")
-  syntax on
-  set hlsearch
-endif
+set hlsearch
 
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
@@ -95,11 +92,13 @@ endif
 " ##################################################################  
 
 " Set the color scheme for plain vi
-syntax enable
+syntax on
 set background=dark
-colorscheme solarized
+set t_Co=16
+let g:solarized_termcolors=16
 let g:solarized_contrast = "high"
 let g:solarized_visibility= "normal"
+colorscheme solarized
 
 " Associate pom files to taskpaper plugin
 augroup taskpaper
@@ -220,7 +219,7 @@ nmap <leader>t :FufFile **/<CR>
 nmap <leader>b :FufBuffer<CR>
 
 let g:fuf_dir_exclude = '\v(^|[/\\])(\.(hg|git|bzr|svn)|CVS)($|[/\\])'
-let g:fuf_file_exclude = '\v\~$|\.(o|exe|dll|bak|orig|swp|wav)$|(^|[/\\])(\.(hg|git|bzr|svn)|CVS|db|target|Vendors|logs)($|[/\\])'
+let g:fuf_file_exclude = '\v\~$|\.(o|exe|dll|bak|orig|swp|wav)$|(^|[/\\])(\.(hg|git|bzr|svn)|CVS|db|target|Vendors|logs|classes)($|[/\\])'
 
 " fix fuzzyfinder color scheme for buffer list
 hi Pmenu guifg=lightgray guibg=darkgrey gui=NONE ctermfg=yellow ctermbg=darkgrey cterm=NONE
