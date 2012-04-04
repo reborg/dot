@@ -96,14 +96,10 @@ endif
 
 " Set the color scheme for plain vi
 syntax enable
-if has('gui_running')
-    set background=light
-else
-    set background=dark
-    set t_Co=16
-    let g:solarized_termcolors=16
-endif
-colorscheme ir_black
+set background=dark
+colorscheme solarized
+let g:solarized_contrast = "high"
+let g:solarized_visibility= "normal"
 
 " Associate pom files to taskpaper plugin
 augroup taskpaper
