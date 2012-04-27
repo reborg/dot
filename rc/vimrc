@@ -94,15 +94,16 @@ endif
 " Set the color scheme for plain vi
 syntax on
 set background=dark
-set t_Co=16
-let g:solarized_termcolors=16
+"set t_Co=16
+"let g:solarized_termcolors=16
 let g:solarized_contrast = "high"
 let g:solarized_visibility= "normal"
 colorscheme solarized
 
 " Associate pom files to taskpaper plugin
 augroup taskpaper
-  au! BufRead,BufNewFile *.pom   setfiletype taskpaper
+  au! BufRead,BufNewFile *.pom        setfiletype taskpaper
+  au! BufRead,BufNewFile inbox.txt    setfiletype taskpaper
 augroup END
 
 " Use softtabs
