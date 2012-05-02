@@ -21,6 +21,7 @@ alias yy='pwd | tr -d "\n" | pbcopy' # yield current dir to clipboard
 alias sign='export SVN_EDITOR=vi; svn propedit svn:ignore .'
 alias sup='svn up'
 alias sst='svn st'
+alias sst='svn diff | less -R'
 sci(){ svn commit -m $1; }
 alias sci='svn commit -m'
 alias sadd="svn status | grep ? | sed -e 's/?      //g' | xargs -J% svn add %"
