@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-find "$PWD" -iname "*$1*" -print | grep -v svn
+find "$PWD" -iname "*$1*" -print
