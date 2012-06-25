@@ -27,14 +27,14 @@ alias sadd="svn status | grep ? | sed -e 's/?      //g' | xargs -J% svn add %"
 alias srm="svn status | grep ! | sed -e 's/!      //g' | xargs -J% svn remove %"
 alias srev="svn status | grep M | sed -e 's/M      //g' | xargs -J% svn revert %"
 
-# MAVEN
-#mcuke(){ mvn -o -Pwithargs cuke4duke:cucumber -DcukeArgs="--tag $@"; }
-#alias mcuke="mvn -o -Pwithargs cuke4duke:cucumber -DcukeArgs=\"--tag $@\""
+# maven
+#mcuke(){ mvn -o -pwithargs cuke4duke:cucumber -dcukeargs="--tag $@"; }
+#alias mcuke="mvn -o -pwithargs cuke4duke:cucumber -dcukeargs=\"--tag $@\""
 alias mrun='mvn clean; mvn install'
 alias mtest='mvn -o surefire-report:report; open target/site/surefire-report.html'
 alias mcover='mvn -o cobertura:cobertura; open target/site/cobertura/index.html'
-#alias mvn='/usr/share/java/maven-2.2.1/bin/mvn'
-alias mvn='/usr/share/java/maven-3.0.3/bin/mvn'
+alias mvn='/Users/reborg/Downloads/apache-maven-2.2.1/bin/mvn'
+#alias mvn='/usr/share/java/maven-3.0.3/bin/mvn'
 
 # GIT
 feature(){ git flow feature start $1; }
