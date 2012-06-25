@@ -96,9 +96,9 @@ syntax on
 set background=dark
 "set t_Co=16
 "let g:solarized_termcolors=16
-let g:solarized_contrast = "high"
-let g:solarized_visibility= "normal"
-colorscheme solarized
+"let g:solarized_contrast = "high"
+"let g:solarized_visibility= "normal"
+colorscheme tomorrow-2
 
 " Associate pom files to taskpaper plugin
 augroup taskpaper
