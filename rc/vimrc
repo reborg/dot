@@ -96,7 +96,7 @@ syntax on
 set background=dark
 set t_Co=16
 let g:solarized_termcolors=16
-let g:solarized_contrast = "high"
+let g:solarized_contrast = "normal"
 let g:solarized_diffmode = "high"
 let g:solarized_visibility= "normal"
 colorscheme solarized
@@ -235,7 +235,7 @@ let vimclojure#HighlightBuiltins=1
 let vimclojure#HighlightContrib=1
 let vimclojure#DynamicHighlighting=1
 let vimclojure#WantNailgun = 1
-let vimclojure#NailgunClient = "/me/prj/vimclojure/client/ng"
+let vimclojure#NailgunClient = "/Users/borgar01/prj/3rdparties/vimclojure/client/ng"
 let vimclojure#ParenRainbow  = 1
 let vimclojure#SplitPos = "right"
 "let clj_want_gorilla = 1

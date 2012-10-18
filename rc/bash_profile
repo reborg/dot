@@ -35,6 +35,7 @@ alias mrun='mvn clean; mvn install'
 alias mtest='mvn -o surefire-report:report; open target/site/surefire-report.html'
 alias mcover='mvn -o cobertura:cobertura; open target/site/cobertura/index.html'
 alias mvn='/usr/share/java/maven-2.2.1/bin/mvn'
+export MAVEN_OPTS=-Xmx512m
 
 # GIT
 feature(){ git flow feature start $1; }
