@@ -47,7 +47,8 @@
 
 export CLASSPATH=$CLASSPATH:/Users/borgar01/prj/my/dot/vim/bin/server-2.3.1.jar
 #export CLOJURE_EXT=/Users/reborg/Downloads/clojure-1.3.0-jars
-export CLOJURE_EXT=/Users/borgar01/Downloads/clojure-1.4.0-jars
+#export CLOJURE_EXT=/Users/borgar01/Downloads/clojure-1.4.0-jars
+export CLOJURE_EXT=/Users/borgar01/prj/3rdparties/clojure/target/clojure-1.5.0-RC4.jar
 
 set -o errexit
 set -o nounset
