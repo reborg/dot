@@ -1,0 +1,22 @@
+#!/bin/sh
+
+#
+# http://en.wikibooks.org/wiki/Clojure_Programming/Getting_Started#Enhancing_the_Environment
+#
+
+breakchars="(){}[],^%$#@\"\";:''|\\"
+# CLOJURE_JAR="/Users/borgar01/Downloads/clojure-1.4.0-jars/clojure-1.4.0.jar"
+CLOJURE_JAR="/Users/borgar01/prj/3rdparties/clojure/target/clojure-1.5.0-RC4.jar"
+if [ $# -eq 0 ]; then 
+exec rlwrap --remember -c -b "$breakchars" \
+       -f "$HOME"/.clj_completions \
+       java -cp "$CLOJURE_JAR" clojure.main
+       else
+       exec java -cp "$CLOJURE_JAR" clojure.main $1 -- "$@"
+       fi
+
+#
+# Use the following to generate the completion file:
+# (def completions (keys (ns-publics (find-ns 'clojure.core))))
+# (with-open [f (java.io.BufferedWriter. (java.io.FileWriter. (str (System/getenv "HOME") "/.clj_completions")))]
+#     (.write f (apply str (interpose \newline completions))))

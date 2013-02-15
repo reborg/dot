@@ -94,17 +94,36 @@ endif
 " Set the color scheme for plain vi
 syntax on
 set background=dark
-"set t_Co=16
-"let g:solarized_termcolors=16
-"let g:solarized_contrast = "high"
-"let g:solarized_visibility= "normal"
-colorscheme tomorrow-2
+set t_Co=16
+let g:solarized_termcolors=16
+let g:solarized_contrast = "high"
+let g:solarized_visibility= "normal"
+colorscheme solarized
 
 " Associate pom files to taskpaper plugin
 augroup taskpaper
   au! BufRead,BufNewFile *.pom        setfiletype taskpaper
   au! BufRead,BufNewFile inbox.txt    setfiletype taskpaper
 augroup END
+
+" Associate arff files to weka syntax
+augroup weka
+  au! BufRead,BufNewFile *.arff       setfiletype arff
+augroup END
+
+" turn-on distraction free writing mode for txt
+au BufNewFile,BufRead *.{md,mdown,mkd,mkdn,markdown,mdwn} call DistractionFreeWriting()
+map <F5> :setlocal spell! spelllang=en_gb<CR>
+map <F6> :setlocal nospell<CR>
+function! DistractionFreeWriting()
+  colorscheme iawriter
+  set background=light
+  set laststatus=0                   " don't show status line
+  set noruler                        " don't show ruler
+  set linebreak                      " break the lines on words
+  set nonumber
+  set nocursorline
+endfunction
 
 " Use softtabs
 set softtabstop=2
@@ -114,6 +133,7 @@ set expandtab
 
 " Useful expansions
 imap hh <Space>=><Space>
+imap kk <Space>-><Space>
 imap jj <Esc>:w <cr>
 
 " highlight line with cursor
@@ -235,7 +255,7 @@ let vimclojure#HighlightBuiltins=1
 let vimclojure#HighlightContrib=1
 let vimclojure#DynamicHighlighting=1
 let vimclojure#WantNailgun = 1
-let vimclojure#NailgunClient = "/me/prj/vimclojure/client/ng"
+let vimclojure#NailgunClient = "/Users/borgar01/prj/3rdparties/vimclojure/client/ng"
 let vimclojure#ParenRainbow  = 1
 let vimclojure#SplitPos = "right"
 "let clj_want_gorilla = 1
@@ -260,8 +280,11 @@ map <silent> ,tobj :!ctags -R --language-force=ObjectiveC --sort=yes --exclude=.
 " Shortcut generation of ctags for Java projects
 map <silent> ,tjava :!ctags -R --language-force=Java --sort=yes --exclude=.git --exclude=.svn --exclude=**/target *<CR>
 
+" Clojure ctags!
+map <silent> ,tclj :!ctags -R --langmap=Lisp:+.clj --sort=yes --exclude=.git --exclude=.svn --exclude=**/target *<CR>
+
 " installing pathogen now I can:
 " cd ~/.vim/bundle
 " git clone git://github.com/tpope/vim-fugitive.git
 " to install what I need. Thanks tpope.
-call pathogen#infect('/me/prj/pathogen-bundles')
+call pathogen#infect('/me/prj/pathogen-bundles/{}')

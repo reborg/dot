@@ -21,6 +21,7 @@ alias yy='pwd | tr -d "\n" | pbcopy' # yield current dir to clipboard
 alias sign='export SVN_EDITOR=vi; svn propedit svn:ignore .'
 alias sup='svn up'
 alias sst='svn st'
+alias sst='svn diff | less -R'
 sci(){ svn commit -m $1; }
 alias sci='svn commit -m'
 alias sadd="svn status | grep ? | sed -e 's/?      //g' | xargs -J% svn add %"
@@ -33,8 +34,8 @@ alias srev="svn status | grep M | sed -e 's/M      //g' | xargs -J% svn revert %
 alias mrun='mvn clean; mvn install'
 alias mtest='mvn -o surefire-report:report; open target/site/surefire-report.html'
 alias mcover='mvn -o cobertura:cobertura; open target/site/cobertura/index.html'
-alias mvn='/Users/reborg/Downloads/apache-maven-2.2.1/bin/mvn'
-#alias mvn='/usr/share/java/maven-3.0.3/bin/mvn'
+alias mvn='/usr/share/java/maven-2.2.1/bin/mvn'
+export MAVEN_OPTS=-Xmx512m
 
 # GIT
 feature(){ git flow feature start $1; }
