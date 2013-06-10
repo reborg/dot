@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<settings>
+  <proxies>
+    <!--proxy>
+      <active>true</active>
+      <protocol>http</protocol>
+      <host>www-cache.reith.bbc.co.uk</host>
+      <port>80</port>
+      <nonProxyHosts>localhost,*.national.core.bbc.co.uk</nonProxyHosts>
+      <id>default</id>
+    </proxy>
+    <proxy>
+      <active>true</active>
+      <protocol>https</protocol>
+      <host>www-cache.reith.bbc.co.uk</host>
+      <port>80</port>
+      <nonProxyHosts>localhost,*.national.core.bbc.co.uk</nonProxyHosts>
+      <id>default</id>
+    </proxy-->
+  </proxies>
+  <profiles>
+    <profile>
+      <id>BBC</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <repositories>
+        <repository>
+          <id>internal-repository</id>
+          <url>https://dev.bbc.co.uk/artifactory/repo</url>
+          <snapshots>
+            <enabled>true</enabled>
+            <updatePolicy>daily</updatePolicy>
+          </snapshots>
+        </repository>
+        <repository>
+          <id>bbc-releases</id>
+          <url>https://dev.bbc.co.uk/maven2/releases</url>
+        </repository>
+        <repository>
+          <id>bbc-snapshots</id>
+          <url>https://dev.bbc.co.uk/maven2/snapshots</url>
+          <snapshots>
+            <enabled>true</enabled>
+            <updatePolicy>daily</updatePolicy>
+          </snapshots>
+        </repository>
+        <repository>
+          <id>bbc-third_party</id>
+          <url>https://dev.bbc.co.uk/maven2/third_party</url>
+        </repository>
+        <repository>
+        <id>UK</id>
+        <name>UK Central</name>
+        <url>http://uk.maven.org/maven2</url>
+      </repository>
+    </repositories>
+    <pluginRepositories>
+      <pluginRepository>
+        <id>bbc-plugin-releases</id>
+        <name>BBC Plugin releases</name>
+        <releases>
+          <enabled>true</enabled>
+          <updatePolicy>always</updatePolicy>
+          <checksumPolicy>warn</checksumPolicy>
+        </releases>
+        <snapshots>
+          <enabled>false</enabled>
+          <updatePolicy>never</updatePolicy>
+          <checksumPolicy>fail</checksumPolicy>
+        </snapshots>
+        <url>https://dev.bbc.co.uk/maven2/releases</url>
+        <layout>default</layout>
+      </pluginRepository>
+      <pluginRepository>
+        <id>bbc-plugin-snapshot</id>
+        <name>BBC Plugin snapshots</name>
+        <releases>
+          <enabled>false</enabled>
+          <updatePolicy>always</updatePolicy>
+          <checksumPolicy>warn</checksumPolicy>
+        </releases>
+        <snapshots>
+          <enabled>true</enabled>
+          <updatePolicy>never</updatePolicy>
+          <checksumPolicy>fail</checksumPolicy>
+        </snapshots>
+        <url>https://dev.bbc.co.uk/maven2/snapshots</url>
+        <layout>default</layout>
+      </pluginRepository>
+    </pluginRepositories>
+  </profile>
+</profiles>
+<mirrors>
+  <!--mirror>
+  <id>UK</id>
+  <name>UK Central</name>
+  <url>http://uk.maven.org/maven2</url>
+  <mirrorOf>central</mirrorOf>
+</mirror-->
+  </mirrors>
+</settings>

@@ -1,0 +1,2 @@
+Host github.com
+ProxyCommand nc -x "socks-gw.reith.bbc.co.uk:1085" -X 5 %h %p

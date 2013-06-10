@@ -1,0 +1,2 @@
+#!/bin/bash
+nc -x "socks-gw.reith.bbc.co.uk:1085" -X 5 $*
