@@ -86,7 +86,7 @@ source "/me/prj/dot/rc/git-completion.bash"
 #source "/Users/borgar01/prj/3rdparties/dev-bash-git-ps1/bash_git_ps1.sh"
 
 # PATH
-export PATH="/me/prj/dot/cmd:/opt/local/bin:/sw/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/bin:/me/prj/dot/vim/bin:$GROOVY_HOME/bin:$ROO_HOME/bin:$GRADLE_HOME/bin:/Applications/Racket v5.3.3/bin:$PATH"
+export PATH="/me/prj/dot/cmd:/sw/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/bin:/me/prj/dot/vim/bin:$GROOVY_HOME/bin:$ROO_HOME/bin:$GRADLE_HOME/bin:/Applications/Racket v5.3.3/bin:$PATH:/opt/local/bin"
 
 #export CLOJURE_EXT=~/Downloads/clojure-1.2.1:~/Downloads/clojure-contrib-1.2.0
 export CLOJURE_EXT=~/Downloads/clojure-1.3.0
@@ -108,6 +108,6 @@ chd() {
 source ~/.bashrc
 
 # MacPorts Installer addition on 2011-12-22_at_11:57:14: adding an appropriate PATH variable for use with MacPorts.
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+# export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 # Finished adapting your PATH environment variable for use with MacPorts.
 [[ -s "/Users/reborg/.rvm/scripts/rvm" ]] && source "/Users/reborg/.rvm/scripts/rvm"
