@@ -283,6 +283,9 @@ map <silent> ,tjava :!ctags -R --language-force=Java --sort=yes --exclude=.git -
 " Clojure ctags!
 map <silent> ,tclj :!ctags -R --langmap=Lisp:+.clj --sort=yes --exclude=.git --exclude=.svn --exclude=**/target *<CR>
 
+" open up json files as JavaScript to get syntax highlighting
+autocmd BufNewFile,BufRead *.json set ft=javascript
+
 " installing pathogen now I can:
 " cd ~/.vim/bundle
 " git clone git://github.com/tpope/vim-fugitive.git
