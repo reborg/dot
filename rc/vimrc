@@ -112,7 +112,7 @@ augroup weka
 augroup END
 
 " turn-on distraction free writing mode for txt
-au BufNewFile,BufRead *.{md,mdown,mkd,mkdn,markdown,mdwn} call DistractionFreeWriting()
+au BufNewFile,BufRead *.{mdown,mkd,mkdn,markdown,mdwn} call DistractionFreeWriting()
 map <F5> :setlocal spell! spelllang=en_gb<CR>
 map <F6> :setlocal nospell<CR>
 function! DistractionFreeWriting()
