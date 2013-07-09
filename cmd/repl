@@ -5,8 +5,7 @@
 #
 
 breakchars="(){}[],^%$#@\"\";:''|\\"
-CLOJURE_JAR="/Users/borgar01/prj/3rdparties/clojure/target/clojure-1.5.0-RC4.jar"
-CLOJURE_JAR=/me/prj/clojure/target/clojure-1.5.0-master-SNAPSHOT.jar
+CLOJURE_JAR="/me/prj/3rdparties/clojure/target/clojure-1.6.0-master-SNAPSHOT.jar"
 
 if [ $# -eq 0 ]; then 
 exec rlwrap --remember -c -b "$breakchars" \
@@ -16,7 +15,7 @@ exec rlwrap --remember -c -b "$breakchars" \
        exec java -cp "$CLOJURE_JAR" clojure.main $1 -- "$@"
        fi
 
-#
+
 # Use the following to generate the completion file:
 # (def completions (keys (ns-publics (find-ns 'clojure.core))))
 # (with-open [f (java.io.BufferedWriter. (java.io.FileWriter. (str (System/getenv "HOME") "/.clj_completions")))]
