@@ -17,6 +17,7 @@ alias finder='open -a finder .'
 alias tailf='tail -f'
 alias yy='pwd | tr -d "\n" | pbcopy' # yield current dir to clipboard
 alias lm='lein midje'
+alias lr='lein repl'
 
 # SVN
 alias sign='export SVN_EDITOR=vi; svn propedit svn:ignore .'
