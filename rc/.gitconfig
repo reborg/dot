@@ -1,0 +1,14 @@
+[user]
+	name = reborg
+	email = reborg@reborg.net
+[push]
+	default = matching
+[color]
+	ui = true
+[core]
+	excludesfile = ~/.globalgitignore
+	editor = /usr/bin/vim
+[alias]
+  co = checkout
+  st = status
+  br = branch

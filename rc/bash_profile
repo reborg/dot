@@ -16,8 +16,15 @@ alias s='cd ..'
 alias finder='open -a finder .'
 alias tailf='tail -f'
 alias yy='pwd | tr -d "\n" | pbcopy' # yield current dir to clipboard
+
+# LEININGEN
 alias lm='lein midje'
 alias lr='lein repl'
+alias lc='lein cucumber'
+
+# RAILS
+alias rs='rails server'
+alias rc='rails console'
 
 # TMUX
 alias tls='tmux list-sessions'

@@ -1,5 +1,7 @@
 tags
 target
+.tmux
+.lein-repl-history
 
 # Logs and databases #
 ######################

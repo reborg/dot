@@ -111,6 +111,11 @@ augroup weka
   au! BufRead,BufNewFile *.arff       setfiletype arff
 augroup END
 
+" .edn to clojure
+augroup clojure
+  au! BufRead,BufNewFile *.edn       setfiletype clojure
+augroup END
+
 " turn-on distraction free writing mode for txt
 au BufNewFile,BufRead *.{mdown,mkd,mkdn,markdown,mdwn} call DistractionFreeWriting()
 map <F5> :setlocal spell! spelllang=en_gb<CR>
@@ -212,10 +217,13 @@ let g:speckyRunSpecCmd = "spec -fs"
 let g:speckyRunRdocCmd = "fri -L -f plain"
 let g:speckyWindowType = 2
 
+" DEVELOPMENT STUFF
 " Run single test mapping
 " http://www.vim.org/scripts/script.php?script_id=2869
-nmap <silent> <leader>t <Plug>ExecuteRubyTest
-set makeprg=spec
+" nmap <silent> <leader>t <Plug>ExecuteRubyTest
+" set makeprg=spec
+nmap <leader>E :Eval<cr>
+nmap <leader>e :%Eval<cr>
 
 " toggle paste without indentation for
 " copy pasting from other application
@@ -240,7 +248,7 @@ nmap <leader>t :FufFile **/<CR>
 nmap <leader>b :FufBuffer<CR>
 
 let g:fuf_dir_exclude = '\v(^|[/\\])(\.(hg|git|bzr|svn)|CVS)($|[/\\])'
-let g:fuf_file_exclude = '\v\~$|\.(o|exe|dll|bak|orig|swp|wav)$|(^|[/\\])(\.(hg|git|bzr|svn)|CVS|db|target|Vendors|logs|classes)($|[/\\])'
+let g:fuf_file_exclude = '\v\~$|\.(o|exe|dll|bak|orig|swp|wav)$|(^|[/\\])(\.(hg|git|bzr|svn)|CVS|db|target|Vendors|logs|classes|select2)($|[/\\])'
 
 " fix fuzzyfinder color scheme for buffer list
 hi Pmenu guifg=lightgray guibg=darkgrey gui=NONE ctermfg=yellow ctermbg=black cterm=NONE

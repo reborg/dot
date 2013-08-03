@@ -1,2 +1,3 @@
 **/bashrc
 rc/hosts
+!.tmux
