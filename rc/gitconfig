@@ -38,3 +38,5 @@ untracked = red
 branch = yellow
 [core]
 	excludesfile = ~/.globalgitignore
+[push]
+	default = simple

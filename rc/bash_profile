@@ -69,19 +69,20 @@ alias gi='git-info.sh'
 
 # Aliased personal projects
 alias prj='cd /me/prj'
-alias pomodori='cd /me/prj/pomodori'
-alias macaruby='cd /me/prj/macaruby'
-alias pomohub='cd /me/prj/pomohub'
+alias pomodori='cd /me/prj/my/pomodori'
+alias macaruby='cd /me/prj/my/macaruby'
+alias pomohub='cd /me/prj/my/pomohub'
 alias tracking='cd /me/Dropbox/tracking'
 alias dot='cd /me/prj/dot'
 alias spikes='cd /me/prj/spikes'
 alias notes='cd /me/Dropbox/notes'
 alias documents='cd /me/Dropbox/documents'
-alias bookshelf='cd /me/bookshelf'
+alias bookshelf='cd /me/Dropbox/bookshelf'
 alias cheat='cd /me/Dropbox/notes/cheatsheets'
 alias talks='cd /me/prj/talks'
 alias downloads='cd ~/Downloads'
 alias crash='cd ~/Library/Logs/DiagnosticReports'
+alias 3rdparties='cd /me/prj/3rdparties'
 
 #export DYLD_LIBRARY_PATH=/opt/local/lib:/usr/local/spidermonkey/lib:$DYLD_LIBRARY_PATH
 
