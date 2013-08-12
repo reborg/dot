@@ -14,6 +14,6 @@ tmux send-keys -t$PROJECT_NAME:1 "cd $WORKING_DIR && vim" C-m
 tmux split-window "cd $WORKING_DIR && lein repl"
 # tmux send-keys "(use 'midje.repl)" "C-m"
 # tmux send-keys "(autotest)" "C-m"
-# tmux resize-pane -D 10
+tmux resize-pane -D 10
  
 tmux attach-session -d -t$PROJECT_NAME
