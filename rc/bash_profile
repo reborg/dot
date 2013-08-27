@@ -73,7 +73,7 @@ alias pomodori='cd /me/prj/my/pomodori'
 alias macaruby='cd /me/prj/my/macaruby'
 alias pomohub='cd /me/prj/my/pomohub'
 alias tracking='cd /me/Dropbox/tracking'
-alias dot='cd /me/prj/dot'
+alias dot='cd /me/prj/my/dot'
 alias spikes='cd /me/prj/spikes'
 alias notes='cd /me/Dropbox/notes'
 alias documents='cd /me/Dropbox/documents'
@@ -101,11 +101,11 @@ export GRADLE_HOME=~/Downloads/gradle-1.0-milestone-9
 
 ### PROMPT STUFF
 export PROMPT_COMMAND='PS1="\[\033[0;33m\][\!]\`if [[ \$? = "0" ]]; then echo "\\[\\033[32m\\]"; else echo "\\[\\033[31m\\]"; fi\`[\u.\h: \`if [[ `pwd|wc -c|tr -d " "` > 18 ]]; then echo "\\W"; else echo "\\w"; fi\`]\$\[\033[0m\] "; echo -ne "\033]0;`hostname -s`:`pwd`\007"'
-source "/me/prj/dot/rc/git-completion.bash"
+source "/me/prj/my/dot/rc/git-completion.bash"
 #source "/Users/borgar01/prj/3rdparties/dev-bash-git-ps1/bash_git_ps1.sh"
 
 # PATH
-export PATH="/me/prj/dot/cmd:/sw/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/bin:/me/prj/dot/vim/bin:$GROOVY_HOME/bin:$ROO_HOME/bin:$GRADLE_HOME/bin:/Applications/Racket v5.3.3/bin:$PATH:/opt/local/bin"
+export PATH="/me/prj/my/dot/cmd:/sw/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/bin:/me/prj/my/dot/vim/bin:$GROOVY_HOME/bin:$ROO_HOME/bin:$GRADLE_HOME/bin:/Applications/Racket v5.3.3/bin:$PATH:/opt/local/bin"
 
 #export CLOJURE_EXT=~/Downloads/clojure-1.2.1:~/Downloads/clojure-contrib-1.2.0
 export CLOJURE_EXT=~/Downloads/clojure-1.3.0
