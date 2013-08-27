@@ -94,7 +94,7 @@ alias 3rdparties='cd /me/prj/3rdparties'
 #source ~/Documents/cmd/ruby_switcher.sh
 
 ### JAVA
-export JAVA_HOME=/Library/Java/Home
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_25.jdk/Contents/Home
 export GROOVY_HOME=~/Downloads/groovy-1.6.9 
 export ROO_HOME=~/Downloads/spring-roo-1.1.5
 export GRADLE_HOME=~/Downloads/gradle-1.0-milestone-9
