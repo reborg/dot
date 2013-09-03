@@ -16,6 +16,7 @@ alias s='cd ..'
 alias finder='open -a finder .'
 alias tailf='tail -f'
 alias yy='pwd | tr -d "\n" | pbcopy' # yield current dir to clipboard
+alias tomcat='cd /usr/local/Cellar/tomcat/7.0.42/libexec'
 
 # LEININGEN
 alias lm='lein midje'
