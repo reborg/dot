@@ -294,6 +294,9 @@ map <silent> ,tclj :!ctags -R --langmap=Lisp:+.clj --sort=yes --exclude=.git --e
 " open up json files as JavaScript to get syntax highlighting
 autocmd BufNewFile,BufRead *.json set ft=javascript
 
+" open up asciidoc files as asciidoc syntax
+autocmd BufNewFile,BufRead *.asciidoc set ft=asciidoc
+
 " installing pathogen now I can:
 " cd ~/.vim/bundle
 " git clone git://github.com/tpope/vim-fugitive.git
