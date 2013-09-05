@@ -91,7 +91,7 @@ endif
 " ##################################################################  
 " ##################################################################  
 
-" Set the color scheme for plain vi
+" Solarized
 syntax on
 set background=dark
 set t_Co=256
@@ -99,6 +99,11 @@ let g:solarized_termcolors=256
 let g:solarized_contrast = "high"
 let g:solarized_visibility= "normal"
 colorscheme solarized
+
+" Tomorrow https://github.com/chriskempson/tomorrow-theme
+" syntax on
+" set background=dark
+" colorscheme tomorrow
 
 " Associate pom files to taskpaper plugin
 augroup taskpaper
