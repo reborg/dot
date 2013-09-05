@@ -31,7 +31,7 @@ alias rc='rails console'
 alias tls='tmux list-sessions'
 tns(){ tmux new-session -s $1; }
 alias tns='tmux new-session -s'
-tas(){ tmux attach-session -t $1; }
+tos(){ tmux attach-session -t $1; }
 alias tas='tmux attach-session -t'
 tks(){ tmux kill-session -t $1; }
 alias tks='tmux kill-session -t'
