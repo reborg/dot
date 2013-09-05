@@ -130,4 +130,4 @@ source ~/.bashrc
 # MacPorts Installer addition on 2011-12-22_at_11:57:14: adding an appropriate PATH variable for use with MacPorts.
 # export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 # Finished adapting your PATH environment variable for use with MacPorts.
-[[ -s "/Users/reborg/.rvm/scripts/rvm" ]] && source "/Users/reborg/.rvm/scripts/rvm"
+[[ -s "/Users/renzoborgatti/.rvm/scripts/rvm" ]] && source "/Users/renzoborgatti/.rvm/scripts/rvm"
