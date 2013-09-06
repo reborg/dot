@@ -100,11 +100,6 @@ let g:solarized_contrast = "high"
 let g:solarized_visibility= "normal"
 colorscheme solarized
 
-" Tomorrow https://github.com/chriskempson/tomorrow-theme
-" syntax on
-" set background=dark
-" colorscheme tomorrow
-
 " Associate pom files to taskpaper plugin
 augroup taskpaper
   au! BufRead,BufNewFile *.pom        setfiletype taskpaper
@@ -251,36 +246,19 @@ set ignorecase
 " Fuzzy File Finder
 nmap <leader>t :FufFile **/<CR>
 nmap <leader>b :FufBuffer<CR>
-
 let g:fuf_dir_exclude = '\v(^|[/\\])(\.(hg|git|bzr|svn)|CVS)($|[/\\])'
 let g:fuf_file_exclude = '\v\~$|\.(o|exe|dll|bak|orig|swp|wav)$|(^|[/\\])(\.(hg|git|bzr|svn)|CVS|db|target|Vendors|logs|classes|select2)($|[/\\])'
-
 " fix fuzzyfinder color scheme for buffer list
 hi Pmenu guifg=lightgray guibg=darkgrey gui=NONE ctermfg=yellow ctermbg=black cterm=NONE
-
-" Tell easytags to create the tag file on
-" the vim root
-":let g:easytags_file = '~/.vim/tags'
-
-" Setup nailgun server for vimclojure
-let vimclojure#FuzzyIndent=1
-let vimclojure#HighlightBuiltins=1
-let vimclojure#HighlightContrib=1
-let vimclojure#DynamicHighlighting=1
-let vimclojure#WantNailgun = 1
-let vimclojure#NailgunClient = "/me/prj/vimclojure/client/ng"
-let vimclojure#ParenRainbow  = 1
-let vimclojure#SplitPos = "right"
-"let clj_want_gorilla = 1
 
 " format xml file with xmllint
 map ,xml :%!xmllint --format --encode UTF-8 -<CR>
 
 " project specific vimrc load on matching folders
-autocmd BufRead,BufNewFile ~/prj/bbc/hydra/* so ~/prj/bbc/mps3/.vimrc
-autocmd BufRead,BufNewFile ~/prj/bbc/mps3/* so ~/prj/bbc/mps3/.vimrc
-autocmd BufRead,BufNewFile ~/prj/bbc/pips-client/* so ~/prj/bbc/pips-client/.vimrc
-autocmd BufRead,BufNewFile ~/prj/bbc/libraries/directory-mounter/trunk/* so ~/prj/bbc/libraries/directory-mounter/trunk/.vimrc
+" autocmd BufRead,BufNewFile ~/prj/bbc/hydra/* so ~/prj/bbc/mps3/.vimrc
+" autocmd BufRead,BufNewFile ~/prj/bbc/mps3/* so ~/prj/bbc/mps3/.vimrc
+" autocmd BufRead,BufNewFile ~/prj/bbc/pips-client/* so ~/prj/bbc/pips-client/.vimrc
+" autocmd BufRead,BufNewFile ~/prj/bbc/libraries/directory-mounter/trunk/* so ~/prj/bbc/libraries/directory-mounter/trunk/.vimrc
 
 " Additional custom specification for ctags regexp-es
 " http://stackoverflow.com/questions/2968522/alternatives-to-ctags-cscope-with-objective-c/5790832#5790832
