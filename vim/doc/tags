@@ -3201,7 +3201,6 @@ A	insert.txt	/*A*
 ACL	editing.txt	/*ACL*
 ATTENTION	usr_11.txt	/*ATTENTION*
 Abbreviations	map.txt	/*Abbreviations*
-AddToLispWords	clojure.txt	/*AddToLispWords*
 Aleph	options.txt	/*Aleph*
 Amiga	os_amiga.txt	/*Amiga*
 Arabic	arabic.txt	/*Arabic*
@@ -3388,8 +3387,6 @@ Dictionaries	eval.txt	/*Dictionaries*
 Dictionary	eval.txt	/*Dictionary*
 Dictionary-function	eval.txt	/*Dictionary-function*
 Digraphs	digraph.txt	/*Digraphs*
-DocLookupInteractive	clojure.txt	/*DocLookupInteractive*
-DocLookupWord	clojure.txt	/*DocLookupWord*
 E	motion.txt	/*E*
 E10	message.txt	/*E10*
 E100	diff.txt	/*E100*
@@ -4187,11 +4184,6 @@ EXINIT	starting.txt	/*EXINIT*
 Elvis	intro.txt	/*Elvis*
 EncodingChanged	autocmd.txt	/*EncodingChanged*
 Eterm	syntax.txt	/*Eterm*
-EvalBlock	clojure.txt	/*EvalBlock*
-EvalFile	clojure.txt	/*EvalFile*
-EvalLine	clojure.txt	/*EvalLine*
-EvalParagraph	clojure.txt	/*EvalParagraph*
-EvalToplevel	clojure.txt	/*EvalToplevel*
 Ex	intro.txt	/*Ex*
 Ex-mode	intro.txt	/*Ex-mode*
 ExtractSnips()	snipMate.txt	/*ExtractSnips()*
@@ -4219,7 +4211,6 @@ FilterReadPost	autocmd.txt	/*FilterReadPost*
 FilterReadPre	autocmd.txt	/*FilterReadPre*
 FilterWritePost	autocmd.txt	/*FilterWritePost*
 FilterWritePre	autocmd.txt	/*FilterWritePre*
-FindDoc	clojure.txt	/*FindDoc*
 Float	eval.txt	/*Float*
 FocusGained	autocmd.txt	/*FocusGained*
 FocusLost	autocmd.txt	/*FocusLost*
@@ -4238,8 +4229,6 @@ GetLatestVimScripts	pi_getscript.txt	/*GetLatestVimScripts*
 GetLatestVimScripts-copyright	pi_getscript.txt	/*GetLatestVimScripts-copyright*
 GetLatestVimScripts_dat	pi_getscript.txt	/*GetLatestVimScripts_dat*
 Gnome	gui_x11.txt	/*Gnome*
-GotoSourceInteractive	clojure.txt	/*GotoSourceInteractive*
-GotoSourceWord	clojure.txt	/*GotoSourceWord*
 H	motion.txt	/*H*
 I	insert.txt	/*I*
 ICCF	uganda.txt	/*ICCF*
@@ -4252,8 +4241,6 @@ InsertEnter	autocmd.txt	/*InsertEnter*
 InsertLeave	autocmd.txt	/*InsertLeave*
 J	change.txt	/*J*
 Japanese	mbyte.txt	/*Japanese*
-JavadocLookupInteractive	clojure.txt	/*JavadocLookupInteractive*
-JavadocLookupWord	clojure.txt	/*JavadocLookupWord*
 K	various.txt	/*K*
 KDE	gui_x11.txt	/*KDE*
 KVim	gui_x11.txt	/*KVim*
@@ -4274,12 +4261,8 @@ Mac	os_mac.txt	/*Mac*
 Mac-format	editing.txt	/*Mac-format*
 Mac-format-write	editing.txt	/*Mac-format-write*
 Macintosh	os_mac.txt	/*Macintosh*
-MacroExpand	clojure.txt	/*MacroExpand*
-MacroExpand1	clojure.txt	/*MacroExpand1*
 Mark	motion.txt	/*Mark*
 MenuPopup	autocmd.txt	/*MenuPopup*
-MetaLookupInteractive	clojure.txt	/*MetaLookupInteractive*
-MetaLookupWord	clojure.txt	/*MetaLookupWord*
 MiNT	os_mint.txt	/*MiNT*
 Moolenaar	intro.txt	/*Moolenaar*
 MorphOS	os_amiga.txt	/*MorphOS*
@@ -4377,12 +4360,9 @@ RISCOS	os_risc.txt	/*RISCOS*
 RemoteReply	autocmd.txt	/*RemoteReply*
 Replace	insert.txt	/*Replace*
 Replace-mode	insert.txt	/*Replace-mode*
-RequireFile	clojure.txt	/*RequireFile*
-RequireFileAll	clojure.txt	/*RequireFileAll*
 ResetSnippets()	snipMate.txt	/*ResetSnippets()*
 Root	mbyte.txt	/*Root*
 Ruby	if_ruby.txt	/*Ruby*
-RunTests	clojure.txt	/*RunTests*
 Russian	russian.txt	/*Russian*
 S	change.txt	/*S*
 SHELL	starting.txt	/*SHELL*
@@ -4396,12 +4376,8 @@ SessionLoadPost	autocmd.txt	/*SessionLoadPost*
 ShellCmdPost	autocmd.txt	/*ShellCmdPost*
 ShellFilterPost	autocmd.txt	/*ShellFilterPost*
 SourceCmd	autocmd.txt	/*SourceCmd*
-SourceLookupInteractive	clojure.txt	/*SourceLookupInteractive*
-SourceLookupWord	clojure.txt	/*SourceLookupWord*
 SourcePre	autocmd.txt	/*SourcePre*
 SpellFileMissing	autocmd.txt	/*SpellFileMissing*
-StartLocalRepl	clojure.txt	/*StartLocalRepl*
-StartRepl	clojure.txt	/*StartRepl*
 StdinReadPost	autocmd.txt	/*StdinReadPost*
 StdinReadPre	autocmd.txt	/*StdinReadPre*
 SwapExists	autocmd.txt	/*SwapExists*
@@ -4417,7 +4393,6 @@ TabLeave	autocmd.txt	/*TabLeave*
 Tcl	if_tcl.txt	/*Tcl*
 TermChanged	autocmd.txt	/*TermChanged*
 TermResponse	autocmd.txt	/*TermResponse*
-ToggleParenRainbow	clojure.txt	/*ToggleParenRainbow*
 Transact-SQL	ft_sql.txt	/*Transact-SQL*
 U	undo.txt	/*U*
 UTF-8	mbyte.txt	/*UTF-8*
@@ -4551,7 +4526,6 @@ ZZ	editing.txt	/*ZZ*
 ]star	motion.txt	/*]star*
 ]z	fold.txt	/*]z*
 ]}	motion.txt	/*]}*
-^	clojure.txt	/*^*
 ^	motion.txt	/*^*
 _	motion.txt	/*_*
 _exrc	starting.txt	/*_exrc*
@@ -4702,7 +4676,6 @@ autocommand-pattern	autocmd.txt	/*autocommand-pattern*
 autoload	eval.txt	/*autoload*
 autoload-functions	eval.txt	/*autoload-functions*
 avoid-hit-enter	version5.txt	/*avoid-hit-enter*
-aw	clojure.txt	/*aw*
 aw	motion.txt	/*aw*
 a{	motion.txt	/*a{*
 a}	motion.txt	/*a}*
@@ -4905,8 +4878,6 @@ clearmatches()	eval.txt	/*clearmatches()*
 client-server	remote.txt	/*client-server*
 clientserver	remote.txt	/*clientserver*
 clipboard	gui.txt	/*clipboard*
-clj-nailgun-server	clojure.txt	/*clj-nailgun-server*
-clojure.vim	clojure.txt	/*clojure.vim*
 cmdarg-variable	eval.txt	/*cmdarg-variable*
 cmdbang-variable	eval.txt	/*cmdbang-variable*
 cmdline-arguments	vi_diff.txt	/*cmdline-arguments*
@@ -5264,7 +5235,6 @@ dtd2vim	insert.txt	/*dtd2vim*
 dying-variable	eval.txt	/*dying-variable*
 e	motion.txt	/*e*
 easy	starting.txt	/*easy*
-eb	clojure.txt	/*eb*
 edit-a-file	editing.txt	/*edit-a-file*
 edit-binary	editing.txt	/*edit-binary*
 edit-dialogs	editing.txt	/*edit-dialogs*
@@ -5272,12 +5242,10 @@ edit-files	editing.txt	/*edit-files*
 edit-intro	editing.txt	/*edit-intro*
 edit-no-break	usr_25.txt	/*edit-no-break*
 editing.txt	editing.txt	/*editing.txt*
-ef	clojure.txt	/*ef*
 efm-%>	quickfix.txt	/*efm-%>*
 efm-entries	quickfix.txt	/*efm-entries*
 efm-ignore	quickfix.txt	/*efm-ignore*
 eiffel.vim	syntax.txt	/*eiffel.vim*
-el	clojure.txt	/*el*
 emacs-keys	tips.txt	/*emacs-keys*
 emacs-tags	tagsrch.txt	/*emacs-tags*
 emacs_tags	tagsrch.txt	/*emacs_tags*
@@ -5289,7 +5257,6 @@ encryption	editing.txt	/*encryption*
 end	intro.txt	/*end*
 end-of-file	pattern.txt	/*end-of-file*
 enlightened-terminal	syntax.txt	/*enlightened-terminal*
-ep	clojure.txt	/*ep*
 erlang.vim	syntax.txt	/*erlang.vim*
 errmsg-variable	eval.txt	/*errmsg-variable*
 error-file-format	quickfix.txt	/*error-file-format*
@@ -5309,7 +5276,6 @@ errors	message.txt	/*errors*
 escape	intro.txt	/*escape*
 escape()	eval.txt	/*escape()*
 escape-bar	version4.txt	/*escape-bar*
-et	clojure.txt	/*et*
 eval	eval.txt	/*eval*
 eval()	eval.txt	/*eval()*
 eval-examples	eval.txt	/*eval-examples*
@@ -5423,7 +5389,6 @@ farsi.txt	farsi.txt	/*farsi.txt*
 fasm.vim	syntax.txt	/*fasm.vim*
 fcs_choice-variable	eval.txt	/*fcs_choice-variable*
 fcs_reason-variable	eval.txt	/*fcs_reason-variable*
-fd	clojure.txt	/*fd*
 feature-list	eval.txt	/*feature-list*
 feedkeys()	eval.txt	/*feedkeys()*
 fetch	pi_netrw.txt	/*fetch*
@@ -5546,8 +5511,6 @@ ft-ch-syntax	syntax.txt	/*ft-ch-syntax*
 ft-changelog-plugin	filetype.txt	/*ft-changelog-plugin*
 ft-changelog-syntax	syntax.txt	/*ft-changelog-syntax*
 ft-chill-syntax	syntax.txt	/*ft-chill-syntax*
-ft-clj-indent	clojure.txt	/*ft-clj-indent*
-ft-clj-syntax	clojure.txt	/*ft-clj-syntax*
 ft-cobol-syntax	syntax.txt	/*ft-cobol-syntax*
 ft-coldfusion-syntax	syntax.txt	/*ft-coldfusion-syntax*
 ft-csh-syntax	syntax.txt	/*ft-csh-syntax*
@@ -6042,7 +6005,6 @@ gex	starting.txt	/*gex*
 gf	editing.txt	/*gf*
 gg	motion.txt	/*gg*
 gh	visual.txt	/*gh*
-gi	clojure.txt	/*gi*
 gi	insert.txt	/*gi*
 gj	motion.txt	/*gj*
 gk	motion.txt	/*gk*
@@ -6156,7 +6118,6 @@ gvim	starting.txt	/*gvim*
 gvimdiff	diff.txt	/*gvimdiff*
 gvimrc	gui.txt	/*gvimrc*
 gw	change.txt	/*gw*
-gw	clojure.txt	/*gw*
 gwgw	change.txt	/*gwgw*
 gww	change.txt	/*gww*
 gzip	pi_gzip.txt	/*gzip*
@@ -6495,14 +6456,12 @@ j	motion.txt	/*j*
 java-cinoptions	indent.txt	/*java-cinoptions*
 java-indenting	indent.txt	/*java-indenting*
 java.vim	syntax.txt	/*java.vim*
-ji	clojure.txt	/*ji*
 join()	eval.txt	/*join()*
 jsbterm-mouse	options.txt	/*jsbterm-mouse*
 jtags	tagsrch.txt	/*jtags*
 jump-motions	motion.txt	/*jump-motions*
 jumplist	motion.txt	/*jumplist*
 jumpto-diffs	diff.txt	/*jumpto-diffs*
-jw	clojure.txt	/*jw*
 k	motion.txt	/*k*
 kcc	uganda.txt	/*kcc*
 kde	gui_x11.txt	/*kde*
@@ -6555,7 +6514,6 @@ less	various.txt	/*less*
 letter	print.txt	/*letter*
 lex.vim	syntax.txt	/*lex.vim*
 lhaskell.vim	syntax.txt	/*lhaskell.vim*
-li	clojure.txt	/*li*
 libcall()	eval.txt	/*libcall()*
 libcallnr()	eval.txt	/*libcallnr()*
 license	uganda.txt	/*license*
@@ -6596,10 +6554,8 @@ long-lines	version5.txt	/*long-lines*
 lowercase	change.txt	/*lowercase*
 lpc.vim	syntax.txt	/*lpc.vim*
 lua.vim	syntax.txt	/*lua.vim*
-lw	clojure.txt	/*lw*
 m	motion.txt	/*m*
 m'	motion.txt	/*m'*
-m1	clojure.txt	/*m1*
 m[	motion.txt	/*m[*
 m]	motion.txt	/*m]*
 m`	motion.txt	/*m`*
@@ -6688,7 +6644,6 @@ mbyte-options	mbyte.txt	/*mbyte-options*
 mbyte-terminal	mbyte.txt	/*mbyte-terminal*
 mbyte-utf8	mbyte.txt	/*mbyte-utf8*
 mbyte.txt	mbyte.txt	/*mbyte.txt*
-me	clojure.txt	/*me*
 menu-changes-5.4	version5.txt	/*menu-changes-5.4*
 menu-examples	gui.txt	/*menu-examples*
 menu-priority	gui.txt	/*menu-priority*
@@ -6700,7 +6655,6 @@ message-history	message.txt	/*message-history*
 message.txt	message.txt	/*message.txt*
 messages	message.txt	/*messages*
 meta	intro.txt	/*meta*
-mi	clojure.txt	/*mi*
 min()	eval.txt	/*min()*
 minimal-features	os_msdos.txt	/*minimal-features*
 missing-options	vi_diff.txt	/*missing-options*
@@ -6758,7 +6712,6 @@ multilang	mlang.txt	/*multilang*
 multilang-menus	mlang.txt	/*multilang-menus*
 multilang-messages	mlang.txt	/*multilang-messages*
 multilang-scripts	mlang.txt	/*multilang-scripts*
-mw	clojure.txt	/*mw*
 myfiletypefile	syntax.txt	/*myfiletypefile*
 myscriptsfile	syntax.txt	/*myscriptsfile*
 mysql	ft_sql.txt	/*mysql*
@@ -7292,7 +7245,6 @@ quotes.txt	quotes.txt	/*quotes.txt*
 quotestar	gui.txt	/*quotestar*
 quote~	change.txt	/*quote~*
 r	change.txt	/*r*
-rF	clojure.txt	/*rF*
 ragtag	ragtag.txt	/*ragtag*
 ragtag-CTRL-V_%	ragtag.txt	/*ragtag-CTRL-V_%*
 ragtag-CTRL-V_&	ragtag.txt	/*ragtag-CTRL-V_&*
@@ -7505,7 +7457,6 @@ retab-example	change.txt	/*retab-example*
 rethrow	eval.txt	/*rethrow*
 reverse()	eval.txt	/*reverse()*
 rexx.vim	syntax.txt	/*rexx.vim*
-rf	clojure.txt	/*rf*
 rgb.txt	gui_w32.txt	/*rgb.txt*
 rgview	starting.txt	/*rgview*
 rgvim	starting.txt	/*rgvim*
@@ -7527,7 +7478,6 @@ riscos-temp-files	os_risc.txt	/*riscos-temp-files*
 rot13	change.txt	/*rot13*
 round()	eval.txt	/*round()*
 rsync	pi_netrw.txt	/*rsync*
-rt	clojure.txt	/*rt*
 ruby	if_ruby.txt	/*ruby*
 ruby-buffer	if_ruby.txt	/*ruby-buffer*
 ruby-command	if_ruby.txt	/*ruby-command*
@@ -7572,7 +7522,6 @@ s/\~	change.txt	/*s\/\\~*
 s:netrw_passwd	pi_netrw.txt	/*s:netrw_passwd*
 s:var	eval.txt	/*s:var*
 s<CR>	change.txt	/*s<CR>*
-sR	clojure.txt	/*sR*
 sandbox	eval.txt	/*sandbox*
 sandbox-option	eval.txt	/*sandbox-option*
 save-file	editing.txt	/*save-file*
@@ -7648,7 +7597,6 @@ shift	intro.txt	/*shift*
 shift-left-right	change.txt	/*shift-left-right*
 short-name-changed	version4.txt	/*short-name-changed*
 showing-menus	gui.txt	/*showing-menus*
-si	clojure.txt	/*si*
 sign-commands	sign.txt	/*sign-commands*
 sign-intro	sign.txt	/*sign-intro*
 sign-support	sign.txt	/*sign-support*
@@ -7829,7 +7777,6 @@ sqlj	ft_sql.txt	/*sqlj*
 sqlserver	ft_sql.txt	/*sqlserver*
 sqlsettype	ft_sql.txt	/*sqlsettype*
 sqrt()	eval.txt	/*sqrt()*
-sr	clojure.txt	/*sr*
 sscanf	eval.txt	/*sscanf*
 standard-plugin	usr_05.txt	/*standard-plugin*
 standard-plugin-list	help.txt	/*standard-plugin-list*
@@ -7889,7 +7836,6 @@ surround-replacements	surround.txt	/*surround-replacements*
 surround-targets	surround.txt	/*surround-targets*
 surround.txt	surround.txt	/*surround.txt*
 suspend	starting.txt	/*suspend*
-sw	clojure.txt	/*sw*
 swap-file	recover.txt	/*swap-file*
 swapchoice-variable	eval.txt	/*swapchoice-variable*
 swapcommand-variable	eval.txt	/*swapcommand-variable*
@@ -8219,7 +8165,6 @@ toggle-revins	version4.txt	/*toggle-revins*
 tolower()	eval.txt	/*tolower()*
 toolbar-icon	gui.txt	/*toolbar-icon*
 toupper()	eval.txt	/*toupper()*
-tr	clojure.txt	/*tr*
 tr()	eval.txt	/*tr()*
 trojan-horse	starting.txt	/*trojan-horse*
 trunc()	eval.txt	/*trunc()*
@@ -8522,7 +8467,6 @@ vimball-extract	pi_vimball.txt	/*vimball-extract*
 vimball-history	pi_vimball.txt	/*vimball-history*
 vimball-intro	pi_vimball.txt	/*vimball-intro*
 vimball-manual	pi_vimball.txt	/*vimball-manual*
-vimclojure.txt	clojure.txt	/*vimclojure.txt*
 vimdev	intro.txt	/*vimdev*
 vimdiff	diff.txt	/*vimdiff*
 vimfiles	options.txt	/*vimfiles*

@@ -100,6 +100,10 @@ let g:solarized_contrast = "high"
 let g:solarized_visibility= "normal"
 colorscheme solarized
 
+" Paredit
+" let g:paredit_mode = 0                          " disable the beast
+" au FileType arc call PareditInitBuffer()        " add another file type paredit control
+
 " Associate pom files to taskpaper plugin
 augroup taskpaper
   au! BufRead,BufNewFile *.pom        setfiletype taskpaper
