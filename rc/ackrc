@@ -10,6 +10,7 @@
 --ignore-dir=tmp
 --ignore-dir=doc
 --ignore-dir=coverage
+--ignore-dir=target
 --sort-files
 --color
 --follow

@@ -1,2 +1,2 @@
 #! /bin/sh
-perl ~/Documents/cmd/Markdown.pl --html4tags $1
+/usr/local/bin/markdown $1 > /tmp/temp.html; open -a safari /tmp/temp.html
