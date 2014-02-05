@@ -5,6 +5,9 @@ test -r /sw/bin/init.sh && . /sw/bin/init.sh
 #export LSCOLORS=Gxfxcxdxbxegedabagacad
 #export SVN_EDITOR=vi
 
+# longer bash history please
+HISTFILESIZE=2500 
+
 # useful alias
 alias p='cd -'
 alias rm='rm -i'
@@ -17,11 +20,14 @@ alias finder='open -a finder .'
 alias tailf='tail -f'
 alias yy='pwd | tr -d "\n" | pbcopy' # yield current dir to clipboard
 alias tomcat='cd /usr/local/Cellar/tomcat/7.0.42/libexec'
+alias top='top -o cpu -O +rsize -s 5 -n 20'
 
 # LEININGEN
 alias lm='lein midje'
 alias lr='lein repl'
 alias lc='lein cucumber'
+la(){ lein cljsbuild auto $1; }
+alias la='lein cljsbuild auto'
 
 # RAILS
 alias rs='rails server'
@@ -32,8 +38,10 @@ alias tls='tmux list-sessions'
 tns(){ tmux new-session -s $1; }
 alias tns='tmux new-session -s'
 tos(){ tmux attach-session -t $1; }
+alias tcs='tns'
 alias tas='tmux attach-session -t'
 tks(){ tmux kill-session -t $1; }
+alias tos='tas'
 alias tks='tmux kill-session -t'
 
 # SVN
@@ -106,11 +114,7 @@ source "/me/prj/my/dot/rc/git-completion.bash"
 #source "/Users/borgar01/prj/3rdparties/dev-bash-git-ps1/bash_git_ps1.sh"
 
 # PATH
-export PATH="/me/prj/my/dot/cmd:/sw/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/bin:/me/prj/my/dot/vim/bin:$GROOVY_HOME/bin:$ROO_HOME/bin:$GRADLE_HOME/bin:/Applications/Racket v5.3.3/bin:$PATH:/opt/local/bin:$HOME/.rvm/bin:$HOME/Downloads/pig-0.11.1/bin"
-
-#export CLOJURE_EXT=~/Downloads/clojure-1.2.1:~/Downloads/clojure-contrib-1.2.0
-export CLOJURE_EXT=~/Downloads/clojure-1.3.0
-
+export PATH="/me/prj/my/dot/cmd:/sw/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/bin:/me/prj/my/dot/vim/bin:$GROOVY_HOME/bin:$ROO_HOME/bin:$GRADLE_HOME/bin:/Applications/Racket v5.3.6/bin:$PATH:/opt/local/bin:$HOME/.rvm/bin:$HOME/Downloads/pig-0.11.1/bin"
 
 # Change to a directory given a full or partial name
 # You don't have to wrap directory names in quotes either
@@ -125,7 +129,11 @@ chd() {
   fi
 }
 
+# Invoke mister bashrc, with private settings
 source ~/.bashrc
+
+# Set the bash edit to vi
+set -o vi
 
 # MacPorts Installer addition on 2011-12-22_at_11:57:14: adding an appropriate PATH variable for use with MacPorts.
 # export PATH=/opt/local/bin:/opt/local/sbin:$PATH
