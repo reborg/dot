@@ -78,12 +78,9 @@ alias gi='git-info.sh'
 
 # Aliased personal projects
 alias prj='cd /me/prj'
-alias pomodori='cd /me/prj/my/pomodori'
-alias macaruby='cd /me/prj/my/macaruby'
-alias pomohub='cd /me/prj/my/pomohub'
+alias my='cd /me/prj/my'
 alias tracking='cd /me/Dropbox/tracking'
 alias dot='cd /me/prj/my/dot'
-alias spikes='cd /me/prj/spikes'
 alias notes='cd /me/Dropbox/notes'
 alias documents='cd /me/Dropbox/documents'
 alias bookshelf='cd /me/Dropbox/bookshelf'
@@ -92,7 +89,7 @@ alias downloads='cd ~/Downloads'
 alias crash='cd ~/Library/Logs/DiagnosticReports'
 alias 3rdparties='cd /me/prj/3rdparties'
 
-#export DYLD_LIBRARY_PATH=/opt/local/lib:/usr/local/spidermonkey/lib:$DYLD_LIBRARY_PATH
+export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:"/Users/reborg/Downloads/opencv-2.4.8/build/lib"
 
 ### RUBY
 #export RUBYOPT=rubygems
@@ -103,7 +100,7 @@ alias 3rdparties='cd /me/prj/3rdparties'
 #source ~/Documents/cmd/ruby_switcher.sh
 
 ### JAVA
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_25.jdk/Contents/Home
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_51.jdk/Contents/Home
 export GROOVY_HOME=~/Downloads/groovy-1.6.9 
 export ROO_HOME=~/Downloads/spring-roo-1.1.5
 export GRADLE_HOME=~/Downloads/gradle-1.0-milestone-9
@@ -138,4 +135,4 @@ set -o vi
 # MacPorts Installer addition on 2011-12-22_at_11:57:14: adding an appropriate PATH variable for use with MacPorts.
 # export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 # Finished adapting your PATH environment variable for use with MacPorts.
-[[ -s "/Users/renzoborgatti/.rvm/scripts/rvm" ]] && source "/Users/renzoborgatti/.rvm/scripts/rvm"
+[[ -s "/Users/reborg/.rvm/scripts/rvm" ]] && source "/Users/reborg/.rvm/scripts/rvm"

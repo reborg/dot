@@ -1,0 +1,1 @@
+*.local, 169.254/16, dvln2dapp28.wgsn.com, *.trgfrnt.com, *.emap-intl.net, *.trg-dev.com, *.cloud.trendinglines.co.uk, localhost, instock, roombooking.topright-group.com, *.gphd.local, 10.103.16.*, 10.40.163.*, klvpn.imgtec.com
