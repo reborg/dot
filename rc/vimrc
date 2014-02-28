@@ -18,6 +18,18 @@ endif
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+Bundle 'gmarik/vundle'
+Bundle 'tpope/vim-fugitive'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'tpope/vim-fireplace'
+Bundle 'plasticboy/vim-markdown'
+Bundle 'tpope/vim-classpath'
+Bundle 'guns/vim-clojure-static'
+Bundle 'L9'
+Bundle 'FuzzyFinder'
+
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
@@ -292,4 +304,5 @@ autocmd BufNewFile,BufRead *.pig set ft=pig
 " cd ~/.vim/bundle
 " git clone git://github.com/tpope/vim-fugitive.git
 " to install what I need. Thanks tpope.
-call pathogen#infect('/me/prj/pathogen-bundles/{}')
+" But, recently moved to Vundle, see top of the file.
+" call pathogen#infect('/me/prj/pathogen-bundles/{}')
