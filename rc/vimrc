@@ -27,8 +27,14 @@ Bundle 'tpope/vim-fireplace'
 Bundle 'plasticboy/vim-markdown'
 Bundle 'tpope/vim-classpath'
 Bundle 'guns/vim-clojure-static'
+Bundle 'bling/vim-bufferline'
+Bundle 'jpalardy/vim-slime'
+Bundle 'bling/vim-airline'
 Bundle 'L9'
 Bundle 'FuzzyFinder'
+
+" Slime settings
+let g:slime_target = "tmux"
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
