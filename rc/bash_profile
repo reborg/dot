@@ -100,7 +100,8 @@ export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:"/Users/reborg/Downloads/opencv-2.4.
 #source ~/Documents/cmd/ruby_switcher.sh
 
 ### JAVA
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_51.jdk/Contents/Home
+#export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_51.jdk/Contents/Home
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/1.6.0_65-b14-462.jdk/Contents/Home
 export GROOVY_HOME=~/Downloads/groovy-1.6.9 
 export ROO_HOME=~/Downloads/spring-roo-1.1.5
 export GRADLE_HOME=~/Downloads/gradle-1.0-milestone-9
