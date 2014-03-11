@@ -1,0 +1,140 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/me/prj/my/sicpbbc/sicp-clojure/src/" . "sicp_clojure/")
+ ("/me/prj/my/" . "rtb-server/")
+ ("/me/prj/" . "my/")
+ ("/me/prj/my/rtb-server/src/" . "tutorial_service/")
+ ("/me/prj/instock/analysis/analysis-api/src/main/java/com/" . "wgsn/")
+ ("/me/prj/instock/analysis/analysis-api/src/main/java/" . "com/")
+ ("/me/prj/instock/analysis/analysis-api/src/main/" . "java/")
+ ("/me/prj/instock/analysis/analysis-api/src/" . "main/")
+ ("/me/prj/instock/analysis/analysis-api/" . "src/")
+ ("/me/prj/instock/analysis/" . "analysis-api/")
+ ("/me/Dropbox/notes/tutorials/06-core-asynch-david-nolen/" . "async-tut1/")
+ ("/me/prj/my/imageclj/test/reborg/" . "imageclj/")
+ ("/me/prj/my/imageclj/test/" . "reborg/")
+ ("/me/prj/my/imageclj/" . "test/")
+ ("/Users/reborg/" . ".emacs.d/")
+ ("/" . "Applications/")
+ ("/me/prj/spikes/command-line-args/src/" . "command_line_args/")
+ ("/me/prj/spikes/command-line-args/" . "test/")
+ ("/me/prj/spikes/command-line-args/test/" . "command_line_args/")
+ ("/me/prj/my/imageclj/src/reborg/" . "imageclj/")
+ ("/me/prj/my/imageclj/src/" . "reborg/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/me/prj/my/rtb-server/src/tutorial_service/"
+ "/me/prj/my/rtb-server/"
+ "/me/prj/my/rtb/"
+ "/Users/reborg/"
+ "/me/prj/spikes/async-tut1/"
+ "/Users/reborg/.emacs.d/"
+ "/me/prj/instock/analysis/analysis-api/src/main/java/com/wgsn/"
+ "/me/Dropbox/notes/tutorials/06-core-asynch-david-nolen/async-tut1/"
+ "/me/prj/my/imageclj/test/reborg/imageclj/"
+ "/me/prj/my/imageclj/src/reborg/imageclj/"
+ "/me/prj/spikes/command-line-args/test/command_line_args/"
+ "/me/prj/spikes/command-line-args/src/command_line_args/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "service.clj"
+ "server.clj"
+ "project.clj"
+ "README.md"
+ ".bash_profile"
+ ".bashrc"
+ "init.el"
+ "Main.java"
+ "index.html"
+ "kmean_test.clj"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/me/prj/my/sicpbbc/sicp-clojure/src/sicp_clojure/" (21261 41296 0 0) "utils.clj" "core.clj" "chapters/" "2_6_church_numerals.clj" "1_9_generated_processes.clj" "1_8_cube_root.clj" "1_7_square_root.clj" "1_14_coin_change_growth.clj" "1_11_rewrite_iterative.clj" "../" "./")
+
+ ("/me/prj/my/sicpbbc/sicp-clojure/src/" (20820 1187 0 0) "sicp_clojure/" "../" "./")
+
+ ("/me/prj/my/sicpbbc/sicp-clojure/" (21261 41814 0 0) "test/" "target/" "src/" "README.md" "project.clj" "doc/" ".tmux" ".nrepl-port" ".lein-repl-history" ".gitignore" ".clojure" "../" "./")
+
+ ("/me/prj/my/rtb-server/src/tutorial_service/" (21252 27021 0 0) "service.clj" "server.clj" "../" "./")
+
+ ("/me/prj/my/rtb-server/" (21252 27054 0 0) "test/" "target/" "src/" "resources/" "README.md" "project.clj" "logs/" "dev/" "config/" ".tmux" ".nrepl-port" ".lein-repl-history" ".gitignore" "../" "./")
+
+ ("/me/prj/my/" (21250 24411 0 0) "xrepl/" "tweetmood/" "sicpbbc/" "scratch/" "rtb-server/" "rtb/" "rlog/" "RiskApp/" "quadcluster/" "pwc/" "programmes/" "prjstats/" "pomodori/" "picomatic/" "periodic/" "parallel/" "irbloom/" "imageclj/" "iad/" "homebrew-taps/" "game-of-life-recruitment/" "enigma-clojure/" "dot/" "countmein/" "coredata/" "clojureweekly/" "clojai-old/" "clojai/" "clj-bookmarks/" "boost/" "bloomoon/" "binpack/" "algoclj/" "10k-training/" ".DS_Store" "../" "./")
+
+ ("/me/prj/" (21250 16832 0 0) "tmux.sh" "templates/" "Teamly/" "talks/" "spikes/" "pathogen-bundles/" "my/" "likely/" "job-interviews/" "instock/" "gists/" "eclipse-workspace/" "bbc/" "articles/" "3rdparties/" ".DS_Store" "../" "./")
+
+ ("/me/" (21244 42079 0 0) "tracking/" "tmp/" "ThinkcodeTV-Dropbox-Shared-Version/" "Riskapp-Other/" "reborg.html" "prj/" "pjvm" "notes/" "my-prj-from-laptop/" "lein" "Dropbox/" "bookshelf/" ".DS_Store" "../" "./")
+
+ ("/me/prj/my/rtb/" (21252 25170 0 0) "test/" "target/" "src/" "public/" "project.clj" ".tmux" ".nrepl-port" ".lein-repl-history" ".lein-failures" ".gitignore" ".git/" "../" "./")
+
+ ("/me/prj/my/rtb-server/src/" (21250 24411 0 0) "tutorial_service/" "../" "./")
+
+ ("/Users/reborg/" (21250 25528 0 0) "tmp/" "Public/" "Pictures/" "Music/" "Movies/" "Library/" "emacsbackup/" "Downloads/" "Documents/" "Desktop/" "Applications/" ".vimrc" ".viminfo" ".vim-fuf-data/" ".vim-fuf" ".vim/" ".vagrant.d/" ".Trash/" ".tmux.conf" ".subversion_IDEA/" ".subversion/" ".ssh/" ".rvm/" ".rnd" ".recentf" ".psql_history" ".passwd-s3fs" ".netrc" ".nbprofiler/" ".mysql_history" ".mldonkey/" ".m2/" ".lesshst" ".lein/" ".jline-reply.history" ".jline-clojure.main.history" ".java_history" ".irssi/" ".irb_history" ".irb-history" ".ido.last" ".heroku/" ".h2.server.properties" ".gvimrc" ".gradle/" ".gnupg/" ".globalgitignore" ".gitk" ".gitconfig" ".gem/" ".gdb_history" ".eyrc" ".emacs.d/" ".DS_Store" ".dropbox/" ".dbshell" ".cups/" ".ctags" ".config/" ".clj_completions" ".CFUserTextEncoding" ".cache/" ".bashrc" ".bash_profile" ".bash_history" ".asadminpass" ".adobe/" ".ackrc" ".#.bashrc" "../" "./")
+
+ ("/me/prj/spikes/async-tut1/" (21250 18607 0 0) "target/" "src/" "project.clj" "index.html" "01-ClojureScript-101-tutorial.pdf" ".nrepl-port" ".gitignore" "#project.clj#" "../" "./")
+
+ ("/Users/reborg/.emacs.d/" (21250 13011 0 0) "semanticdb/" "places" "jdee-2.4.1/" "init.el" "elpa/" "backups/" "auto-save-list/" ".smex-items" "../" "./")
+
+ ("/me/prj/instock/analysis/analysis-api/src/main/java/com/wgsn/" (21246 9187 0 0) "Main.java" "Environment.java" "endpoints/" "Database.java" "CONST.java" "../" "./")
+
+ ("/me/prj/instock/analysis/analysis-api/src/main/java/com/" (21244 41174 0 0) "wgsn/" "../" "./")
+
+ ("/me/prj/instock/analysis/analysis-api/src/main/java/" (21244 41174 0 0) "com/" "../" "./")
+
+ ("/me/prj/instock/analysis/analysis-api/src/main/" (21244 41174 0 0) "webapp/" "resources/" "java/" "../" "./")
+
+ ("/me/prj/instock/analysis/analysis-api/src/" (21244 41174 0 0) "test/" "main/" "../" "./")
+
+ ("/me/prj/instock/analysis/analysis-api/" (21246 11456 0 0) "target/" "src/" "pom.xml" "analysis-api.iml" ".gitignore" "../" "./")
+
+ ("/me/prj/instock/analysis/" (21246 17387 0 0) "pom.xml" "deploy/" "analysis.iml" "analysis-api/" ".idea/" ".gitignore" ".git/" "../" "./")
+
+ ("/me/Dropbox/notes/tutorials/06-core-asynch-david-nolen/" (21245 53770 0 0) "async-tut1/" "01-ClojureScript-101-tutorial.pdf" "../" "./")
+
+ ("/me/Dropbox/notes/tutorials/06-core-asynch-david-nolen/async-tut1/src/async_tut1/" (21245 53739 0 0) "core.cljs" "../" "./")
+
+ ("/me/Dropbox/notes/tutorials/06-core-asynch-david-nolen/async-tut1/src/" (21245 53739 0 0) "async_tut1/" "../" "./")
+
+ ("/me/Dropbox/notes/tutorials/06-core-asynch-david-nolen/async-tut1/" (21245 53739 0 0) "src/" "project.clj" "index.html" ".gitignore" "../" "./")
+
+ ("/me/prj/my/imageclj/test/reborg/imageclj/" (21234 33241 0 0) "load_test.clj" "kmean_test.clj" "image_test.clj" "face_test.clj" "export_test.clj" "crop_test.clj" "create_test.clj" "core_test.clj" "../" "./")
+
+ ("/me/prj/my/imageclj/test/reborg/" (21225 19660 0 0) "imageclj/" "../" "./")
+
+ ("/me/prj/my/imageclj/test/" (21225 19660 0 0) "test07.jpg" "test06.jpg" "test05.jpg" "test04.jpg" "test03.jpg" "test02.jpg" "test01.jpg" "reborg/" "group.jpg" "../" "./")
+
+ ("/me/prj/my/imageclj/src/reborg/imageclj/" (21244 34577 0 0) "load.clj" "kmean.clj" "image.clj" "face.clj" "export.clj" "crop.clj" "create.clj" "core.clj" "../" "./")
+
+ ("/me/prj/my/imageclj/" (21244 34741 0 0) "test/" "target/" "src/" "resources/" "README.md" "project.clj" "pom.xml" "LICENSE" "java/" "imageclj.iml" "doc/" "classpath" ".tmux" ".nrepl-port" ".lein-repl-history" ".idea/" ".gitignore" ".git/" ".DS_Store" "../" "./")
+
+ ("/Users/" (20965 45647 0 0) "Shared/" "reborg/" "laura/" "Guest/" ".localized" "../" "./")
+
+ ("/Applications/" (21240 46363 0 0) "Xcode.app/" "weka-3-7-9.app/" "VLC.app/" "VisualVM.app/" "VirtualBox.app/" "Utilities/" "Uninstall Chiavetta Internet MT833UP.app/" "Twitter.app/" "TouchCopy12.app/" "TotalSpaces.app/" "Time Machine.app/" "TextEdit.app/" "System Preferences.app/" "Stickies.app/" "Spotify.app/" "Skype.app/" "Sequel Pro.app/" "Safari.app/" "Remote Desktop - VNC.app/" "Reminders.app/" "RealVNC/" "Racket v5.3.3/" "QuickTime Player.app/" "Quicksilver.app/" "Preview.app/" "Pomodori.app/" "PodWorks.app/" "Photo Booth.app/" "PDFpen.app/" "Pages.app/" "OpenOffice.org.app/" "OmniOutliner.app/" "OmniGraffle Professional 5.app/" "Notes.app/" "NetNewsWire.app/" "Mission Control.app/" "MindNode Lite.app/" "Microsoft Silverlight/" "Messages.app/" "Mail.app/" "MacVim.app/" "MacPorts/" "Launchpad.app/" "Last.fm.app/" "knime/" "Keynote.app/" "iTunes.app/" "iTerm.app/" "iStat Menus.app/" "iShowU.app/" "iScrobbler.app/" "iPhoto.app/" "IntelliJ IDEA 12.app/" "Install Xcode.app/" "Image Capture.app/" "Growl.app/" "Google Chrome.app/" "Garmin Training Center.app/" "Game Center.app/" "Font Book.app/" "Firefox.app/" "FaceTime.app/" "Evernote.app/" "Emacs.app/" "eclipse/" "DVD Player.app/" "Dropbox.app/" "Dictionary.app/" "Dashboard.app/" "CoRD.app/" "Contacts.app/" "Colloquy.app/" "Cog.app/" "Cisco/" "CHM View.app/" "Chiavetta Internet MT833UP.app/" "Chess.app/" "Calendar.app/" "Calculator.app/" "Automator.app/" "App Store.app/" "Adobe Media Player.app/" "Adobe/" "Adium.app/" "3Hub.app/" "2X Client RDP.app/" ".localized" ".DS_Store" "../" "./")
+
+ ("/me/prj/spikes/command-line-args/test/command_line_args/" (21242 28161 0 0) "core_test.clj" "../" "./")
+
+ ("/me/prj/spikes/command-line-args/src/command_line_args/" (21242 27873 0 0) "core.clj" "../" "./")
+
+ ("/me/prj/spikes/command-line-args/" (21242 28190 0 0) "test/" "target/" "src/" "resources/" "README.md" "project.clj" "LICENSE" "doc/" ".nrepl-port" ".gitignore" "../" "./")
+
+ ("/me/prj/spikes/command-line-args/src/" (21237 55549 0 0) "command_line_args/" "../" "./")
+
+ ("/me/prj/spikes/" (21237 55549 0 0) "SpikeUITableViewController/" "social/" "rails-3.2.8-playground/" "git-workflow/" "gcd-java/" "command-line-args/" "clojure-datalog/" ".DS_Store" "../" "./")
+
+ ("/me/prj/spikes/command-line-args/test/" (21237 55549 0 0) "command_line_args/" "../" "./")
+
+ ("/me/prj/my/imageclj/src/reborg/" (21225 19660 0 0) "imageclj/" "../" "./")
+
+ ("/me/prj/my/imageclj/src/" (21225 19660 0 0) "reborg/" "../" "./")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t

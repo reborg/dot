@@ -1,0 +1,31 @@
+;; Object wgsn/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "wgsn/"
+  :tables
+  (list
+    (semanticdb-table "Main.java"
+      :major-mode 'jde-mode
+      :tags 
+        '( ("com.wgsn" package nil nil [1 18])
+            ("Main" type
+               (:typemodifiers ("public")
+                :members 
+                  ( ("main" function
+                       (:typemodifiers ("public" "static")
+                        :arguments 
+                          ( ("args" variable
+                               (:dereference 1
+                                :type "String")
+                                (reparse-symbol formal_parameters) [69 82]))                          
+                        :type "void")
+                        (reparse-symbol class_member_declaration) [45 91]))                  
+                :type "class")
+                nil [20 94]))          
+      :file "Main.java"
+      :pointmax 95
+      :fsize 94
+      :lastmodtime '(21244 41174 0 0)
+      :unmatched-syntax '((IDENTIFIER 15 . 19) (DOT 14 . 15) (IDENTIFIER 11 . 14) (IDENTIFIER 1 . 10) (IDENTIFIER 15 . 19) (DOT 14 . 15) (IDENTIFIER 11 . 14) (IDENTIFIER 1 . 10))))
+  :file "!me!prj!instock!analysis!analysis-api!src!main!java!com!wgsn!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

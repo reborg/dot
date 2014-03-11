@@ -27,14 +27,16 @@ Bundle 'tpope/vim-fireplace'
 Bundle 'plasticboy/vim-markdown'
 Bundle 'tpope/vim-classpath'
 Bundle 'guns/vim-clojure-static'
-Bundle 'bling/vim-bufferline'
 Bundle 'jpalardy/vim-slime'
 Bundle 'bling/vim-airline'
 Bundle 'L9'
 Bundle 'FuzzyFinder'
+Bundle 'airblade/vim-gitgutter'
 
 " Slime settings
 let g:slime_target = "tmux"
+let g:slime_paste_file = "$HOME/.slime_paste"
+let g:slime_default_config = {"socket_name": "default", "target_pane": "2"}
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -290,10 +292,8 @@ let tlist_objc_settings = 'ObjectiveC;P:protocols;c:class;m:method'
 " Shortcut generation of ctags for objc projects
 " For this to work: brew install ctags --HEAD
 map <silent> ,tobj :!ctags -R --language-force=ObjectiveC --sort=yes --exclude=.git --exclude=Resources --exclude=build --exclude=Vendors *<CR>
-
 " Shortcut generation of ctags for Java projects
 map <silent> ,tjava :!ctags -R --language-force=Java --sort=yes --exclude=.git --exclude=.svn --exclude=**/target *<CR>
-
 " Clojure ctags!
 map <silent> ,tclj :!ctags -R --langmap=Lisp:+.clj --sort=yes --exclude=.git --exclude=.svn --exclude=**/target *<CR>
 
@@ -306,9 +306,8 @@ autocmd BufNewFile,BufRead *.asciidoc set ft=asciidoc
 " Open pig as pig
 autocmd BufNewFile,BufRead *.pig set ft=pig
 
-" installing pathogen now I can:
-" cd ~/.vim/bundle
-" git clone git://github.com/tpope/vim-fugitive.git
-" to install what I need. Thanks tpope.
-" But, recently moved to Vundle, see top of the file.
+" recently moved to Vundle, see top of the file.
 " call pathogen#infect('/me/prj/pathogen-bundles/{}')
+
+" Fixes Airline not showing on a single pane
+set laststatus=2

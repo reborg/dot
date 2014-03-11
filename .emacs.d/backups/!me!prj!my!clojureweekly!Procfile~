@@ -1,0 +1,1 @@
+web: java $JVM_OPTS -cp target/clojureweekly.jar clojure.main -m hello.world $PORT

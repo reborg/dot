@@ -1,0 +1,29 @@
+
+;; ----- smex-history -----
+(
+ cider-quit
+ pwd
+ eval-buffer
+ cider-jack-in
+ mh-folder-mode
+ shell
+ cd
+)
+
+;; ----- smex-data -----
+(
+ (forward-page . 1)
+ (cider-jack-in . 19)
+ (package-install . 2)
+ (load-theme . 1)
+ (kill-whole-line . 2)
+ (eval-buffer . 10)
+ (pwd . 6)
+ (cd . 4)
+ (ffap-bindings . 1)
+ (customize-group . 1)
+ (package-install-file . 2)
+ (cider-quit . 5)
+ (shell . 4)
+ (mh-folder-mode . 1)
+)
