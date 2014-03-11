@@ -130,7 +130,7 @@ chd() {
 source ~/.bashrc
 
 # Set the bash edit to vi
-set -o vi
+# set -o vi
 
 # MacPorts Installer addition on 2011-12-22_at_11:57:14: adding an appropriate PATH variable for use with MacPorts.
 # export PATH=/opt/local/bin:/opt/local/sbin:$PATH

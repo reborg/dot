@@ -1,0 +1,161 @@
+alias mywgsn-prod-tomcat1='ssh mywgsn@frln1papp16.trgfrnt.com'
+alias mywgsn-prod-tomcat2='ssh mywgsn@frln2papp16.trgfrnt.com'
+
+## INSTOCK MIX
+
+alias jenkins-dev='ssh renzo.borgatti@jenkins.cloud.trendinglines.co.uk'
+alias jenkins-live='ssh instockadmin@frln1pakj01.trgfrnt.com'
+alias instock='cd /me/prj/instock/'
+alias uiserver='cd /me/prj/instock/visual/Server/anorak-rest'
+alias instockadmin='cd /me/prj/instock/sandbox/light-admin'
+alias mysqldump-int='mysqldump -uanorak_admin_int -pb76cN251Mc5761W -hpresentation-db-prod.csnttsqs4w4d.eu-west-1.rds.amazonaws.com anorak_admin_integration > anorak_admin_integration.sql'
+alias mysqldump-qa='mysqldump -uanorak_admin_qa -pIBtSIQW852Mx434 -hpresentation-db-prod.csnttsqs4w4d.eu-west-1.rds.amazonaws.com anorak_admin_qa > anorak_admin_qa.sql'
+alias mysqldump-stag='mysqldump -uanorak_admin_stg -pj4x3r72Teh9fb7d -hpresentation-db-prod.csnttsqs4w4d.eu-west-1.rds.amazonaws.com anorak_admin_staging > anorak_admin_stag.sql'
+alias mysqldump-live='mysqldump -uinstock_admin -p5fJHTnFcU8RG7Mq -hfrln1pakq01.trgfrnt.com anorak_admin_production > anorak_admin_production.sql'
+alias categorisation-db='mysql -h transformation-db-prod.csnttsqs4w4d.eu-west-1.rds.amazonaws.com -u myadmin ''-pFashionGoat!!1'''
+alias mysql-rest-live='mysql -h frln1pakq01.trgfrnt.com -u renzo.borgatti ''-paz29gwZZ!!'''
+alias kapow-db='mysql -h collection-db-prod-ro.cloud.trendinglines.co.uk -u renzo.borgatti -p7fddDfDr56h4d'
+
+######################
+## INSTOCK DEVELOPMENT
+
+alias es-dev='ssh renzo.borgatti@aveu1d-search-i-2aff8760.cloud.trendinglines.co.uk'
+alias tomcat-dev='ssh renzo.borgatti@aveu1d-appserver-i-be2b0ef4.cloud.trendinglines.co.uk'
+alias nginx-dev='ssh renzo.borgatti@aveu1d-webhost-i-e82b0ea2.cloud.trendinglines.co.uk'
+alias dev-all="HOSTS='aveu1d-search-i-2aff8760.cloud.trendinglines.co.uk aveu1d-appserver-i-be2b0ef4.cloud.trendinglines.co.uk aveu1d-webhost-i-e82b0ea2.cloud.trendinglines.co.uk' tmux-multiplexer.sh instock-dev-all"
+
+alias kapow-dev-1='ssh renzo.borgatti@aveu1d-kpwuknode-i-30f2df7d.cloud.trendinglines.co.uk'
+alias kapow-dev-2='ssh renzo.borgatti@aveu1d-kpwuknode-i-48f2df05.cloud.trendinglines.co.uk'
+alias kapow-dev-3='ssh renzo.borgatti@aveu1d-kpwuknode-i-4ef2df03.cloud.trendinglines.co.uk'
+alias kapow-dev-4='ssh renzo.borgatti@aveu1d-kpwuknode-i-d2cde09f.cloud.trendinglines.co.uk'
+alias kapow-dev-all="HOSTS='aveu1d-kpwuknode-i-30f2df7d.cloud.trendinglines.co.uk aveu1d-kpwuknode-i-48f2df05.cloud.trendinglines.co.uk aveu1d-kpwuknode-i-4ef2df03.cloud.trendinglines.co.uk aveu1d-kpwuknode-i-d2cde09f.cloud.trendinglines.co.uk' tmux-multiplexer.sh kapow-dev-all"
+
+######################
+## INSTOCK INTEGRATION
+
+alias es-int-1='ssh renzo.borgatti@aveu1i-search-i-32a89d78.cloud.trendinglines.co.uk'
+alias es-int-2='ssh renzo.borgatti@aveu1i-search-i-f280d6b8.cloud.trendinglines.co.uk'
+alias es-int-3='ssh renzo.borgatti@aveu1i-searchlb-i-78443032.cloud.trendinglines.co.uk'
+alias es-int-all="HOSTS='aveu1i-search-i-32a89d78.cloud.trendinglines.co.uk aveu1i-search-i-f280d6b8.cloud.trendinglines.co.uk aveu1i-searchlb-i-78443032.cloud.trendinglines.co.uk' tmux-multiplexer.sh es-int"
+
+alias tomcat-int='ssh renzo.borgatti@aveu1i-appserver-i-9a5b2fd0.cloud.trendinglines.co.uk'
+alias nginx-int='ssh renzo.borgatti@aveu1i-webhost-i-e05a2eaa.cloud.trendinglines.co.uk'
+
+##################
+## INSTOCK STAGING
+
+alias nginx-staging-1='ssh renzo.borgatti@aveu1s-webhost-i-32bc9d78.cloud.trendinglines.co.uk'
+alias nginx-staging-2='ssh renzo.borgatti@aveu1s-webhost-i-7295b438.cloud.trendinglines.co.uk'
+alias nginx-staging-all="HOSTS='aveu1s-webhost-i-32bc9d78.cloud.trendinglines.co.uk aveu1s-webhost-i-7295b438.cloud.trendinglines.co.uk' tmux-multiplexer.sh nginx-staging"
+
+alias tomcat-staging-1='ssh renzo.borgatti@aveu1s-appserver-i-764b6b3c.cloud.trendinglines.co.uk'
+alias tomcat-staging-2='ssh renzo.borgatti@aveu1s-appserver-i-fc4a6ab6.cloud.trendinglines.co.uk'
+alias tomcat-staging-all="HOSTS='aveu1s-appserver-i-fc4a6ab6.cloud.trendinglines.co.uk aveu1s-appserver-i-764b6b3c.cloud.trendinglines.co.uk' tmux-multiplexer.sh tomcat-staging"
+
+alias es-staging-1='ssh renzo.borgatti@aveu1s-search-i-66cb062b.cloud.trendinglines.co.uk'
+alias es-staging-2='ssh renzo.borgatti@aveu1s-search-i-60cb062d.cloud.trendinglines.co.uk'
+alias es-staging-3='ssh renzo.borgatti@aveu1s-search-i-8835d0c5.cloud.trendinglines.co.uk'
+alias es-staging-4='ssh renzo.borgatti@aveu1s-search-i-8a35d0c7.cloud.trendinglines.co.uk'
+alias es-staging-5='ssh renzo.borgatti@aveu1s-search-i-fc34d1b1.cloud.trendinglines.co.uk'
+alias es-staging-6='ssh renzo.borgatti@aveu1s-search-i-fe34d1b3.cloud.trendinglines.co.uk'
+alias es-staging-7='ssh renzo.borgatti@aveu1s-searchlb-i-384d6872.cloud.trendinglines.co.uk'
+alias es-staging-8='ssh renzo.borgatti@aveu1s-searchlb-i-904065da.cloud.trendinglines.co.uk'
+alias es-staging-all="HOSTS='aveu1s-search-i-66cb062b.cloud.trendinglines.co.uk aveu1s-search-i-60cb062d.cloud.trendinglines.co.uk aveu1s-search-i-8835d0c5.cloud.trendinglines.co.uk aveu1s-search-i-8a35d0c7.cloud.trendinglines.co.uk aveu1s-search-i-fc34d1b1.cloud.trendinglines.co.uk aveu1s-search-i-fe34d1b3.cloud.trendinglines.co.uk aveu1s-searchlb-i-384d6872.cloud.trendinglines.co.uk aveu1s-searchlb-i-904065da.cloud.trendinglines.co.uk' tmux-multiplexer.sh es-staging"
+
+alias hadoop-staging-1='ssh renzo.borgatti@aveu1s-hadoopmaster-i-3ec9ee74.cloud.trendinglines.co.uk'
+alias hive-staging='ssh renzo.borgatti@aveu1s-hadoopnode-i-cccee986.cloud.trendinglines.co.uk'
+
+##################
+## INSTOCK QA
+
+alias es-qa-1='ssh renzo.borgatti@aveu1q-search-i-b4e602f9.cloud.trendinglines.co.uk'
+alias es-qa-2='ssh renzo.borgatti@aveu1q-search-i-b8e602f5.cloud.trendinglines.co.uk'
+alias es-qa-3='ssh renzo.borgatti@aveu1q-search-i-bae602f7.cloud.trendinglines.co.uk'
+alias es-qa-4='ssh renzo.borgatti@aveu1q-search-i-bee602f3.cloud.trendinglines.co.uk'
+alias es-qa-all="HOSTS='aveu1q-search-i-b4e602f9.cloud.trendinglines.co.uk aveu1q-search-i-b8e602f5.cloud.trendinglines.co.uk aveu1q-search-i-bae602f7.cloud.trendinglines.co.uk aveu1q-search-i-bee602f3.cloud.trendinglines.co.uk' tmux-multiplexer.sh es-qa"
+
+alias hadoop-qa-1='ssh instockadmin@frvcdqgpn01.trgfrnt.com'
+
+alias nginx-qa='ssh renzo.borgatti@aveu1q-webhost-i-d0280d9a.cloud.trendinglines.co.uk'
+alias tomcat-qa='ssh renzo.borgatti@aveu1q-appserver-i-96280ddc.cloud.trendinglines.co.uk'
+
+##################
+## INSTOCK LIVE
+
+alias nginx-live-1='ssh instockadmin@frln1pakw01.trgfrnt.com'
+alias nginx-live-2='ssh instockadmin@frln1pakw02.trgfrnt.com'
+alias nginx-live-all="HOSTS='frln1pakw01.trgfrnt.com frln1pakw02.trgfrnt.com' tmux-multiplexer2.sh nginx-live"
+
+alias tomcat-live-1='ssh instockadmin@frln1paka01.trgfrnt.com'
+alias tomcat-live-2='ssh instockadmin@frln1paka02.trgfrnt.com'
+alias tomcat-live-all="HOSTS='frln1paka01.trgfrnt.com frln1paka02.trgfrnt.com' tmux-multiplexer2.sh tomcat-prod"
+
+alias hadoop-live-hdc1='ssh root@10.103.16.11'
+alias hadoop-live-hdc2='ssh root@10.103.16.12'
+alias hadoop-live-hdc3='ssh root@10.103.16.13'
+alias hadoop-live-hdc4='ssh root@10.103.16.14'
+alias hadoop-live-hdc5='ssh root@10.103.16.15'
+alias hadoop-live-hdc6='ssh root@10.103.16.16'
+alias hadoop-live-hdc7='ssh root@10.103.16.17'
+
+
+alias es-live-1='ssh instockadmin@frln1pakb01.trgfrnt.com'
+alias es-live-2='ssh instockadmin@frln1pakb02.trgfrnt.com'
+alias es-live-3='ssh instockadmin@frln1pakb03.trgfrnt.com'
+alias es-live-all="HOSTS='frln1pakb01.trgfrnt.com frln1pakb02.trgfrnt.com frln1pakb03.trgfrnt.com' tmux-multiplexer2.sh es-live"
+
+alias content-live-1='ssh instockadmin@frln1pakc01.trgfrnt.com'
+alias content-live-2='ssh instockadmin@frln2pakc02.trgfrnt.com'
+alias content-live-all="HOSTS='frln1pakc01.trgfrnt.com frln1pakc02.trgfrnt.com' tmux-multiplexer2.sh content-live"
+
+########################
+## INSTOCK GREENPLUM DEV
+
+alias hadoop-greendev-2='ssh renzo.borgatti@10.40.163.58'
+
+function proxyup {
+  export HTTP_PROXY=http://proxygsprimary.trghosting.net:3128
+  export HTTPS_PROXY=https://proxygsprimary.trghosting.net:3128
+  export RSYNC_PROXY=proxygsprimary.trghosting.net:3128
+  export http_proxy=$HTTP_PROXY
+  export https_proxy=$HTTPS_PROXY
+  export rsync_proxy=$RSYNC_PROXY
+  export npm_config_proxy=$HTTP_PROXY
+  export npm_config_https_proxy=$HTTPS_PROXY
+}
+
+function proxydown {
+  unset HTTP_PROXY
+  unset HTTPS_PROXY
+  unset RSYNC_PROXY
+  unset http_proxy
+  unset https_proxy
+  unset rsync_proxy
+  unset npm_config_proxy
+  unset npm_config_https_proxy
+}
+
+function maven2 {
+  export CURRENT_MAVEN_HOME=$M2_HOME
+  export CURRENT_PATH=$PATH
+  export M2_HOME=/me/prj/wgsn/tools/apache-maven/apache-maven-2.2.1
+  export PATH=/me/prj/wgsn/tools/apache-maven/apache-maven-2.2.1/bin:$PATH
+}
+
+# Assumes shell always start from maven 3.0.3 default
+function maven3 {
+  export M2_HOME=$CURRENT_MAVEN_HOME
+  export PATH=$CURRENT_PATH
+  unset CURRENT_MAVEN_HOME
+  unset CURRENT_PATH
+}
+
+function java6 {
+  export CURRENT_JAVA_HOME=$JAVA_HOME
+  export JAVA_HOME=/Library/Java/Home
+}
+
+function java7 {
+  export JAVA_HOME=$CURRENT_JAVA_HOME
+  unset CURRENT_JAVA_HOME
+}
