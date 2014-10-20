@@ -74,3 +74,6 @@
 ;; display line numbers
 (global-linum-mode t)
 (setq linum-format "%d ")
+
+;; set zk root
+(setenv "CLJ_FE_ZK_ROOT" "clj-fe-renzo")

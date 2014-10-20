@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-vi /me/Dropbox/notes/cheatsheets/$1.pom
+vi /me/Dropbox/notes/cheatsheets/$1.md

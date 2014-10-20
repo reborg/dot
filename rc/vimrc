@@ -18,6 +18,7 @@ endif
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
+" vim +BundleInstall +qall
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
@@ -32,6 +33,10 @@ Bundle 'bling/vim-airline'
 Bundle 'L9'
 Bundle 'FuzzyFinder'
 Bundle 'airblade/vim-gitgutter'
+Bundle 'dgrnbrg/vim-redl'
+Bundle 'tpope/vim-commentary'
+Bundle 'hail2u/vim-css3-syntax'
+Bundle 'mattn/emmet-vim'
 
 " Slime settings
 let g:slime_target = "tmux"
@@ -114,10 +119,10 @@ endif
 " Solarized
 syntax on
 set background=dark
-set t_Co=256
-let g:solarized_termcolors=256
-let g:solarized_contrast = "high"
-let g:solarized_visibility= "normal"
+" set t_Co=256
+" let g:solarized_termcolors=256
+" let g:solarized_contrast = "high"
+" let g:solarized_visibility= "normal"
 colorscheme solarized
 
 " Paredit
@@ -168,6 +173,7 @@ imap jj <Esc>:w <cr>
 
 " highlight line with cursor
 set cursorline
+hi CursorLine ctermbg=17
 "hi CursorLine cterm=underline
 
 " remove search highlighting on hit return command mode
@@ -271,13 +277,16 @@ set ignorecase
 " Fuzzy File Finder
 nmap <leader>t :FufFile **/<CR>
 nmap <leader>b :FufBuffer<CR>
-let g:fuf_dir_exclude = '\v(^|[/\\])(\.(hg|git|bzr|svn)|CVS|docs|doc|target)($|[/\\])'
-let g:fuf_file_exclude = '\v\~$|\.(o|exe|dll|bak|orig|swp|wav|png|jpg|gif)$|(^|[/\\])(\.(hg|git|bzr|svn)|CVS|db|target|Vendors|logs|classes|select2|docs|doc)($|[/\\])'
+let g:fuf_dir_exclude = '\v(^|[/\\])(\.(hg|git|bzr|svn)|CVS|docs|doc|target|out)($|[/\\])'
+let g:fuf_file_exclude = '\v\~$|\.(o|exe|dll|bak|orig|swp|wav|png|jpg|gif)$|(^|[/\\])(\.(hg|git|bzr|svn)|CVS|db|target|out|Vendors|logs|classes|select2|docs|doc)($|[/\\])'
 " fix fuzzyfinder color scheme for buffer list
 hi Pmenu guifg=lightgray guibg=darkgrey gui=NONE ctermfg=yellow ctermbg=black cterm=NONE
 
 " format xml file with xmllint
 map ,xml :%!xmllint --format --encode UTF-8 -<CR>
+
+" clean up html with tidy
+map ,html :!tidy -q -i --show-errors 0<CR>
 
 " project specific vimrc load on matching folders
 " autocmd BufRead,BufNewFile ~/prj/bbc/hydra/* so ~/prj/bbc/mps3/.vimrc
@@ -311,3 +320,16 @@ autocmd BufNewFile,BufRead *.pig set ft=pig
 
 " Fixes Airline not showing on a single pane
 set laststatus=2
+
+" Fixes delay pressing ESC to return to command mode from normal mode
+set timeoutlen=1000 ttimeoutlen=0
+
+" autotrim space from files on saving
+fun! <SID>StripTrailingWhitespaces()
+    let l = line(".")
+    let c = col(".")
+    %s/\s\+$//e
+    call cursor(l, c)
+endfun
+
+autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()

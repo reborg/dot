@@ -6,7 +6,7 @@ test -r /sw/bin/init.sh && . /sw/bin/init.sh
 #export SVN_EDITOR=vi
 
 # longer bash history please
-HISTFILESIZE=2500 
+HISTFILESIZE=2500
 
 # useful alias
 alias p='cd -'
@@ -24,6 +24,7 @@ alias top='top -o cpu -O +rsize -s 5 -n 20'
 
 # LEININGEN
 alias lm='lein midje'
+alias lt='lein with-profile test test'
 alias lr='lein repl'
 alias lc='lein cucumber'
 la(){ lein cljsbuild auto $1; }
@@ -75,6 +76,7 @@ gci(){ git commit -m $1; }
 alias gci='git commit -m'
 alias glog='git log --oneline --decorate --graph'
 alias gi='git-info.sh'
+alias gp='git pull --rebase'
 
 # Aliased personal projects
 alias prj='cd /me/prj'
@@ -100,9 +102,9 @@ export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:"/Users/reborg/Downloads/opencv-2.4.
 #source ~/Documents/cmd/ruby_switcher.sh
 
 ### JAVA
-#export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_51.jdk/Contents/Home
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/1.6.0_65-b14-462.jdk/Contents/Home
-export GROOVY_HOME=~/Downloads/groovy-1.6.9 
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_51.jdk/Contents/Home
+#export JAVA_HOME=/Library/Java/JavaVirtualMachines/1.6.0_65-b14-462.jdk/Contents/Home
+export GROOVY_HOME=~/Downloads/groovy-1.6.9
 export ROO_HOME=~/Downloads/spring-roo-1.1.5
 export GRADLE_HOME=~/Downloads/gradle-1.0-milestone-9
 
@@ -137,3 +139,8 @@ source ~/.bashrc
 # export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 # Finished adapting your PATH environment variable for use with MacPorts.
 [[ -s "/Users/reborg/.rvm/scripts/rvm" ]] && source "/Users/reborg/.rvm/scripts/rvm"
+
+[ -s "/Users/renzo.borgatti/.nvm/nvm.sh" ] && . "/Users/renzo.borgatti/.nvm/nvm.sh" # This loads nvm
+
+nvm use 0.10
+

@@ -5,7 +5,8 @@
 #
 
 breakchars="(){}[],^%$#@\"\";:''|\\"
-CLOJURE_JAR="/me/prj/3rdparties/clojure/clojure-1.6.0-master-SNAPSHOT.jar"
+#CLOJURE_JAR="/me/prj/3rdparties/clojure/target/clojure-1.7.0-master-SNAPSHOT.jar"
+CLOJURE_JAR="/Users/renzo.borgatti/Downloads/clojure-1.6.0.jar"
 
 if [ $# -eq 0 ]; then 
 exec rlwrap --remember -c -b "$breakchars" \

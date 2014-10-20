@@ -1,0 +1,21 @@
+
+;; ----- smex-history -----
+(
+ exit-minibuffer
+ setenv
+ eval-buffer
+ cd
+ 5x5
+ arp
+ dbx
+)
+
+;; ----- smex-data -----
+(
+ (cider-jack-in . 9)
+ (cider-quit . 6)
+ (eval-buffer . 1)
+ (setenv . 2)
+ (cider . 1)
+ (exit-minibuffer . 1)
+)

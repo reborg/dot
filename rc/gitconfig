@@ -40,3 +40,6 @@ branch = yellow
 	excludesfile = ~/.globalgitignore
 [push]
 	default = simple
+
+[url "ssh://git@github.com/"]
+  insteadOf = git://github.com/

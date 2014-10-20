@@ -22,7 +22,7 @@ starttmux() {
     tmux new-session -d -s $sessionname 
     for i in $HOSTS
     do
-    tmux split-window -v -t $sessionname "ssh renzo.borgatti@$i"
+    tmux split-window -v -t $sessionname "ssh root@$i"
     tmux select-layout tiled
     done
     tmux set-window-option synchronize-panes on
