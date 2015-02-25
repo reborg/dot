@@ -1,16 +1,5 @@
 #!/bin/bash
 
-usage() {
-    echo
-    echo
-    echo "Application Call: "
-    echo
-    echo "$BNAME sessionname"
-    echo "before calling the script do: export HOSTS='host1 host2 host3'"
-    echo "as a list of hosts to work on, or you will be promted to type"
-    echo "the list in."
-}
-
 starttmux() {
     echo
     echo $HOSTS
@@ -22,7 +11,7 @@ starttmux() {
     tmux new-session -d -s $sessionname
     for i in $HOSTS
     do
-    tmux split-window -v -t $sessionname "ssh $username@$i"
+    tmux split-window -v -t $sessionname "cd /me/prj/dm/clj_fe; lein repl :connect $i:7888"
     tmux select-layout tiled
     done
     tmux set-window-option synchronize-panes on
@@ -36,5 +25,4 @@ if  [ $# -lt 1 ]; then
 fi
 
 sessionname=$1
-username=$2
 starttmux
