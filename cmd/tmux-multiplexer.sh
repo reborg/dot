@@ -25,7 +25,9 @@ starttmux() {
     tmux split-window -v -t $sessionname "ssh $username@$i"
     tmux select-layout tiled
     done
-    tmux set-window-option synchronize-panes on
+    if [ -z "$sync" ]; then
+      tmux set-window-option synchronize-panes $sync
+    fi
     tmux attach -t $sessionname
 }
 
@@ -37,4 +39,6 @@ fi
 
 sessionname=$1
 username=$2
+sync=$3
+echo $3
 starttmux

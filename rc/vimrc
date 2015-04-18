@@ -26,26 +26,47 @@ set nocompatible
 " :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+
 Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-commentary'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'tpope/vim-fireplace'
 Plugin 'xolox/vim-reload'
 Plugin 'xolox/vim-misc'
-Plugin 'tpope/vim-leiningen'
-Plugin 'guns/vim-sexp'
 Plugin 'plasticboy/vim-markdown'
-Plugin 'tpope/vim-classpath'
-Plugin 'tpope/vim-sexp-mappings-for-regular-people'
-Plugin 'guns/vim-clojure-static'
-Plugin 'jpalardy/vim-slime'
 Plugin 'bling/vim-airline'
 Plugin 'L9'
 Plugin 'FuzzyFinder'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'dgrnbrg/vim-redl'
-Plugin 'tpope/vim-commentary'
+Plugin 'majutsushi/tagbar'
+Plugin 'mileszs/ack.vim'
+" Plugin 'scrooloose/syntastic'
+
+" Clojure
+Plugin 'tpope/vim-fireplace'
+Plugin 'tpope/vim-leiningen'
+Plugin 'tpope/vim-classpath'
+Plugin 'guns/vim-clojure-static'
+Plugin 'jpalardy/vim-slime'
+
+" Haskell
+Plugin 'Shougo/vimproc.vim'
+Plugin 'raichoo/haskell-vim'
+Plugin 'Twinside/vim-hoogle'
+Plugin 'eagletmt/ghcmod-vim'
+
+Plugin 'davidoc/taskpaper.vim'
+Plugin 'vim-scripts/BufOnly.vim'
+
+" My Exprimental plugins
 " Plugin 'file:///me/prj/my/vim-cljrefactor'
+"
+" still getting used to this...
+" Plugin 'guns/vim-sexp'
+" Plugin 'tpope/vim-sexp-mappings-for-regular-people'
+
 call vundle#end()
 
 " Slime settings
@@ -132,8 +153,9 @@ set background=dark
 " set t_Co=256
 " let g:solarized_termcolors=256
 " let g:solarized_contrast = "high"
-" let g:solarized_visibility= "normal"
+let g:solarized_visibility= "high"
 colorscheme solarized
+let g:html_use_css = 1
 
 " Paredit
 let g:paredit_mode = 0                          " disable the beast
@@ -157,18 +179,18 @@ augroup clojure
 augroup END
 
 " turn-on distraction free writing mode for txt
-au BufNewFile,BufRead *.{mdown,mkd,mkdn,markdown,mdwn} call DistractionFreeWriting()
-map <F5> :setlocal spell! spelllang=en_gb<CR>
-map <F6> :setlocal nospell<CR>
-function! DistractionFreeWriting()
-  colorscheme iawriter
-  set background=light
-  set laststatus=0                   " don't show status line
-  set noruler                        " don't show ruler
-  set linebreak                      " break the lines on words
-  set nonumber
-  set nocursorline
-endfunction
+"au BufNewFile,BufRead *.{mdown,mkd,mkdn,markdown,mdwn} call DistractionFreeWriting()
+"map <F5> :setlocal spell! spelllang=en_gb<CR>
+"map <F6> :setlocal nospell<CR>
+"function! DistractionFreeWriting()
+"  colorscheme iawriter
+"  set background=light
+"  set laststatus=0                   " don't show status line
+"  set noruler                        " don't show ruler
+"  set linebreak                      " break the lines on words
+"  set nonumber
+"  set nocursorline
+"endfunction
 
 " Use softtabs
 set softtabstop=2
@@ -345,9 +367,65 @@ fun! <SID>StripTrailingWhitespaces()
     call cursor(l, c)
 endfun
 
+" strip trailing whitespaces on write file
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
+" Vim fugitive shortcuts
+nnoremap <Leader>gs :Gstatus<CR>
+nnoremap <Leader>gd :Gdiff<CR>
+nnoremap <Leader>gb :Gblame<CR>
+nnoremap <Leader>gc :Gcommit<CR>
+nnoremap <Leader>gl :exe ':!cd ' . expand('%:p:h') . '; git log --oneline --decorate --graph':w'<CR>
+nnoremap <Leader>gr :Gread<CR>
+nnoremap <Leader>gw :Gwrite<CR>
+nnoremap <Leader>gp :Git push<CR>
+nnoremap <Leader>g+ :Silent Git stash<CR>:e<CR>
+nnoremap <Leader>g- :Silent Git stash pop<CR>:e<CR>
+
 " Haskell stuff
-au BufEnter *.hs compiler ghc
+" au BufEnter *.hs compiler ghc
 let g:haddock_browser = "/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
-let g:ghc = "/usr/bin/ghc"
+" let g:ghc = "/usr/bin/ghc"
+nmap <leader>= :TagbarToggle<CR>
+let g:tagbar_autofocus = 1
+
+" ghcmod
+au FileType haskell map <LocalLeader>in :GhcModInfo<cr>
+au FileType haskell map <LocalLeader>ty :GhcModType<cr>
+au FileType haskell map <LocalLeader>ch :GhcModCheck<cr>
+au FileType haskell map <LocalLeader>li :GhcModLint<cr>
+au FileType haskell map <LocalLeader>ex :GhcModExpand<cr>
+au FileType haskell map <LocalLeader>cl :GhcModTypeClear<cr>
+autocmd BufWritePost *.hs GhcModCheckAndLintAsync
+let &l:statusline = '%{empty(getqflist()) ? "[No Errors]" : "[Errors Found]"}' . (empty(&l:statusline) ? &statusline : &l:statusline)
+
+" syntastic
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+" let g:syntastic_always_populate_loc_list = 0
+" let g:syntastic_auto_loc_list = 0
+" let g:syntastic_check_on_open = 0
+" let g:syntastic_check_on_wq = 0
+" map <silent> <Leader>e :Errors<CR>
+" map <Leader>s :SyntasticToggleMode<CR>
+
+" vim-hoogle
+" Hoogle the word under the cursor
+nnoremap <silent> <leader>hh :Hoogle<CR>
+" Hoogle and prompt for input
+nnoremap <leader>hH :Hoogle
+" Hoogle for detailed documentation (e.g. "Functor")
+nnoremap <silent> <leader>hi :HoogleInfo<CR>
+" Hoogle for detailed documentation and prompt for input
+nnoremap <leader>hI :HoogleInfo
+" Hoogle, close the Hoogle window
+nnoremap <silent> <leader>hc :HoogleClose<CR>
+
+" https://github.com/raichoo/haskell-vim
+let g:haskell_enable_quantification = 1         " to enable highlighting of forall
+let g:haskell_enable_recursivedo = 1            " to enable highlighting of mdo and rec
+let g:haskell_enable_arrowsyntax = 1            " to enable highlighting of proc
+let g:haskell_enable_pattern_synonyms = 1       " to enable highlighting of pattern
+let g:haskell_enable_typeroles = 1              " to enable highlighting of type roles
+let g:haskell_enable_static_pointers = 1        " to enable highlighting of static
