@@ -100,10 +100,6 @@ alias crash='cd ~/Library/Logs/DiagnosticReports'
 alias 3rdparties='cd /me/prj/3rdparties'
 alias spikes='cd /me/prj/spikes'
 
-export DYLD_LIBRARY_PATH="/Users/reborg/Downloads/opencv-2.4.8/build/lib":"/opt/local/lib"
-export LD_LIBRARY_PATH=/opt/local/lib:$LD_LIBRARY_PATH
-export LIBRARY_PATH=/opt/local/lib:$LIBRARY_PATH
-
 alias zk=' /me/prj/3rdparties/zookeper/bin/zkServer.sh start-foreground'
 
 ### RUBY
@@ -127,8 +123,12 @@ export PROMPT_COMMAND='PS1="\[\033[0;33m\][\!]\`if [[ \$? = "0" ]]; then echo "\
 source "/me/prj/my/dot/rc/git-completion.bash"
 #source "/Users/borgar01/prj/3rdparties/dev-bash-git-ps1/bash_git_ps1.sh"
 
-# PATH
-export PATH="$HOME/.cabal/bin:/me/prj/my/dot/cmd:/sw/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/bin:/me/prj/my/dot/vim/bin:$GROOVY_HOME/bin:$ROO_HOME/bin:$GRADLE_HOME/bin:/Applications/Racket v5.3.6/bin:$PATH:/opt/local/bin:$HOME/.rvm/bin:$HOME/Downloads/pig-0.11.1/bin:/Applications/CMake.app/Contents/bin"
+# PATHS
+export PATH="$HOME/.cabal/bin:/me/prj/my/dot/cmd:/sw/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/bin:/me/prj/my/dot/vim/bin:$GROOVY_HOME/bin:$ROO_HOME/bin:$GRADLE_HOME/bin:/Applications/Racket v5.3.6/bin:$PATH:/opt/local/bin:$HOME/.rvm/bin:$HOME/Downloads/pig-0.11.1/bin:/Applications/CMake.app/Contents/bin:/me/prj/3rdparties/FlameGraph"
+export DYLD_LIBRARY_PATH="/Users/reborg/Downloads/opencv-2.4.8/build/lib":"/opt/local/lib"
+export LD_LIBRARY_PATH=/opt/local/lib:$LD_LIBRARY_PATH
+export LIBRARY_PATH=/opt/local/lib:$LIBRARY_PATH
+
 
 # Change to a directory given a full or partial name
 # You don't have to wrap directory names in quotes either
