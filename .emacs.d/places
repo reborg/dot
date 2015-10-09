@@ -1,7 +1,6 @@
 ;;; -*- coding: utf-8 -*-
 (("/Users/renzo.borgatti/.lein/profiles.clj" . 299)
  ("/me/prj/dm/clj-components/src/clj_components/components/web_server.clj" . 2162)
- ("/me/prj/dm/clj_fe/dev/project_repl/fe.clj" . 2121)
  ("/me/prj/dm/clj_fe/src/fe/endpoints/single_article.clj" . 752)
  ("/me/prj/dm/clj_fe/src/fe/renderers/standard_module.clj" . 3)
  ("/me/prj/dm/clj_fe/src/fe/renderers/standard_modules/tim_bond_utils.clj" . 1297)
@@ -9,6 +8,4 @@
  ("/me/prj/dm/clj_fe/src/fe/renderers/standard_modules/tim_calc_bonds.clj" . 2196)
  ("/me/prj/dm/clj_fe/src/fe/system/app.clj" . 124)
  ("/me/prj/dm/clj_fe/src/fe/system/bootstrap.clj" . 355)
- ("/me/prj/dm/clj_fe/src/fe/utils/core.clj" . 173)
- ("/me/prj/dm/interviews/mparser/test/mparser/core_test.clj" . 662)
  ("/me/prj/my/dot/.emacs.d/init.el" . 2791))

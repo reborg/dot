@@ -5,10 +5,11 @@
 #
 
 breakchars="(){}[],^%$#@\"\";:''|\\"
-#CLOJURE_JAR="/me/prj/3rdparties/clojure/target/clojure-1.7.0-master-SNAPSHOT.jar"
-CLOJURE_JAR="/Users/renzo.borgatti/Downloads/clojure-1.6.0.jar"
+CLOJURE_JAR="/me/prj/3rdparties/clojure/target/clojure-1.8.0-master-SNAPSHOT.jar"
+# CLOJURE_JAR="/Users/renzo.borgatti/.m2/repository/org/clojure/clojure/1.7.0-master-SNAPSHOT/clojure-1.7.0-master-SNAPSHOT.jar"
+# CLOJURE_JAR="/Users/renzo.borgatti/Downloads/clojure-1.6.0.jar"
 
-if [ $# -eq 0 ]; then 
+if [ $# -eq 0 ]; then
 exec rlwrap --remember -c -b "$breakchars" \
        -f "$HOME"/.clj_completions \
        java -cp "$CLOJURE_JAR" clojure.main
