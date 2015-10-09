@@ -77,3 +77,6 @@
 
 ;; set zk root
 (setenv "CLJ_FE_ZK_ROOT" "clj-fe-renzo")
+
+;; spacemacs
+(setq-default dotspacemacs-configuration-layers '(osx))
