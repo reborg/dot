@@ -323,10 +323,10 @@ map ,xml :%!xmllint --format --encode UTF-8 -<CR>
 map ,html :!tidy -q -i --show-errors 0<CR>
 
 " project specific vimrc load on matching folders
-" autocmd BufRead,BufNewFile ~/prj/bbc/hydra/* so ~/prj/bbc/mps3/.vimrc
-" autocmd BufRead,BufNewFile ~/prj/bbc/mps3/* so ~/prj/bbc/mps3/.vimrc
-" autocmd BufRead,BufNewFile ~/prj/bbc/pips-client/* so ~/prj/bbc/pips-client/.vimrc
-" autocmd BufRead,BufNewFile ~/prj/bbc/libraries/directory-mounter/trunk/* so ~/prj/bbc/libraries/directory-mounter/trunk/.vimrc
+" autocmd BufRead,BufNewFile ~/prj/blah/hydra/* so ~/prj/blablah/mps3/.vimrc
+" autocmd BufRead,BufNewFile ~/prj/blah/mps3/* so ~/prj/blah/mps3/.vimrc
+" autocmd BufRead,BufNewFile ~/prj/blah/pips-client/* so ~/prj/blah/pips-client/.vimrc
+" autocmd BufRead,BufNewFile ~/prj/blah/libraries/directory-mounter/trunk/* so ~/prj/blah/libraries/directory-mounter/trunk/.vimrc
 
 " Additional custom specification for ctags regexp-es
 " http://stackoverflow.com/questions/2968522/alternatives-to-ctags-cscope-with-objective-c/5790832#5790832

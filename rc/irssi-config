@@ -2,13 +2,13 @@ servers = (
   { address = "eu.irc6.net"; chatnet = "IRCnet"; port = "6667"; },
   { address = "open.ircnet.net"; chatnet = "IRCnet"; port = "6667"; },
   { address = "irc.efnet.org"; chatnet = "EFNet"; port = "6667"; },
-  { 
+  {
     address = "irc.undernet.org";
     chatnet = "Undernet";
     port = "6667";
   },
   { address = "irc.dal.net"; chatnet = "DALnet"; port = "6667"; },
-  { 
+  {
     address = "irc.quakenet.org";
     chatnet = "QuakeNet";
     port = "6667";
@@ -22,15 +22,7 @@ servers = (
   { address = "irc.webchat.org"; chatnet = "WebChat"; port = "6667"; },
   { address = "irc.rizon.net"; chatnet = "Rizon"; port = "6667"; },
   { address = "irc.link-net.org"; chatnet = "LinkNet"; port = "6667"; },
-  { address = "silc.silcnet.org"; chatnet = "SILC"; port = "706"; },
-  {
-    address = "localhost";
-    chatnet = "BBC";
-    port = "6697";
-    use_ssl = "yes";
-    ssl_cert = "/me/Dropbox/bbc/certificates/exp2013-PWDasdfasdf06-modif-irssi.pem";
-    ssl_verify = "no";
-  }
+  { address = "silc.silcnet.org"; chatnet = "SILC"; port = "706"; }
 );
 
 chatnets = {
@@ -41,7 +33,7 @@ chatnets = {
     max_whois = "4";
     max_query_chans = "5";
   };
-  EFNet = { 
+  EFNet = {
     type = "IRC";
     max_kicks = "4";
     max_msgs = "3";
@@ -65,7 +57,7 @@ chatnets = {
     max_msgs = "3";
     max_whois = "30";
   };
-  OFTC = { 
+  OFTC = {
     type = "IRC";
     max_kicks = "1";
     max_msgs = "3";
@@ -83,7 +75,7 @@ chatnets = {
     max_msgs = "3";
     max_whois = "30";
   };
-  Rizon = { 
+  Rizon = {
     type = "IRC";
     max_kicks = "1";
     max_msgs = "3";
@@ -96,12 +88,10 @@ chatnets = {
     max_whois = "30";
   };
   SILC = { type = "SILC"; };
-  BBC = { type = "IRC"; };
 };
 
 channels = (
-  { name = "#clojure"; chatnet = "bbc"; autojoin = "yes"; }
-  { name = "#ivote"; chatnet = "bbc"; autojoin = "yes"; }
+  { name = "#clojure"; chatnet = "irc"; autojoin = "yes"; }
 );
 
 aliases = {
@@ -152,8 +142,6 @@ aliases = {
   ATAG = "WINDOW SERVER";
   UNSET = "set -clear";
   RESET = "set -default";
-  SOCAT = "exec socat TCP4-LISTEN:6697,fork SOCKS4:socks-gw.reith.bbc.co.uk:irc.dev.bbc.co.uk:6697,socksport=1080";
-  bbc = "socat; connect bbc";
 };
 
 statusbar = {
