@@ -6,7 +6,7 @@
 
 breakchars="(){}[],^%$#@\"\";:''|\\"
 CLOJURE_JAR="/me/prj/3rdparties/clojure/target/clojure-1.8.0-master-SNAPSHOT.jar"
-# CLOJURE_JAR="/Users/reborg/.m2/repository/org/clojure/clojure/1.7.0-master-SNAPSHOT/clojure-1.7.0-master-SNAPSHOT.jar"
+# CLOJURE_JAR="/Users/reborg/.m2/repository/org/clojure/clojure/1.7.0/clojure-1.7.0.jar"
 # CLOJURE_JAR="/Users/reborg/Downloads/clojure-1.6.0.jar"
 
 if [ $# -eq 0 ]; then

@@ -1,2 +1,27 @@
 #!/usr/bin/env bash
-vi /me/Dropbox/notes/cheatsheets/$1.md
+
+maybeparam=$1
+maybefile=$2
+
+opencheat() {
+    echo
+    if [ -n "$maybefile" ]; then
+      echo "opening as text"
+      open -e /me/Dropbox/notes/cheatsheets/"$maybefile".md
+    else
+      echo "opening as markdown"
+      vi /me/Dropbox/notes/cheatsheets/"$maybeparam".md
+    fi
+}
+
+BNAME=`basename $0`
+if  [ $# -lt 1 ]; then
+    echo "At least one parameter should be passed in."
+    exit 0
+fi
+
+# echo "0 $0"
+# echo "1 $1"
+# echo "2 $2"
+
+opencheat

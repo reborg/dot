@@ -38,6 +38,7 @@ untracked = red
 branch = yellow
 [core]
 	excludesfile = ~/.globalgitignore
+	editor = /usr/bin/vim
 [push]
 	default = simple
 

@@ -73,10 +73,8 @@ alias mcover='mvn -o cobertura:cobertura; open target/site/cobertura/index.html'
 export MAVEN_OPTS="-Xmx512m -Duser.timezone=UTC"
 
 # GIT
-feature(){ git flow feature start $1; }
-finish(){ git flow feature finish $1; }
-alias feature='git flow feature start'
-alias finish='git flow feature finish'
+feature(){ git checkout -b feature-$1; }
+alias feature='git checkout -b feature-'
 alias gst='git status'
 alias gbr='git branch'
 alias gco='git checkout'
@@ -85,7 +83,7 @@ alias gci='git commit -m'
 alias glog='git log --oneline --decorate --graph'
 alias gi='git-info.sh'
 alias gp='git pull --rebase'
-alias gd='git diff'
+alias gdiff='git diff'
 
 # Aliased personal projects
 alias prj='cd /me/prj'
@@ -112,7 +110,8 @@ alias zk=' /me/prj/3rdparties/zookeper/bin/zkServer.sh start-foreground'
 #source ~/Documents/cmd/ruby_switcher.sh
 
 ### JAVA
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_65.jdk/Contents/Home
+# export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home
 # export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_51.jdk/Contents/Home
 #export JAVA_HOME=/Library/Java/JavaVirtualMachines/1.6.0_65-b14-462.jdk/Contents/Home
 export GROOVY_HOME=~/Downloads/groovy-1.6.9
@@ -199,6 +198,8 @@ fi
 export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 # Finished adapting your PATH environment variable for use with MacPorts.
 
+## gpg stuff http://superuser.com/questions/739215/gpg-with-gpg-agent-never-asks-for-passphrase
+export GPG_TTY=$(tty)
 
 #THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
 # [[ -s "/Users/reborg/.gvm/bin/gvm-init.sh" ]] && source "/Users/reborg/.gvm/bin/gvm-init.sh"

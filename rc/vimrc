@@ -57,7 +57,8 @@ Plugin 'Twinside/vim-hoogle'
 Plugin 'eagletmt/ghcmod-vim'
 
 " Asciidoc
-Plugin 'asciidoc/vim-asciidoc'
+Plugin 'dagwieers/asciidoc-vim'
+" Plugin 'asciidoc/vim-asciidoc'
 " Plugin 'dahu/vimple'
 " Plugin 'dahu/Asif'
 " Plugin 'vim-scripts/SyntaxRange'
@@ -169,7 +170,11 @@ let g:paredit_electric_return=0
 autocmd BufNewFile,BufRead *.pom set ft=taskpaper
 autocmd BufNewFile,BufRead *.json set ft=javascript
 autocmd BufNewFile,BufRead *.asciidoc set ft=asciidoc
+
 autocmd BufNewFile,BufRead *.adoc set ft=asciidoc
+autocmd FileType asciidoc set nonumber
+autocmd FileType asciidoc set spell spelllang=en_us
+
 autocmd BufNewFile,BufRead *.pig set ft=pig
 autocmd BufNewFile,BufReadPost *.cljx setfiletype clojure
 autocmd BufNewFile,BufReadPost *.edn setfiletype clojure
