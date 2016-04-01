@@ -57,7 +57,8 @@ Plugin 'Twinside/vim-hoogle'
 Plugin 'eagletmt/ghcmod-vim'
 
 " Asciidoc
-Plugin 'dagwieers/asciidoc-vim'
+" Plugin 'dagwieers/asciidoc-vim'
+Plugin 'mjakl/vim-asciidoc'
 " Plugin 'asciidoc/vim-asciidoc'
 " Plugin 'dahu/vimple'
 " Plugin 'dahu/Asif'
@@ -247,9 +248,9 @@ set nowritebackup
 " Some initial folding settings
 " Then you can toggle folding with za. You can fold everything with zM and unfold
 " everything with zR. zm and zr can be used to get those folds just right
-set foldmethod=indent   "fold based on indent
-set foldnestmax=10      "deepest fold is 10 levels
-set foldlevelstart=10
+" set foldmethod=indent   "fold based on indent
+" set foldnestmax=10      "deepest fold is 10 levels
+" set foldlevelstart=10
 
 " markdown support
 " http://plasticboy.com/markdown-vim-mode/

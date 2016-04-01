@@ -3,3 +3,4 @@ rc/hosts
 !.tmux
 vim
 .emacs.d/semanticdb
+cmd/which-*
