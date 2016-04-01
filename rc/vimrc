@@ -18,7 +18,13 @@ endif
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
+" =======================================
+" Installing from scratch?
+" ln -s /me/prj/my/dot/rc/vimrc .vimrc
+" ln -s /me/prj/my/dot/vim .vim
 " vim +BundleInstall +qall
+" =======================================
+"
 " Brief help
 " :PluginList       - lists configured plugins
 " :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
