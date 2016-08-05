@@ -88,6 +88,7 @@ alias gdiff='git diff'
 # Aliased personal projects
 alias prj='cd /me/prj'
 alias my='cd /me/prj/my'
+alias book='cd /me/prj/my/book'
 alias tracking='cd /me/Dropbox/tracking'
 alias dot='cd /me/prj/my/dot'
 alias notes='cd /me/Dropbox/notes'
@@ -159,9 +160,9 @@ source ~/.bashrc
 
 # Dockerize
 export DOCKER_TLS_VERIFY="1"
-export DOCKER_HOST="tcp://192.168.99.100:2376"
-export DOCKER_CERT_PATH="/Users/reborg/.docker/machine/machines/default"
-export DOCKER_MACHINE_NAME="default"
+export DOCKER_HOST="tcp://192.168.99.101:2376"
+export DOCKER_CERT_PATH="/Users/reborg/.docker/machine/machines/dev"
+export DOCKER_MACHINE_NAME="dev"
 
 alias dps='docker ps -a'
 dstop(){ docker stop $1; }
