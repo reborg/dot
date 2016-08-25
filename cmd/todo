@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-echo "$1" >> /me/Dropbox/tracking/inventory.md
+echo "$1" >> /Users/reborg/Dropbox/tracking/inventory.md

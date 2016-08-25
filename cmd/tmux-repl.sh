@@ -11,7 +11,7 @@ starttmux() {
     tmux new-session -d -s $sessionname
     for i in $HOSTS
     do
-    tmux split-window -v -t $sessionname "cd /me/prj/dm/clj_fe; lein repl :connect $i:$PORT"
+    tmux split-window -v -t $sessionname "cd /Users/reborg/prj/dm/clj_fe; lein repl :connect $i:$PORT"
     tmux select-layout tiled
     done
     tmux set-window-option synchronize-panes on

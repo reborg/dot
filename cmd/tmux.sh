@@ -1,7 +1,7 @@
 export PROJECT_NAME=$1
-export WORKING_DIR=/me/prj/$PROJECT_NAME
+export WORKING_DIR=/Users/reborg/prj/$PROJECT_NAME
 cd $WORKING_DIR;
- 
+
 # create the session
 tmux start-server
 tmux new-session -d -s $PROJECT_NAME -n work
@@ -15,5 +15,5 @@ tmux split-window "cd $WORKING_DIR && lein repl"
 tmux send-keys "(use 'midje.repl)" "C-m"
 tmux send-keys "(autotest)" "C-m"
 tmux resize-pane -D 10
- 
+
 tmux attach-session -d -t$PROJECT_NAME

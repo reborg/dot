@@ -7,10 +7,10 @@ opencheat() {
     echo
     if [ -n "$maybefile" ]; then
       echo "opening as text"
-      open -e /me/Dropbox/notes/cheatsheets/"$maybefile".md
+      open -e /Users/reborg/Dropbox/notes/cheatsheets/"$maybefile".md
     else
       echo "opening as markdown"
-      vi /me/Dropbox/notes/cheatsheets/"$maybeparam".md
+      vi /Users/reborg/Dropbox/notes/cheatsheets/"$maybeparam".md
     fi
 }
 

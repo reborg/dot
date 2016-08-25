@@ -346,7 +346,7 @@ map <silent> ,tjava :!ctags -R --language-force=Java --sort=yes --exclude=.git -
 map <silent> ,tclj :!ctags -R --langmap=Lisp:+.clj --sort=yes --exclude=.git --exclude=.svn --exclude=**/target *<CR>
 
 " recently moved to Vundle, see top of the file.
-" call pathogen#infect('/me/prj/pathogen-bundles/{}')
+" call pathogen#infect('/Users/reborg/prj/pathogen-bundles/{}')
 
 " Fixes Airline not showing on a single pane
 set laststatus=2
