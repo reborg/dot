@@ -120,38 +120,13 @@ function parse_git_branch {
 export PS1="\[\033[01;34m\]\$(parse_git_branch) \[\033[01;32m\][\w] \[\033[01;31m\]λ\[\e[0m\] "
 
 # PATHS
-export PATH="$HOME/.cabal/bin:/Users/reborg/prj/my/dot/cmd:/sw/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/bin:/Users/reborg/prj/my/dot/vim/bin:$GROOVY_HOME/bin:$ROO_HOME/bin:$GRADLE_HOME/bin:/Applications/Racket v5.3.6/bin:$PATH:/opt/local/bin:$HOME/.rvm/bin:$HOME/Downloads/pig-0.11.1/bin:/Applications/CMake.app/Contents/bin:/Users/reborg/prj/3rdparties/FlameGraph:/Users/reborg/Downloads/stack-0.1.5.0-x86_64-osx"
+export PATH="$HOME/.cabal/bin:/Users/reborg/prj/my/dot/cmd:/sw/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/bin:/Users/reborg/prj/my/dot/vim/bin:$GROOVY_HOME/bin:$ROO_HOME/bin:$GRADLE_HOME/bin:/Applications/Racket v5.3.6/bin:$PATH:/opt/local/bin:$HOME/Downloads/pig-0.11.1/bin:/Applications/CMake.app/Contents/bin:/Users/reborg/prj/3rdparties/FlameGraph:/Users/reborg/Downloads/stack-0.1.5.0-x86_64-osx"
 export DYLD_LIBRARY_PATH="/Users/reborg/Downloads/opencv-2.4.8/build/lib":"/opt/local/lib"
 export LD_LIBRARY_PATH=/opt/local/lib:$LD_LIBRARY_PATH
 export LIBRARY_PATH=/opt/local/lib:$LIBRARY_PATH
 
-
-# Change to a directory given a full or partial name
-# You don't have to wrap directory names in quotes either
-# WIP
-chd() {
-  if [ -n "$@" ]; then
-    if [ -n "`ls *"$@"* 2>/dev/null`" ]; then
-      cd "$@"*
-    else
-      echo "-bash: chd: "$@": No directory could be extrapolated from partial name"
-    fi
-  fi
-}
-
 # Invoke private aliases
 [[ -s ~/.privaterc ]] && source ~/.privaterc
-
-# Set the bash edit to vi
-# set -o vi
-
-# MacPorts Installer addition on 2011-12-22_at_11:57:14: adding an appropriate PATH variable for use with MacPorts.
-# export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-# Finished adapting your PATH environment variable for use with MacPorts.
-[[ -s "/Users/reborg/.rvm/scripts/rvm" ]] && source "/Users/reborg/.rvm/scripts/rvm"
-
-# [ -s "/Users/reborg/.nvm/nvm.sh" ] && . "/Users/reborg/.nvm/nvm.sh" # This loads nvm
-# nvm use 0.10
 
 # Dockerize
 export DOCKER_TLS_VERIFY="1"
@@ -183,16 +158,5 @@ if [ -d "$GHC_DOT_APP" ]; then
     export PATH="${HOME}/.cabal/bin:${GHC_DOT_APP}/Contents/bin:${PATH}"
 fi
 
-##
-# Your previous /Users/reborg/.bash_profile file was backed up as /Users/reborg/.bash_profile.macports-saved_2015-03-04_at_12:52:41
-##
-
-# MacPorts Installer addition on 2015-03-04_at_12:52:41: adding an appropriate PATH variable for use with MacPorts.
-export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
-# Finished adapting your PATH environment variable for use with MacPorts.
-
 ## gpg stuff http://superuser.com/questions/739215/gpg-with-gpg-agent-never-asks-for-passphrase
 export GPG_TTY=$(tty)
-
-#THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
-# [[ -s "/Users/reborg/.gvm/bin/gvm-init.sh" ]] && source "/Users/reborg/.gvm/bin/gvm-init.sh"
