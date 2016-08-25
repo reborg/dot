@@ -29,7 +29,6 @@ alias lt='lein with-profile test test'
 alias lr='lein repl'
 alias lc='lein cucumber'
 la(){ lein cljsbuild auto $1; }
-alias la='lein cljsbuild auto'
 
 # HASKELL
 alias cb='cabal configure; cabal build'
@@ -51,7 +50,6 @@ alias tcs='tns'
 alias tas='tmux attach-session -t'
 tks(){ tmux kill-session -t $1; }
 alias tos='tas'
-alias tks='tmux kill-session -t'
 
 # SVN
 alias sign='export SVN_EDITOR=vi; svn propedit svn:ignore .'
@@ -74,12 +72,10 @@ export MAVEN_OPTS="-Xmx512m -Duser.timezone=UTC"
 
 # GIT
 feature(){ git checkout -b feature-$1; }
-alias feature='git checkout -b feature-'
 alias gst='git status'
 alias gbr='git branch'
 alias gco='git checkout'
 gci(){ git commit -m $1; }
-alias gci='git commit -m'
 alias glog='git log --oneline --decorate --graph'
 alias gi='git-info.sh'
 alias gp='git pull --rebase'
@@ -166,15 +162,10 @@ export DOCKER_MACHINE_NAME="dev"
 
 alias dps='docker ps -a'
 dstop(){ docker stop $1; }
-alias dstop='docker stop'
 dstart(){ docker start $1; }
-alias dstart='docker start'
 dtail(){ docker logs -f $1; }
-alias dtail='docker logs -f'
 dexec(){ docker exec -i -t $1; }
-alias dexec='docker exec -i -t'
 drm(){ docker rm $1; }
-alias drm='docker rm'
 alias dimages='docker images'
 alias dcrm='docker-compose rm'
 alias dcstop='docker-compose stop'
@@ -183,6 +174,8 @@ alias dctail='docker-compose logs'
 alias dlogs='docker-compose logs'
 alias l='ls -lart'
 alias drmall="docker ps -a |  awk '{print \$1}' | xargs docker rm"
+alias devbox='/Users/reborg/prj/my/docker-boxes/connect.sh devbox'
+
 alias hl='highlight -O rtf ${PWD##*/} --line-numbers --font-size 24 --font Monaco --style rdark -W -J 50 -j 3 --src-lang clojure | pbcopy'
 
 # Add GHC 7.8.3 to the PATH, via http://ghcformacosx.github.io/

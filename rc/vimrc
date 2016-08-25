@@ -177,6 +177,7 @@ let g:paredit_electric_return=0
 autocmd BufNewFile,BufRead *.pom set ft=taskpaper
 autocmd BufNewFile,BufRead *.json set ft=javascript
 autocmd BufNewFile,BufRead *.asciidoc set ft=asciidoc
+autocmd BufNewFile,BufRead *.dockerfile set ft=sh
 
 autocmd BufNewFile,BufRead *.adoc set ft=asciidoc
 autocmd FileType asciidoc set nonumber
