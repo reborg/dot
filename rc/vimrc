@@ -188,18 +188,16 @@ autocmd BufNewFile,BufReadPost *.edn setfiletype clojure
 autocmd BufNewFile,BufReadPost *.eg setfiletype lisp
 
 " turn-on distraction free writing mode for txt
-"au BufNewFile,BufRead *.{mdown,mkd,mkdn,markdown,mdwn} call DistractionFreeWriting()
-"map <F5> :setlocal spell! spelllang=en_gb<CR>
-"map <F6> :setlocal nospell<CR>
-"function! DistractionFreeWriting()
-"  colorscheme iawriter
-"  set background=light
-"  set laststatus=0                   " don't show status line
-"  set noruler                        " don't show ruler
-"  set linebreak                      " break the lines on words
-"  set nonumber
-"  set nocursorline
-"endfunction
+" au BufNewFile,BufRead *.{mdown,mkd,mkdn,markdown,mdwn,md,adoc} call DistractionFreeWriting()
+" function! DistractionFreeWriting()
+"   colorscheme solarized
+"   set background=light
+"   set laststatus=0                   " don't show status line
+"   set noruler                        " don't show ruler
+"   set linebreak                      " break the lines on words
+"   set nonumber
+"   set nocursorline
+" endfunction
 
 " Use softtabs
 set softtabstop=2

@@ -40,6 +40,8 @@
 --type-add=cmake:is:CMakeLists.txt
 --type-add=cmake:ext:cmake
 --type-add=clojure:ext:clj
+--type-add=clojure:ext:cljs
+--type-add=clojure:ext:cljc
 --type-add=cc:ext:c,h,xs
 --type-add=hh:ext:h
 --type-add=cpp:ext:cpp,cc,cxx,m,hpp,hh,h,hxx

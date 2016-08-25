@@ -1,0 +1,1 @@
+for old in *.$1; do mv $old `basename $old .$1`.$2; done
