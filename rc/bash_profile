@@ -45,11 +45,9 @@ alias rc='rails console'
 alias tls='tmux list-sessions'
 # tns(){ tmux new-session -s $1; }
 alias tns='tmux new-session -s ${PWD##*/}'
-tos(){ tmux attach-session -t $1; }
+tas(){ tmux attach-session -t $1; }
 alias tcs='tns'
-alias tas='tmux attach-session -t'
 tks(){ tmux kill-session -t $1; }
-alias tos='tas'
 
 # SVN
 alias sign='export SVN_EDITOR=vi; svn propedit svn:ignore .'
@@ -57,7 +55,6 @@ alias sup='svn up'
 alias sst='svn st'
 alias sst='svn diff | less -R'
 sci(){ svn commit -m $1; }
-alias sci='svn commit -m'
 alias sadd="svn status | grep ? | sed -e 's/?      //g' | xargs -J% svn add %"
 alias srm="svn status | grep ! | sed -e 's/!      //g' | xargs -J% svn remove %"
 alias srev="svn status | grep M | sed -e 's/M      //g' | xargs -J% svn revert %"
