@@ -72,7 +72,7 @@ feature(){ git checkout -b feature-$1; }
 alias gst='git status'
 alias gbr='git branch'
 alias gco='git checkout'
-gci(){ git commit -m $1; }
+gci(){ git commit -m "$1"; }
 alias glog='git log --oneline --decorate --graph'
 alias gi='git-info.sh'
 alias gp='git pull --rebase'
