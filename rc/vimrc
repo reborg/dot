@@ -20,8 +20,8 @@ set nocompatible
 
 " =======================================
 " Installing from scratch?
-" ln -s /me/prj/my/dot/rc/vimrc .vimrc
-" ln -s /me/prj/my/dot/vim .vim
+" ln -s /Users/reborg/prj/my/dot/rc/vimrc .vimrc
+" ln -s /Users/reborg/prj/my/dot/vim .vim
 " vim +BundleInstall +qall
 " =======================================
 "
