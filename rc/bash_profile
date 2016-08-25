@@ -119,8 +119,6 @@ function parse_git_branch {
 }
 export PS1="\[\033[01;34m\]\$(parse_git_branch) \[\033[01;32m\][\w] \[\033[01;31m\]λ\[\e[0m\] "
 
-source "/Users/reborg/prj/my/dot/rc/git-completion.bash"
-
 # PATHS
 export PATH="$HOME/.cabal/bin:/Users/reborg/prj/my/dot/cmd:/sw/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/bin:/Users/reborg/prj/my/dot/vim/bin:$GROOVY_HOME/bin:$ROO_HOME/bin:$GRADLE_HOME/bin:/Applications/Racket v5.3.6/bin:$PATH:/opt/local/bin:$HOME/.rvm/bin:$HOME/Downloads/pig-0.11.1/bin:/Applications/CMake.app/Contents/bin:/Users/reborg/prj/3rdparties/FlameGraph:/Users/reborg/Downloads/stack-0.1.5.0-x86_64-osx"
 export DYLD_LIBRARY_PATH="/Users/reborg/Downloads/opencv-2.4.8/build/lib":"/opt/local/lib"
