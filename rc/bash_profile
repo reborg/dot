@@ -117,7 +117,7 @@ export GRADLE_HOME=~/Downloads/gradle-1.0-milestone-9
 function parse_git_branch {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
-export PS1="\[\033[01;34m\]\$(parse_git_branch) \[\033[01;32m\][\w] \[\033[01;31m\]λ\[\e[0m\] "
+export PS1="\[\033[01;30m\]\h \[\033[01;32m\][\w] \[\033[01;33m\]\$(parse_git_branch)\nλ:\[\e[0m\] "
 
 # PATHS
 export PATH="$HOME/.cabal/bin:/Users/reborg/prj/my/dot/cmd:/sw/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/bin:/Users/reborg/prj/my/dot/vim/bin:$GROOVY_HOME/bin:$ROO_HOME/bin:$GRADLE_HOME/bin:/Applications/Racket v5.3.6/bin:$PATH:/opt/local/bin:$HOME/Downloads/pig-0.11.1/bin:/Applications/CMake.app/Contents/bin:/Users/reborg/prj/3rdparties/FlameGraph:/Users/reborg/Downloads/stack-0.1.5.0-x86_64-osx"
@@ -148,7 +148,8 @@ alias dctail='docker-compose logs'
 alias dlogs='docker-compose logs'
 alias l='ls -lart'
 alias drmall="docker ps -a |  awk '{print \$1}' | xargs docker rm"
-alias devbox='/Users/reborg/prj/my/docker-boxes/connect.sh devbox'
+devbox-start(){ /Users/reborg/prj/my/docker-boxes/start.sh $1; }
+devbox(){ /Users/reborg/prj/my/docker-boxes/connect.sh $1; }
 
 alias hl='highlight -O rtf ${PWD##*/} --line-numbers --font-size 24 --font Monaco --style rdark -W -J 50 -j 3 --src-lang clojure | pbcopy'
 
@@ -160,3 +161,25 @@ fi
 
 ## gpg stuff http://superuser.com/questions/739215/gpg-with-gpg-agent-never-asks-for-passphrase
 export GPG_TTY=$(tty)
+
+## Only inside the devbox
+if [ "trick$DEVBOX" != "trick" ]; then
+
+  alias vi='nvim'
+
+  if [ -x /usr/bin/dircolors ]; then
+      test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+      alias ls='ls --color=auto'
+      alias l='ls --color=auto -lart'
+      alias grep='grep --color=auto'
+  fi
+
+  if [ ! -L /Users/reborg/.netrc ]; then
+    ln -s /Users/reborg/Dropbox/Documents/home-dot-files/.netrc .netrc
+  fi
+
+  if [ ! -L /Users/reborg/.ssh ]; then
+    ln -s /Users/reborg/Dropbox/Documents/home-dot-files/.ssh .ssh
+  fi
+
+fi
