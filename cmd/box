@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-cat ~/.bashrc | grep $1 | grep -v all
+cat ~/.privaterc | grep $1 | grep -v all

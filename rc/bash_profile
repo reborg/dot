@@ -45,7 +45,7 @@ alias rc='rails console'
 alias tls='tmux list-sessions'
 # tns(){ tmux new-session -s $1; }
 alias tns='tmux -u new-session -s ${PWD##*/}'
-tas(){ tmux attach-session -t $1; }
+tas(){ tmux attach-session -dt $1; }
 alias tcs='tns'
 tks(){ tmux kill-session -t $1; }
 
@@ -134,8 +134,8 @@ export LIBRARY_PATH=/opt/local/lib:$LIBRARY_PATH
 # Dockerize
 export DOCKER_TLS_VERIFY="1"
 export DOCKER_HOST="tcp://192.168.99.100:2376"
-export DOCKER_CERT_PATH="/Users/reborg/.docker/machine/machines/dev"
-export DOCKER_MACHINE_NAME="dev"
+export DOCKER_CERT_PATH="/Users/reborg/.docker/machine/machines/default"
+export DOCKER_MACHINE_NAME="default"
 
 alias dps='docker ps -a'
 dstop(){ docker stop $1; }

@@ -10,7 +10,11 @@ opencheat() {
       open -e /Users/reborg/Dropbox/notes/cheatsheets/"$maybefile".md
     else
       echo "opening as markdown"
-      vi /Users/reborg/Dropbox/notes/cheatsheets/"$maybeparam".md
+      if [ "$DEVBOX" == "devbox" ]; then
+        nvim /Users/reborg/Dropbox/notes/cheatsheets/"$maybeparam".md
+      else
+        vi /Users/reborg/Dropbox/notes/cheatsheets/"$maybeparam".md
+      fi
     fi
 }
 
