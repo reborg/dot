@@ -81,7 +81,7 @@ alias gdiff='git diff'
 # Aliased personal projects
 alias prj='cd /Users/reborg/prj'
 alias my='cd /Users/reborg/prj/my'
-alias dm='cd /Users/reborg/prj/dm'
+alias uswitch='cd /Users/reborg/prj/uswitch'
 alias book='cd /Users/reborg/prj/my/book'
 alias tracking='cd /Users/reborg/Dropbox/tracking'
 alias dot='cd /Users/reborg/prj/my/dot'
@@ -177,11 +177,11 @@ if [ "$DEVBOX" != "localhost" ]; then
       alias grep='grep --color=auto'
   fi
 
-  if [ ! -L /Users/reborg/.netrc ]; then
+  if [ ! -L /home/reborg/.netrc ]; then
     ln -s /Users/reborg/Dropbox/Documents/home-dot-files/.netrc .netrc
   fi
 
-  if [ ! -L /Users/reborg/.ssh ]; then
+  if [ ! -L /home/reborg/.ssh ]; then
     ln -s /Users/reborg/Dropbox/Documents/home-dot-files/.ssh .ssh
   fi
 
