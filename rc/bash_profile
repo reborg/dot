@@ -198,7 +198,7 @@ if [ "$DEVBOX" != "localhost" ]; then
   fi
 
   if [ ! -L /home/reborg/.tmux ]; then
-    ln -s /Users/reborg/.tmux .tmux
+    ln -s /Users/reborg/Dropbox/Documents/home-dot-files/.tmux .tmux
   fi
 
 fi
