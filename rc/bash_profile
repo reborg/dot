@@ -111,10 +111,10 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 # export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_65.jdk/Contents/Home
 # export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home
 # export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_51.jdk/Contents/Home
-#export JAVA_HOME=/Library/Java/JavaVirtualMachines/1.6.0_65-b14-462.jdk/Contents/Home
-export GROOVY_HOME=~/Downloads/groovy-1.6.9
-export ROO_HOME=~/Downloads/spring-roo-1.1.5
-export GRADLE_HOME=~/Downloads/gradle-1.0-milestone-9
+# export JAVA_HOME=/Library/Java/JavaVirtualMachines/1.6.0_65-b14-462.jdk/Contents/Home
+# export GROOVY_HOME=~/Downloads/groovy-1.6.9
+# export ROO_HOME=~/Downloads/spring-roo-1.1.5
+# export GRADLE_HOME=~/Downloads/gradle-1.0-milestone-9
 
 ### PROMPT STUFF
 
@@ -170,6 +170,7 @@ export GPG_TTY=$(tty)
 if [ "$DEVBOX" != "localhost" ]; then
 
   alias vi='nvim'
+  export JAVA_HOME=/usr/lib/jvm/java-8-oracle/jre
 
   if [ -x /usr/bin/dircolors ]; then
       test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
@@ -189,6 +190,11 @@ if [ "$DEVBOX" != "localhost" ]; then
   if [ ! -L /home/reborg/.privaterc ]; then
     ln -s /Users/reborg/Dropbox/Documents/home-dot-files/.privaterc .privaterc
   fi
+
+  if [ ! -L /home/reborg/.m2 ]; then
+    ln -s /Users/reborg/.m2 .m2
+  fi
+
 fi
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
