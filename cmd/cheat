@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 maybeparam=$1
 maybefile=$2
@@ -9,9 +9,9 @@ opencheat() {
       echo "opening as text"
       open -e /Users/reborg/Dropbox/notes/cheatsheets/"$maybefile".md
     else
-      echo "opening as markdown"
-      if [ "$DEVBOX" == "devbox" ]; then
-        nvim /Users/reborg/Dropbox/notes/cheatsheets/"$maybeparam".md
+      echo "opening as markdown in $DEVBOX"
+      if [[ $DEVBOX == "localhost" ]]; then
+        vi /Users/reborg/Dropbox/notes/cheatsheets/"$maybeparam".md
       else
         vi /Users/reborg/Dropbox/notes/cheatsheets/"$maybeparam".md
       fi
