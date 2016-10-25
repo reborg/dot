@@ -107,7 +107,9 @@ alias zk=' /Users/reborg/prj/3rdparties/zookeper/bin/zkServer.sh start-foregroun
 #source ~/Documents/cmd/ruby_switcher.sh
 
 ### JAVA
-export JAVA_HOME=$(/usr/libexec/java_home)
+if [ "$DEVBOX" == "localhost" ]; then
+  export JAVA_HOME=$(/usr/libexec/java_home)
+fi
 # export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_65.jdk/Contents/Home
 # export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home
 # export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_51.jdk/Contents/Home
