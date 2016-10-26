@@ -201,6 +201,10 @@ if [ "$DEVBOX" != "localhost" ]; then
     ln -s /Users/reborg/Dropbox/Documents/home-dot-files/.tmux .tmux
   fi
 
+  if [ ! -L /home/reborg/.aws ]; then
+    ln -s /Users/reborg/.aws
+  fi
+
 fi
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
