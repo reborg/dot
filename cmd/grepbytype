@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 #echo Searching for $1 inside all '*.'$2 file starting from $PWD
-ack --type-set=cit=.$1 --cit $2
+# ack --type-set=cit=.$1 --cit $2
+find . -iname "*.$2" | xargs ack "$1"

@@ -1,0 +1,16 @@
+#!/bin/sh
+
+if [ "$1" = "--with-profiler" ]; then
+  JAVAOPTS="$JAVAOPTS $PROFILER_AGENT"
+elif [ "$1" = "--with-criterium" ]; then
+  JAVACP="$JAVACP:$CRITERIUM_JAR"
+elif [ "$1" = "--with-disassembler" ]; then
+  JAVACP="$JAVACP:$NODISASSEMBLE_JAR"
+elif [ "$1" = "--with-clojure" ]; then
+  JAVACP="$JAVACP:$NODISASSEMBLE_JAR"
+else
+  JAVAOPTS=""
+  JAVACP="$CLOJURE_19"
+fi
+
+git log -g --grep=$1

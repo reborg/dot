@@ -49,12 +49,17 @@ Plugin 'mileszs/ack.vim'
 
 " Clojure Here
 Plugin 'tpope/vim-fireplace'
-Plugin 'tpope/vim-leiningen'
-Plugin 'tpope/vim-classpath'
+" Plugin 'tpope/vim-salve'
+" Plugin 'tpope/vim-projectionist'
+" Plugin 'tpope/vim-dispatch'
+" Plugin 'tpope/vim-leiningen'
+" Plugin 'tpope/vim-classpath'
 Plugin 'guns/vim-sexp'
 Plugin 'tpope/vim-sexp-mappings-for-regular-people'
 Plugin 'guns/vim-clojure-static'
 Plugin 'jpalardy/vim-slime'
+Plugin 'neovim/node-host'
+Plugin 'snoe/clj-refactor.nvim'
 
 " Haskell
 Plugin 'Shougo/vimproc.vim'
@@ -317,16 +322,19 @@ set ignorecase
 " Fuzzy File Finder
 nmap <leader>t :FufFile **/<CR>
 nmap <leader>b :FufBuffer<CR>
-let g:fuf_dir_exclude = '\v(^|[/\\])(\.(hg|git|bzr|svn)|CVS|docs|dist|doc|target|out|AAMakePDF)($|[/\\])'
-let g:fuf_file_exclude = '\v\~$|\.(o|exe|dll|bak|orig|swp|wav|png|jpg|gif)$|(^|[/\\])(\.(hg|git|bzr|svn)|CVS|db|target|out|Vendors|logs|classes|select2|docs|doc|dist|AAMakePDF)($|[/\\])'
+let g:fuf_dir_exclude = '\v(^|[/\\])(\.(hg|git|bzr|svn)tmp||node_modules|CVS|docs|dist|doc|target|out|AAMakePDF)($|[/\\])'
+let g:fuf_file_exclude = '\v\~$|\.(o|exe|dll|bak|orig|swp|wav|png|jpg|gif)$|(^|[/\\])(\.(hg|git|bzr|svn)|CVS|db|target|out|Vendors|logs|classes|select2|docs|doc|dist|AAMakePDF|node_modules)($|[/\\])'
 " fix fuzzyfinder color scheme for buffer list
 hi Pmenu guifg=lightgray guibg=darkgrey gui=NONE ctermfg=yellow ctermbg=black cterm=NONE
 
 " format xml file with xmllint
 map ,xml :%!xmllint --format --encode UTF-8 -<CR>
 
+" shortcut to open clojure core
+map ,core :e /Users/reborg/prj/3rdparties/clojure/src/clj/clojure/core.clj<CR>
+
 " clean up html with tidy
-map ,html :!tidy -q -i --show-errors 0<CR>
+map ,html :!/usr/local/bin/tidy -q -i --show-errors 0<CR>
 
 " project specific vimrc load on matching folders
 " autocmd BufRead,BufNewFile ~/prj/blah/hydra/* so ~/prj/blablah/mps3/.vimrc

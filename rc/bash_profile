@@ -21,6 +21,7 @@ alias tailf='tail -f'
 alias yy='pwd | tr -d "\n" | pbcopy' # yield current dir to clipboard
 alias tomcat='cd /usr/local/Cellar/tomcat/7.0.42/libexec'
 alias top='top -o cpu -O +rsize -s 5 -n 20'
+alias vi='nvim'
 alias e='vi'
 
 # LEININGEN
@@ -87,7 +88,7 @@ alias tracking='cd /Users/reborg/Dropbox/tracking'
 alias dot='cd /Users/reborg/prj/my/dot'
 alias notes='cd /Users/reborg/Dropbox/notes'
 alias documents='cd /Users/reborg/Dropbox/documents'
-alias bookshelf='cd /Users/reborg/Dropbox/bookshelf'
+alias bookshelf='cd /Users/reborg/Google\ Drive/bookshelf'
 alias talks='cd /Users/reborg/prj/talks'
 alias downloads='cd ~/Downloads'
 alias crash='cd ~/Library/Logs/DiagnosticReports'
@@ -126,7 +127,9 @@ function parse_git_branch {
 export PS1="\[\033[01;31m\]${DEVBOX:=localhost} \[\033[01;32m\][\w] \[\033[01;33m\]\$(parse_git_branch)\nλ:\[\e[0m\] "
 
 # PATHS
-export PATH="$JAVA_HOME/jre/bin:$HOME/.cabal/bin:/Users/reborg/prj/my/dot/cmd:/sw/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/bin:/Users/reborg/prj/my/dot/vim/bin:$GROOVY_HOME/bin:$ROO_HOME/bin:$GRADLE_HOME/bin:/Applications/Racket v5.3.6/bin:$PATH:/opt/local/bin:$HOME/Downloads/pig-0.11.1/bin:/Applications/CMake.app/Contents/bin:/Users/reborg/prj/3rdparties/FlameGraph:/Users/reborg/Downloads/stack-0.1.5.0-x86_64-osx"
+export GOPATH=$HOME/go
+export VAULTED_GITHUB_TOKEN=1b9bec71fa2cdee381c471dc71d050efb22b135f
+export PATH="$JAVA_HOME/jre/bin:$HOME/.cabal/bin:/Users/reborg/prj/my/dot/cmd:/sw/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/bin:/Users/reborg/prj/my/dot/vim/bin:$GROOVY_HOME/bin:$ROO_HOME/bin:$GRADLE_HOME/bin:/Applications/Racket v5.3.6/bin:$PATH:/opt/local/bin:$HOME/Downloads/pig-0.11.1/bin:/Applications/CMake.app/Contents/bin:/Users/reborg/prj/3rdparties/FlameGraph:/Users/reborg/Downloads/stack-0.1.5.0-x86_64-osx:$GOPATH/bin:$HOME/Downloads/visualvm_139/bin"
 # export DYLD_LIBRARY_PATH="/Users/reborg/Downloads/opencv-2.4.8/build/lib":"/opt/local/lib"
 # export LD_LIBRARY_PATH=/opt/local/lib:$LD_LIBRARY_PATH
 # export LIBRARY_PATH=/opt/local/lib:$LIBRARY_PATH
