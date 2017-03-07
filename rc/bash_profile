@@ -1,7 +1,8 @@
 test -r /sw/bin/init.sh && . /sw/bin/init.sh
 
 # different color scheme for the console
-#export CLICOLOR=1
+export CLICOLOR=1
+export TERM=xterm-256color
 #export LSCOLORS=Gxfxcxdxbxegedabagacad
 #export SVN_EDITOR=vi
 
@@ -21,7 +22,9 @@ alias tailf='tail -f'
 alias yy='pwd | tr -d "\n" | pbcopy' # yield current dir to clipboard
 alias tomcat='cd /usr/local/Cellar/tomcat/7.0.42/libexec'
 alias top='top -o cpu -O +rsize -s 5 -n 20'
-alias vi='nvim'
+alias vim="nvim"
+alias vi="nvim"
+alias oldvim="vim"
 alias e='vi'
 
 # LEININGEN
