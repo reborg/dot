@@ -1,0 +1,28 @@
+pane	banking-click-consumers	1	:bash	1	:*	1	:/Users/reborg/prj/uswitch/banking-click-consumers	0	bash	:
+pane	banking-click-consumers	1	:bash	1	:*	2	:/Users/reborg/prj/uswitch/banking-click-consumers	1	bash	:
+pane	money-credit-cards	1	:nvim	1	:*	1	:/Users/reborg/prj/uswitch/money-credit-cards	1	nvim	:nvim
+pane	money-credit-cards	1	:nvim	1	:*	2	:/Users/reborg/prj/uswitch/money-credit-cards	0	bash	:
+pane	money-credit-cards	1	:nvim	1	:*	3	:/Users/reborg/prj/uswitch/money-credit-cards	0	bash	:
+pane	money-data	1	:bash	1	:*	1	:/Users/reborg/prj/uswitch/money-data	0	nvim	:nvim
+pane	money-data	1	:bash	1	:*	2	:/Users/reborg/prj/uswitch/money-data	0	bash	:
+pane	money-data	1	:bash	1	:*	3	:/Users/reborg/prj/uswitch/money-data	1	bash	:
+pane	money-mortgages	1	:bash	1	:*	1	:/Users/reborg/prj/uswitch/money-mortgages	0	nvim	:nvim
+pane	money-mortgages	1	:bash	1	:*	2	:/Users/reborg/prj/uswitch/money-mortgages	1	bash	:
+pane	money-mortgages	1	:bash	1	:*	3	:/Users/reborg/prj/uswitch/money-mortgages	0	bash	:
+pane	money-redirect	1	:bash	1	:*	1	:/Users/reborg/prj/uswitch/money-redirect	0	nvim	:nvim
+pane	money-redirect	1	:bash	1	:*	2	:/Users/reborg/prj/uswitch/money-redirect	0	bash	:
+pane	money-redirect	1	:bash	1	:*	3	:/Users/reborg/prj/uswitch	1	bash	:
+pane	money-reports	1	:bash	1	:*	1	:/Users/reborg/prj/uswitch/money-reports	0	nvim	:nvim
+pane	money-reports	1	:bash	1	:*	2	:/Users/reborg/prj/uswitch/money-reports	1	bash	:
+pane	money-reports	1	:bash	1	:*	3	:/Users/reborg/prj/uswitch/money-reports	0	mysql	:mysql -h money-reporting.cv7dcdtnxmsa.eu-west-1.rds.amazonaws.com -u reporting --password=x xxxxxxxxxxxx reporting
+pane	money-reports-worker	1	:nvim	1	:*	1	:/Users/reborg/prj/uswitch/money-reports-worker	1	nvim	:nvim
+pane	money-reports-worker	1	:nvim	1	:*	2	:/Users/reborg/prj/uswitch/money-reports-worker	0	bash	:
+pane	money-reports-worker	1	:nvim	1	:*	3	:/Users/reborg/prj/uswitch/money-reports-worker	0	bash	:
+window	banking-click-consumers	1	1	:*	50c8,318x83,0,0[318x61,0,0,27,318x21,0,62,28]
+window	money-credit-cards	1	1	:*	8769,318x83,0,0[318x61,0,0,13,318x21,0,62{159x21,0,62,14,158x21,160,62,15}]
+window	money-data	1	1	:*	6d54,318x83,0,0[318x61,0,0,0,318x21,0,62{159x21,0,62,1,158x21,160,62,2}]
+window	money-mortgages	1	1	:*	ed85,318x83,0,0[318x61,0,0,3,318x21,0,62{159x21,0,62,4,158x21,160,62,5}]
+window	money-redirect	1	1	:*	3780,318x83,0,0[318x61,0,0,19,318x21,0,62{159x21,0,62,20,158x21,160,62,21}]
+window	money-reports	1	1	:*	d744,318x83,0,0[318x61,0,0,8,318x21,0,62{159x21,0,62,9,158x21,160,62,10}]
+window	money-reports-worker	1	1	:*	c769,318x83,0,0[318x61,0,0,32,318x21,0,62{159x21,0,62,33,158x21,160,62,35}]
+state	money-redirect	money-reports-worker

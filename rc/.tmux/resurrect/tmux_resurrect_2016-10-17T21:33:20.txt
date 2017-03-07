@@ -1,0 +1,62 @@
+pane	amazonica	1	:vim	1	:*	1	:/Users/reborg/prj/3rdparties/amazonica	1	vim	:vi
+pane	amazonica	1	:vim	1	:*	2	:/Users/reborg/prj/3rdparties/amazonica	0	bash	:bash /Users/reborg/prj/my/dot/cmd/lein repl
+pane	aws	1	:vim	1	:*	1	:/Users/reborg/prj/spikes/aws	1	vim	:vi
+pane	aws	1	:vim	1	:*	2	:/Users/reborg/prj/spikes/aws	0	bash	:bash /Users/reborg/prj/my/dot/cmd/lein repl
+pane	banking-click-consumers	1	:vim	1	:*	1	:/Users/reborg/prj/uswitch/banking-click-consumers	1	vim	:vi ecs/
+pane	banking-click-consumers	1	:vim	1	:*	2	:/Users/reborg/prj/uswitch/banking-click-consumers	0	bash	:bash /Users/reborg/prj/my/dot/cmd/lein repl
+pane	banking-click-consumers	1	:vim	1	:*	3	:/Users/reborg/prj/uswitch/banking-click-consumers	0	bash	:
+pane	banking-ftp-api	1	:vim	1	:*	1	:/Users/reborg/prj/uswitch/banking-ftp-api	1	vim	:vi
+pane	banking-ftp-api	1	:vim	1	:*	2	:/Users/reborg/prj/uswitch/banking-ftp-api	0	bash	:
+pane	banking-mortgages-feed	1	:vim	1	:*	1	:/Users/reborg/prj/uswitch/banking-mortgages-feed	1	vim	:vi
+pane	banking-mortgages-feed	1	:vim	1	:*	2	:/Users/reborg/prj/uswitch/banking-mortgages-feed	0	bash	:bash /Users/reborg/prj/my/dot/cmd/lein repl
+pane	banking-mortgages-feed	1	:vim	1	:*	3	:/Users/reborg/prj/uswitch/banking-mortgages-feed	0	bash	:
+pane	banking-reports-api	1	:vim	1	:*	1	:/Users/reborg/prj/uswitch/banking-reports-api	1	vim	:vi
+pane	banking-reports-api	1	:vim	1	:*	2	:/Users/reborg/prj/uswitch/banking-reports-api	0	bash	:
+pane	book	1	:vim	1	:*	1	:/Users/reborg/prj/my/book	1	vim	:vi
+pane	book	1	:vim	1	:*	2	:/Users/reborg/prj/my/book	0	ruby	:/usr/local/opt/ruby/bin/ruby /usr/local/bin/guard
+pane	book	1	:vim	1	:*	3	:/Users/reborg/prj/my/book	0	bash	:bash /Users/reborg/prj/my/dot/cmd/lein repl
+pane	finj	1	:bash	1	:*	1	:/Users/reborg/prj/3rdparties/finj	0	vim	:vi
+pane	finj	1	:bash	1	:*	2	:/Users/reborg/prj/3rdparties/finj	1	bash	:bash /Users/reborg/prj/my/dot/cmd/lein repl
+pane	finj-spike	1	:bash	1	:*	1	:/Users/reborg/prj/spikes/finj-spike	0	bash	:
+pane	finj-spike	1	:bash	1	:*	2	:/Users/reborg/prj/spikes/finj-spike	1	bash	:bash /Users/reborg/prj/my/dot/cmd/lein repl
+pane	money-data	1	:vim	1	:*	1	:/Users/reborg/prj/uswitch/money-data	1	vim	:vi
+pane	money-data	1	:vim	1	:*	2	:/Users/reborg/prj/uswitch/money-data	0	bash	:
+pane	money-mortgages	1	:vim	1	:*	1	:/Users/reborg/prj/uswitch/money-mortgages	1	vim	:vi .
+pane	money-mortgages	1	:vim	1	:*	2	:/Users/reborg/prj/uswitch/money-mortgages	0	bash	:
+pane	mortgage-feed-explorer	1	:vim	1	:*	1	:/Users/reborg/prj/uswitch/mortgage-feed-explorer	1	vim	:vi
+pane	mortgage-feed-explorer	1	:vim	1	:*	2	:/Users/reborg/prj/uswitch/mortgage-feed-explorer	0	bash	:bash /Users/reborg/prj/my/dot/cmd/lein repl
+pane	mortgage-feed-explorer	1	:vim	1	:*	3	:/Users/reborg/prj/uswitch/mortgage-feed-explorer	0	bash	:
+pane	mortgages-api	1	:vim	1	:*	1	:/Users/reborg/prj/uswitch/mortgages-api	1	vim	:vi
+pane	mortgages-api	1	:vim	1	:*	2	:/Users/reborg/prj/uswitch/mortgages-api	0	bash	:bash /Users/reborg/prj/my/dot/cmd/lein repl
+pane	mortgages-api	1	:vim	1	:*	3	:/Users/reborg/prj/uswitch/mortgages-api	0	bash	:bash /Users/reborg/prj/my/dot/cmd/lein test-refresh
+pane	mortgages-rails-api	1	:vim	1	:*	1	:/Users/reborg/prj/uswitch/mortgages-rails-api	1	vim	:vi .
+pane	mortgages-rails-api	1	:vim	1	:*	2	:/Users/reborg/prj/uswitch/mortgages-rails-api	0	ruby	:irb 
+pane	mortgages-rails-api	1	:vim	1	:*	3	:/Users/reborg/prj/uswitch/mortgages-rails-api	0	ruby	:puma 3.6.0 (tcp://0.0.0.0:3000) [mortgages-rails-api]       
+pane	puppet	1	:vim	1	:*	1	:/Users/reborg/prj/uswitch/puppet	1	vim	:vi README.md
+pane	puppet	1	:vim	1	:*	2	:/Users/reborg/prj/uswitch/puppet	0	bash	:
+pane	snippetizer	1	:bash	1	:*	1	:/Users/reborg/prj/my/book/snippetizer	0	vim	:vi
+pane	snippetizer	1	:bash	1	:*	2	:/Users/reborg/prj/my/book/snippetizer	0	bash	:bash /Users/reborg/prj/my/dot/cmd/lein repl
+pane	snippetizer	1	:bash	1	:*	3	:/Users/reborg/prj/my/book	1	bash	:
+pane	terrafying-specs	1	:bash	1	:*	1	:/Users/reborg/prj/uswitch/terrafying-specs	0	vim	:vi
+pane	terrafying-specs	1	:bash	1	:*	2	:/Users/reborg/prj/uswitch/terrafying-specs	1	bash	:
+pane	tracking	1	:vim	1	:*	1	:/Users/reborg/Dropbox/tracking	1	vim	:vi 2016/10/05.pom
+pane	tracking	1	:vim	1	:*	2	:/Users/reborg/Dropbox/tracking	0	vim	:vi pomodoro.tbl
+window	amazonica	1	1	:*	4744,318x83,0,0[318x58,0,0,24,318x24,0,59,25]
+window	aws	1	1	:*	0d40,318x83,0,0[318x60,0,0,6,318x22,0,61,7]
+window	banking-click-consumers	1	1	:*	040b,318x83,0,0[318x62,0,0,145,318x20,0,63{159x20,0,63,146,158x20,160,63,148}]
+window	banking-ftp-api	1	1	:*	9b82,318x83,0,0[318x65,0,0,80,318x17,0,66,81]
+window	banking-mortgages-feed	1	1	:*	1799,213x80,0,0[213x59,0,0,20,213x20,0,60{106x20,0,60,21,106x20,107,60,117}]
+window	banking-reports-api	1	1	:*	7888,318x83,0,0[318x63,0,0,84,318x19,0,64,85]
+window	book	1	1	:*	08d4,176x48,0,0[176x45,0,0,12,176x2,0,46{87x2,0,46,13,88x2,88,46,14}]
+window	finj	1	1	:*	91d9,178x51,0,0[178x36,0,0,201,178x14,0,37,202]
+window	finj-spike	1	1	:*	d3ae,157x38,0,0[157x19,0,0,199,157x18,0,20,200]
+window	money-data	1	1	:*	e640,318x83,0,0[318x61,0,0,171,318x21,0,62,172]
+window	money-mortgages	1	1	:*	4f32,256x80,0,0[256x55,0,0,64,256x24,0,56,65]
+window	mortgage-feed-explorer	1	1	:*	840c,318x83,0,0[318x62,0,0,139,318x20,0,63{159x20,0,63,140,158x20,160,63,151}]
+window	mortgages-api	1	1	:*	f4fa,178x51,0,0[178x43,0,0,4,178x7,0,44{88x7,0,44,5,89x7,89,44,198}]
+window	mortgages-rails-api	1	1	:*	2ed4,318x83,0,0[318x63,0,0,165,318x19,0,64{159x19,0,64,166,158x19,160,64,167}]
+window	puppet	1	1	:*	2de8,318x83,0,0[318x62,0,0,9,318x20,0,63,10]
+window	snippetizer	1	1	:*	256c,178x51,0,0[178x40,0,0,15,178x10,0,41{89x10,0,41,16,88x10,90,41,17}]
+window	terrafying-specs	1	1	:*	f88c,318x83,0,0[318x63,0,0,68,318x19,0,64,69]
+window	tracking	1	1	:*	9efc,176x48,0,0[176x45,0,0,0,176x2,0,46,2]
+state	finj	

@@ -1,0 +1,26 @@
+pane	aws	1	:vim	1	:*	1	:/Users/reborg/prj/spikes/aws	1	vim	:vi
+pane	aws	1	:vim	1	:*	2	:/Users/reborg/prj/spikes/aws	0	bash	:bash /Users/reborg/prj/my/dot/cmd/lein repl
+pane	aws	1	:vim	1	:*	3	:/Users/reborg/prj/spikes/aws	0	bash	:
+pane	banking-mortgages-feed	1	:bash	1	:*	1	:/Users/reborg/prj/uswitch/banking-mortgages-feed	1	bash	:
+pane	banking-mortgages-feed	1	:bash	1	:*	2	:/Users/reborg/prj/uswitch/banking-mortgages-feed	0	bash	:
+pane	book	1	:bash	1	:*	1	:/Users/reborg/prj/my/book	0	vim	:vi Gemfile
+pane	book	1	:bash	1	:*	2	:/Users/reborg/prj/my/book	1	bash	:
+pane	book	1	:bash	1	:*	3	:/Users/reborg/prj/my/book	0	bash	:
+pane	mortgages-api	1	:bash	1	:*	1	:/Users/reborg/prj/uswitch/mortgages-api	1	bash	:
+pane	mortgages-api	1	:bash	1	:*	2	:/Users/reborg/prj/uswitch/mortgages-api	0	bash	:bash /Users/reborg/prj/my/dot/cmd/lein repl
+pane	mortgages-api	1	:bash	1	:*	3	:/Users/reborg/prj/uswitch/mortgages-api	0	bash	:
+pane	puppet	1	:bash	1	:*Z	1	:/Users/reborg/prj/uswitch/puppet	0	bash	:
+pane	puppet	1	:bash	1	:*Z	2	:/Users/reborg/prj/uswitch/puppet	1	bash	:
+pane	snippetizer	1	:vim	1	:*	1	:/Users/reborg/prj/my/book/snippetizer	1	vim	:vi
+pane	snippetizer	1	:vim	1	:*	2	:/Users/reborg/prj/my/book/snippetizer	0	bash	:bash /Users/reborg/prj/my/dot/cmd/lein repl
+pane	snippetizer	1	:vim	1	:*	3	:/Users/reborg/prj/my/book/snippetizer	0	bash	:bash /Users/reborg/prj/my/dot/cmd/lein test-refresh
+pane	tracking	1	:vim	1	:*	1	:/Users/reborg/Dropbox/tracking	1	vim	:vi 2016/10/05.pom
+pane	tracking	1	:vim	1	:*	2	:/Users/reborg/Dropbox/tracking	0	vim	:vi pomodoro.tbl
+window	aws	1	1	:*	1919,318x83,0,0[318x55,0,0,6,318x27,0,56{159x27,0,56,7,158x27,160,56,18}]
+window	banking-mortgages-feed	1	1	:*	e23d,318x83,0,0[318x62,0,0,20,318x20,0,63,21]
+window	book	1	1	:*	f14a,157x38,0,0[157x35,0,0,12,157x2,0,36{78x2,0,36,13,78x2,79,36,14}]
+window	mortgages-api	1	1	:*	a00d,318x83,0,0[318x57,0,0,3,318x25,0,58{159x25,0,58,4,158x25,160,58,5}]
+window	puppet	1	1	:*Z	8f7e,158x80,0,0[158x40,0,0,9,158x39,0,41,10]
+window	snippetizer	1	1	:*	d6f2,318x83,0,0[318x53,0,0,15,318x29,0,54{159x29,0,54,16,158x29,160,54,17}]
+window	tracking	1	1	:*	26df,158x80,0,0[158x53,0,0,0,158x26,0,54,2]
+state	banking-mortgages-feed	

@@ -1,0 +1,9 @@
+pane	tracking	1	:bash	1	:*	1	:/Users/reborg/Dropbox/tracking	0	bash	:
+pane	tracking	1	:bash	1	:*	2	:/Users/reborg/Dropbox/tracking	1	bash	:
+pane	uswitch	1	:bash	1	:*	1	:/Users/reborg/prj/uswitch	0	bash	:
+pane	uswitch	1	:bash	1	:*	2	:/Users/reborg/prj/uswitch	0	bash	:
+pane	uswitch	1	:bash	1	:*	3	:/Users/reborg/prj/uswitch/money-data	0	docker-compose	:docker-compose up
+pane	uswitch	1	:bash	1	:*	4	:/Users/reborg/prj/uswitch	1	bash	:
+window	tracking	1	1	:*	455e,158x80,0,0[158x60,0,0,0,158x19,0,61,1]
+window	uswitch	1	1	:*	b1d3,318x83,0,0[318x41,0,0{159x41,0,0,2,158x41,160,0,5},318x41,0,42{159x41,0,42,3,158x41,160,42,4}]
+state	uswitch	
