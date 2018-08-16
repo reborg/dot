@@ -1,0 +1,10 @@
+﻿{
+  "publickeys": [
+    {
+      "email": "renzo.borgatti@uswitch.com",
+      "publickey": {
+        "pem": "-----BEGIN PUBLIC KEY-----\nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAk/ICs7rHHqcSLhY9OgQv\nrKQeNfDj63exKtpLVWq8qmQcgIy/JYf9DtiZCSk1WD6shtxal99AzPxFPvicJ7HA\n2QShYWEyb6injbhuDtHFfVP+dv6oJynsXl3b6gH6XM6/Y9WNDH/PgQI8X1+Hn98F\ndRtiP4+mtihlxp7rbhpso3UEdIK7hIxCXxSIGSOY1J98ho4mu0LPMunD2B398fDI\nztrgFv7I3y5vpWifBmN2tHnZST8OT7Nq3/mGaEZ613nM0QxPma3l+UEiw2YXFFiM\nGiDfF+cUjuig6LbqBng3NREH4nIQCPxmmLVKqN7R9kjypF6K17AIvnm5s7kR/oD6\nScjyh5VFiUeRNuC7x//u9/X7RlMeejVUeMYeWgYdlA/pg8pjh5dIrZaHr6N3W5XP\ntojpWvtMMRyFTybJVyq1T8if6VspIEl6flumzhWarIejjdW7OSNElgyqxTql2qBc\nj1AOiw+pjAtQ120Wbv+Dg8cMVZri5JVtvnYNhbcJCy1grjwNgX38PSFyjD/P5iV/\n/gn414FZ2Hlj1vfI+tYwuuCX9DW3PQKtS5mvZvELmIY1sL4jKbGmNBI8x3nJRrMz\nhkbodUzrl9N/LEOB2PuPyAkypbapI+pwvcspRJcgjB1MNmFPEbVjmiZvYMW8W+F3\nZjtUZ3ESvZrD/oaPs1s/ji0CAwEAAQ==\n-----END PUBLIC KEY-----\n"
+      }
+    }
+  ]
+}

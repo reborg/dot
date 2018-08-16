@@ -1,0 +1,68 @@
+﻿{
+  "watchedFolders": [
+    {
+      "path": "/Users/reborg/Documents/My AxCrypt/",
+      "publicTag": {
+        "thumbprint": {
+          "thumbprint": "QdNE0I5C"
+        },
+        "email": {
+          "address": "renzo.borgatti@uswitch.com"
+        }
+      },
+      "keyShares": []
+    },
+    {
+      "path": "/Users/reborg/Library/Mobile Documents/com~apple~CloudDocs/My AxCrypt/",
+      "publicTag": {
+        "thumbprint": {
+          "thumbprint": "QdNE0I5C"
+        },
+        "email": {
+          "address": "renzo.borgatti@uswitch.com"
+        }
+      },
+      "keyShares": []
+    },
+    {
+      "path": "/Users/reborg/Google Drive/My AxCrypt/",
+      "publicTag": {
+        "thumbprint": {
+          "thumbprint": "QdNE0I5C"
+        },
+        "email": {
+          "address": "renzo.borgatti@uswitch.com"
+        }
+      },
+      "keyShares": []
+    }
+  ],
+  "knownPassphrases": [
+    {
+      "thumbprint": {
+        "thumbprint": "QdNE0I5C"
+      }
+    },
+    {
+      "thumbprint": {
+        "thumbprint": "C1rP3/92"
+      }
+    }
+  ],
+  "activeFiles": [
+    {
+      "thumbprint": {
+        "thumbprint": "C1rP3/92"
+      },
+      "decryptedFolder": "/Users/reborg/.local/share/AxCrypt/bk8h5wle",
+      "protectedDecryptedName": "fin10JC+pEee7Q/HWYnbNqCo5E/lAasaTHBIubcPwQzjWtSc7zmfV8uAz+lWAIQr18e9mdSLQaYAS0CzWdS4UY+zA5ttEAafVZDMPpmENaD6LhpJ0gl3msT6FFQUZiyPDh9vn/RHZu0lcVNxcMwL6pMvqVoyQMH9D0iT62f6IR66D20+GZLyjubt0RAhijGiXMFrQYTV1P2Leg+Bh8vMzc/DwUw2tzHwfm5+leHfc915D3jqZCVQi1ekKGdtmB2YyXs2QG3PdHDuhFAlsK+y0NOGfircjwPzL6syMsXgr9s=",
+      "encryptedPath": "/Users/reborg/Desktop/SFTP access details.axx",
+      "status": 1,
+      "properties": {
+        "cryptoId": "e20f33d4-89e2-4d88-a39c-21dd62fb674f",
+        "lastActivityTimeUtc": "2018-06-29T12:38:50.482508Z",
+        "lastEncryptionWriteTimeUtc": "2018-06-08T12:57:05Z"
+      }
+    }
+  ]
+}

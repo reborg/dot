@@ -5,6 +5,7 @@ export CLICOLOR=1
 export TERM=xterm-256color
 #export LSCOLORS=Gxfxcxdxbxegedabagacad
 #export SVN_EDITOR=vi
+export EDITOR=vim
 
 # longer bash history please
 HISTFILESIZE=2500
@@ -40,6 +41,11 @@ alias ci='cabal configure; cabal install --dependencies-only'
 alias cre='cabal configure; cabal repl'
 alias cru='cabal configure; cabal run'
 alias ct='cabal configure --enable-tests; cabal install --only-dependencies --enable-tests; cabal test'
+alias saut='stscreds auth; u kauth'
+
+# clj
+alias brepl='cd /Users/reborg/prj/3rdparties/clojure; mvn -Dmaven.test.skip=true clean package; repl --bleeding'
+alias cljs='clj -Sdeps "{:deps {org.clojure/clojurescript {:mvn/version \"1.9.946\"}}}" -m cljs.repl.node'
 
 # RAILS
 alias rs='rails server'
@@ -84,6 +90,7 @@ alias gdiff='git diff'
 
 # Aliased personal projects
 alias prj='cd /Users/reborg/prj'
+alias energy='cd /Users/reborg/prj/uswitch/energy'
 alias my='cd /Users/reborg/prj/my'
 alias uswitch='cd /Users/reborg/prj/uswitch'
 alias book='cd /Users/reborg/prj/my/book'
@@ -99,8 +106,71 @@ alias 3rdparties='cd /Users/reborg/prj/3rdparties'
 alias spikes='cd /Users/reborg/prj/spikes'
 alias luca='cd /Users/reborg/Dropbox/Documents/Luca'
 alias sara='cd /Users/reborg/Dropbox/Documents/sara'
+alias chess='cd /Users/reborg/Dropbox/notes/chess'
+alias job='cd /Users/reborg/Dropbox/Documents/job'
+alias coaching='cd /Users/reborg/Dropbox/Documents/coaching'
 
 alias zk=' /Users/reborg/prj/3rdparties/zookeper/bin/zkServer.sh start-foreground'
+
+# Docker alias
+alias dps='docker ps -a'
+dstop(){ docker stop $1; }
+dstart(){ docker start $1; }
+dtail(){ docker logs -f $1; }
+dexec(){ docker exec -i -t $1; }
+drm(){ docker rm $1; }
+alias dimages='docker images'
+alias dcrm='docker-compose rm'
+alias dcstop='docker-compose stop'
+alias dcup='docker-compose up -d'
+alias dctail='docker-compose logs'
+alias dlogs='docker-compose logs'
+alias l='ls -lart'
+alias drmall="docker ps -a |  awk '{print \$1}' | xargs docker rm"
+alias devboxstart='/Users/reborg/prj/my/docker-boxes/start.sh'
+alias devbox='/Users/reborg/prj/my/docker-boxes/connect.sh'
+
+# Kube alias
+bopods(){ kubectl -n energy-back-office get pods; }
+bodepls(){ kubectl -n energy-back-office get deployments; }
+bocrons(){ kubectl -n energy-back-office get cronjobs; }
+bojobs(){ kubectl -n energy-back-office get jobs; }
+bojobpods(){ kubectl -n energy-back-office get pods -l job-name=$1 --show-all; }
+bodescron(){ kubectl -n energy-back-office describe cron $1; }
+bodesjob(){ kubectl -n energy-back-office describe job $1; }
+bodespod(){ kubectl -n energy-back-office describe pod $1; }
+bodesing(){ kubectl -n energy-back-office describe ingress $1; }
+bodeljob(){ kubectl -n energy-back-office delete job $1; }
+bocreate(){ kubectl -n energy-back-office create -f $1; }
+boing(){ kubectl -n energy-back-office get ingresses; }
+
+bologs(){ kubectl -n energy-back-office logs -f $1; }
+bologsc(){ kubectl -n energy-back-office logs -f $1 -c $2; }
+bokill(){ kubectl -n energy-back-office delete deployment $1; }
+borestart(){ kubectl -n energy-back-office delete pod $1; }
+
+offsecrets(){ kubectl -n energy-offline get secret $1 -o yaml; }
+offeditsecret(){ kubectl -n energy-offline edit secret $1 -o yaml; }
+offlogs(){ kubectl -n energy-offline logs -f $1; }
+offlogsc(){ kubectl -n energy-offline logs -f $1 -c $2; }
+offjobs(){ kubectl -n energy-offline get jobs; }
+offpods(){ kubectl -n energy-offline get pods; }
+offdespod(){ kubectl -n energy-offline describe pod $1; }
+offdesjob(){ kubectl -n energy-offline describe job $1; }
+offdescron(){ kubectl -n energy-offline describe cron $1; }
+offcrons(){ kubectl -n energy-offline get cronjobs; }
+offjobpods(){ kubectl -n energy-offline get pods --selector=job-name=$1 --show-all; }
+offrestart(){ kubectl -n energy-offline delete pod $1; }
+offdeljob(){ kubectl -n energy-offline delete job $1; }
+offing(){ kubectl -n energy-offline get ingresses; }
+offdesing(){ kubectl -n energy-offline describe ingress $1; }
+
+bosecrets(){ kubectl -n energy-back-office get secret $1 -o yaml; }
+boeditsecret(){ kubectl -n energy-back-office edit secret $1 -o yaml; }
+
+bosh(){ kubectl -n energy-back-office exec $1 -i -t -- bash; }
+offsh(){ kubectl -n energy-offline exec $1 -i -t -- bash; }
+podclj(){ kubectl -n energy-back-office run playground --rm -i --tty --image clojure:latest --limits="cpu=500m,memory=1Gi" -- bash -lic "lein repl"; }
 
 ### RUBY
 #export RUBYOPT=rubygems
@@ -132,7 +202,9 @@ export PS1="\[\033[01;31m\]${DEVBOX:=localhost} \[\033[01;32m\][\w] \[\033[01;33
 # PATHS
 export GOPATH=$HOME/go
 export VAULTED_GITHUB_TOKEN=1b9bec71fa2cdee381c471dc71d050efb22b135f
-export PATH="$JAVA_HOME/jre/bin:$HOME/.cabal/bin:/Users/reborg/prj/my/dot/cmd:/sw/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/bin:/Users/reborg/prj/my/dot/vim/bin:$GROOVY_HOME/bin:$ROO_HOME/bin:$GRADLE_HOME/bin:/Applications/Racket v5.3.6/bin:$PATH:/opt/local/bin:$HOME/Downloads/pig-0.11.1/bin:/Applications/CMake.app/Contents/bin:/Users/reborg/prj/3rdparties/FlameGraph:/Users/reborg/Downloads/stack-0.1.5.0-x86_64-osx:$GOPATH/bin:$HOME/Downloads/visualvm_139/bin"
+
+export PATH="$HOME/.jenv/bin:$HOME/.cabal/bin:/Users/reborg/prj/my/dot/cmd:/sw/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/bin:/Users/reborg/prj/my/dot/vim/bin:$GROOVY_HOME/bin:$ROO_HOME/bin:$GRADLE_HOME/bin:$PATH:/opt/local/bin:$HOME/Downloads/pig-0.11.1/bin:/Applications/CMake.app/Contents/bin:/Users/reborg/prj/3rdparties/FlameGraph:/Users/reborg/Downloads/stack-0.1.5.0-x86_64-osx:$GOPATH/bin:/usr/local/Cellar/smlnj/110.74/libexec/bin:/Users/reborg/prj/3rdparties/graalvm/mx"
+
 # export DYLD_LIBRARY_PATH="/Users/reborg/Downloads/opencv-2.4.8/build/lib":"/opt/local/lib"
 # export LD_LIBRARY_PATH=/opt/local/lib:$LD_LIBRARY_PATH
 # export LIBRARY_PATH=/opt/local/lib:$LIBRARY_PATH
@@ -141,29 +213,13 @@ export PATH="$JAVA_HOME/jre/bin:$HOME/.cabal/bin:/Users/reborg/prj/my/dot/cmd:/s
 [[ -s ~/.privaterc ]] && source ~/.privaterc
 
 # Dockerize
-export DOCKER_TLS_VERIFY="1"
-export DOCKER_HOST="tcp://192.168.99.100:2376"
-export DOCKER_CERT_PATH="/Users/reborg/.docker/machine/machines/default"
-export DOCKER_MACHINE_NAME="default"
+# export DOCKER_TLS_VERIFY="1"
+# export DOCKER_HOST="tcp://192.168.99.100:2376"
+# export DOCKER_CERT_PATH="/Users/reborg/.docker/machine/machines/default"
+# export DOCKER_MACHINE_NAME="default"
 
-alias dps='docker ps -a'
-dstop(){ docker stop $1; }
-dstart(){ docker start $1; }
-dtail(){ docker logs -f $1; }
-dexec(){ docker exec -i -t $1; }
-drm(){ docker rm $1; }
-alias dimages='docker images'
-alias dcrm='docker-compose rm'
-alias dcstop='docker-compose stop'
-alias dcup='docker-compose up -d'
-alias dctail='docker-compose logs'
-alias dlogs='docker-compose logs'
-alias l='ls -lart'
-alias drmall="docker ps -a |  awk '{print \$1}' | xargs docker rm"
-alias devboxstart='/Users/reborg/prj/my/docker-boxes/start.sh'
-alias devbox='/Users/reborg/prj/my/docker-boxes/connect.sh'
-
-alias hl='highlight -O rtf ${PWD##*/} --line-numbers --font-size 24 --font Monaco --style rdark -W -J 50 -j 3 --src-lang clojure | pbcopy'
+# Highlight clojure code from clipboard
+alias hl='pbcopy | highlight -O rtf --font-size 12 --font DejaVuSansMono --style rdark -W -J 50 -j 3 --src-lang clojure | pbcopy'
 
 # Add GHC 7.8.3 to the PATH, via http://ghcformacosx.github.io/
 export GHC_DOT_APP="/Applications/ghc-7.8.3.app"
@@ -213,5 +269,34 @@ if [ "$DEVBOX" != "localhost" ]; then
 
 fi
 
+# fzf stuff, brew install fzf and rg
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+eval "$(u --completion-script-bash)"
+source <(kubectl completion bash)
+
+# added by Anaconda2 5.0.1 installer
+export PATH="/Users/reborg/anaconda2/bin:$PATH"
+
+# jenv
+export PATH="/Users/reborg/.jenv/shims:${PATH}"
+source "/usr/local/Cellar/jenv/0.4.4/libexec/libexec/../completions/jenv.bash"
+jenv rehash 2>/dev/null
+export JENV_LOADED=1
+unset JAVA_HOME
+jenv() {
+  typeset command
+  command="$1"
+  if [ "$#" -gt 0 ]; then
+    shift
+  fi
+
+  case "$command" in
+  enable-plugin|rehash|shell|shell-options)
+    eval `jenv "sh-$command" "$@"`;;
+  *)
+    command jenv "$command" "$@";;
+  esac
+}

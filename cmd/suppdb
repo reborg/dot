@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+vaulted=`u vault db energy-back-office-switch-management_readonly`
+# echo "vaulted $vaulted"
+u=`echo "$vaulted" | head -n 2 | tail -n 1 | awk '{print $1}'`
+p=`echo "$vaulted" | head -n 2 | tail -n 1 | awk '{print $2}'`
+echo "connecting with user $u, password $p"
+mysql -h energy-supplier-data.cv7dcdtnxmsa.eu-west-1.rds.amazonaws.com -u $u --password=$p switch_management

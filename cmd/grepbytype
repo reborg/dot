@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
-#echo Searching for $1 inside all '*.'$2 file starting from $PWD
-# ack --type-set=cit=.$1 --cit $2
-find . -iname "*.$2" | xargs ack "$1"
+echo "Usage: grepbytype somestuff txt"
+find . -iname "*.$2" -not -path "./.git/*" \
+| grep -v "\\'" \
+| xargs ack "$1"

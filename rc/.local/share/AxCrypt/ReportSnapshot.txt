@@ -1,0 +1,12 @@
+﻿----------- Exception at 2018-06-29 12:35:15Z -----------
+
+System.Net.WebException: Error: ConnectFailure (Connection refused) ---> System.Net.Sockets.SocketException: Connection refused
+  at System.Net.Sockets.Socket.Connect (System.Net.EndPoint remoteEP) [0x000b6] in <33cd10430e48468ca5f7bc5ea49d5f55>:0 
+  at System.Net.WebConnection.Connect (System.Net.HttpWebRequest request) [0x0016d] in <33cd10430e48468ca5f7bc5ea49d5f55>:0 
+   --- End of inner exception stack trace ---
+  at System.Net.HttpWebRequest.EndGetRequestStream (System.IAsyncResult asyncResult) [0x0003a] in <33cd10430e48468ca5f7bc5ea49d5f55>:0 
+  at System.Net.HttpWebRequest.GetRequestStream () [0x0004e] in <33cd10430e48468ca5f7bc5ea49d5f55>:0 
+  at Axantum.AxCrypt.Mono.HttpRequestClient.DoRequestInternal (System.String method, System.String content, System.Net.WebRequest request) [0x00021] in <8d16f2d7e8e840f09d2d6201e72cd255>:0 
+  at Axantum.AxCrypt.Mono.HttpRequestClient.Dispatch (Axantum.AxCrypt.Core.Ipc.CommandServiceEventArgs command) [0x00031] in <8d16f2d7e8e840f09d2d6201e72cd255>:0 
+ 
+  at Axantum.AxCrypt.Mono.HttpRequestClient.Dispatch (Axantum.AxCrypt.Core.Ipc.CommandServiceEventArgs command) [0x00031] in <8d16f2d7e8e840f09d2d6201e72cd255>:0 

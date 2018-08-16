@@ -37,15 +37,19 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-rhubarb'
 Plugin 'altercation/vim-colors-solarized'
 Bundle 'gabrielelana/vim-markdown'
 Plugin 'bling/vim-airline'
 Plugin 'L9'
 Plugin 'FuzzyFinder'
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'majutsushi/tagbar'
 Plugin 'mileszs/ack.vim'
 " Plugin 'scrooloose/syntastic'
+Plugin 'vim-ruby/vim-ruby'
 
 " Clojure Here
 Plugin 'tpope/vim-fireplace'
@@ -62,10 +66,10 @@ Plugin 'neovim/node-host'
 Plugin 'snoe/clj-refactor.nvim'
 
 " Haskell
-Plugin 'Shougo/vimproc.vim'
-Plugin 'raichoo/haskell-vim'
-Plugin 'Twinside/vim-hoogle'
-Plugin 'eagletmt/ghcmod-vim'
+" Plugin 'Shougo/vimproc.vim'
+" Plugin 'raichoo/haskell-vim'
+" Plugin 'Twinside/vim-hoogle'
+" Plugin 'eagletmt/ghcmod-vim'
 
 " Asciidoc
 " Plugin 'dagwieers/asciidoc-vim'
@@ -79,16 +83,30 @@ Plugin 'mjakl/vim-asciidoc'
 " other stuff
 Plugin 'davidoc/taskpaper.vim'
 Plugin 'vim-scripts/BufOnly.vim'
+Plugin 'tyru/open-browser.vim'
+Plugin 'tyru/open-browser-github.vim'
+Plugin 'tommcdo/vim-lion.git'
+Plugin 'javier-lopez/sprunge.vim'
 
 " My Exprimental plugins
 " Plugin 'https://github.com/MailOnline/vim-cljrefactor.git'
 
 call vundle#end()
 
+" Makes ruby files faster again
+set re=1
+
+" clj-refactor settings
+let g:clj_refactor_prefix_rewriting=0
+
 " Slime settings
 let g:slime_target = "tmux"
 let g:slime_paste_file = "$HOME/.slime_paste"
 let g:slime_default_config = {"socket_name": "default", "target_pane": "2"}
+
+" lion settings
+let b:lion_squeeze_spaces=1
+let g:lion_squeeze_spaces=1
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -193,18 +211,6 @@ autocmd BufNewFile,BufReadPost *.cljx setfiletype clojure
 autocmd BufNewFile,BufReadPost *.edn setfiletype clojure
 autocmd BufNewFile,BufReadPost *.eg setfiletype lisp
 
-" turn-on distraction free writing mode for txt
-" au BufNewFile,BufRead *.{mdown,mkd,mkdn,markdown,mdwn,md,adoc} call DistractionFreeWriting()
-" function! DistractionFreeWriting()
-"   colorscheme solarized
-"   set background=light
-"   set laststatus=0                   " don't show status line
-"   set noruler                        " don't show ruler
-"   set linebreak                      " break the lines on words
-"   set nonumber
-"   set nocursorline
-" endfunction
-
 " Use softtabs
 set softtabstop=2
 set shiftwidth=2
@@ -215,6 +221,8 @@ set expandtab
 imap hh <Space>=><Space>
 imap kk <Esc>:w <cr>
 imap jj <Esc>: <cr>
+imap [so [source,clojure]<cr>----<cr>----<Esc>O
+imap `clj ```clojure<cr>```<Esc>O
 
 " highlight line with cursor
 set cursorline
@@ -261,13 +269,6 @@ set nowritebackup
 " set foldmethod=indent   "fold based on indent
 " set foldnestmax=10      "deepest fold is 10 levels
 " set foldlevelstart=10
-
-" markdown support
-" http://plasticboy.com/markdown-vim-mode/
-augroup mkd
-autocmd BufRead,BufNewFile *.mkd set ai formatoptions=tcroqn2 comments=n:>
-autocmd BufRead,BufNewFile *.markdown set ai formatoptions=tcroqn2 comments=n:>
-augroup END
 
 " going hard core, disabling arrows
 "noremap  <Up> ""
@@ -320,21 +321,51 @@ set smartcase
 set ignorecase
 
 " Fuzzy File Finder
-nmap <leader>t :FufFile **/<CR>
-nmap <leader>b :FufBuffer<CR>
-let g:fuf_dir_exclude = '\v(^|[/\\])(\.(hg|git|bzr|svn)tmp||node_modules|CVS|docs|dist|doc|target|out|AAMakePDF)($|[/\\])'
-let g:fuf_file_exclude = '\v\~$|\.(o|exe|dll|bak|orig|swp|wav|png|jpg|gif)$|(^|[/\\])(\.(hg|git|bzr|svn)|CVS|db|target|out|Vendors|logs|classes|select2|docs|doc|dist|AAMakePDF|node_modules)($|[/\\])'
+" nmap <leader>t :FufFile **/<CR>
+" nmap <leader>b :FufBuffer<CR>
+" nmap <leader>j :FufJumpList<CR>
+" nmap <leader>c :FufChangeList<CR>
+" Don't know the long term consequences of this.
+let g:fuf_dataDir = '~/.vim-fuf-data'
+" Not using this modes
+let g:fuf_modesDisable = [ 'mrufile', 'mrucmd', ]
+" Won't show in FufDif browsing of dirs only
+let g:fuf_dir_exclude = '\v(^|[/\\])(\.(hg|git|bzr|svn)|CVS|Vendors|classes|compiled|node_modules)($|[/\\])'
+" Won't show file matching the pattern below, filename or parts of the path
+let g:fuf_file_exclude = '\v\~$|\.(o|exe|dll|bak|orig|swp|wav|png|jpg|gif|class|log|map|DS_Store)$|(^|[/\\])(\.(hg|git|bzr|svn))|AAMakePDF|CVS|Vendors|classes|compiled|dist|logs|node_modules|out|select2|target|tmp($|[/\\])|\.(py[co])$'
 " fix fuzzyfinder color scheme for buffer list
 hi Pmenu guifg=lightgray guibg=darkgrey gui=NONE ctermfg=yellow ctermbg=black cterm=NONE
 
+" Fzf.vim
+nmap <leader>t  :Files<CR>
+nmap <leader>b  :Buffers<CR>
+nmap <leader>gf :GFiles<CR>
+nmap <leader>gc :Commits<CR>
+
+let g:fzf_layout = { 'up': '~20%' }
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-h': 'split',
+  \ 'ctrl-k': 'vsplit' }
+
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always '.shellescape(<q-args>), 1,
+  \   <bang>0 ? fzf#vim#with_preview('up:60%')
+  \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+  \   <bang>0)
+
+command! -bang -nargs=? -complete=dir Files
+  \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
+
 " format xml file with xmllint
 map ,xml :%!xmllint --format --encode UTF-8 -<CR>
-
 " shortcut to open clojure core
 map ,core :e /Users/reborg/prj/3rdparties/clojure/src/clj/clojure/core.clj<CR>
-
 " clean up html with tidy
 map ,html :!/usr/local/bin/tidy -q -i --show-errors 0<CR>
+" clean up json or js with json.tools
+map ,json :%!python -m json.tool<CR>
 
 " project specific vimrc load on matching folders
 " autocmd BufRead,BufNewFile ~/prj/blah/hydra/* so ~/prj/blablah/mps3/.vimrc
@@ -402,6 +433,9 @@ au FileType haskell map <LocalLeader>ex :GhcModExpand<cr>
 au FileType haskell map <LocalLeader>cl :GhcModTypeClear<cr>
 autocmd BufWritePost *.hs GhcModCheckAndLintAsync
 let &l:statusline = '%{empty(getqflist()) ? "[No Errors]" : "[Errors Found]"}' . (empty(&l:statusline) ? &statusline : &l:statusline)
+
+" Clojure stuff
+" let g:clojure_align_subforms = 1
 
 " syntastic
 " set statusline+=%#warningmsg#

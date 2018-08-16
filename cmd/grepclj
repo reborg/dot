@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# echo "Usage: grepclj somestuff"
+find . -iname "*.clj" -not -path "./dunaj/*" \
+-not -path "./clojure/*" \
+-not -path "./clojure-pristine-1.6.0/*" \
+-not -path "./clojure-clr/*" \
+-not -path "./clojure-direct/*" \
+-not -path "./skummet/*" \
+-not -path "./ferret/*" \
+| grep -v "\\'" \
+| xargs ack "$1"
