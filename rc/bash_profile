@@ -23,9 +23,6 @@ alias tailf='tail -f'
 alias yy='pwd | tr -d "\n" | pbcopy' # yield current dir to clipboard
 alias tomcat='cd /usr/local/Cellar/tomcat/7.0.42/libexec'
 alias top='top -o cpu -O +rsize -s 5 -n 20'
-alias vim="nvim"
-alias vi="nvim"
-alias oldvim="vim"
 alias e='vi'
 
 # LEININGEN
@@ -33,6 +30,7 @@ alias lm='lein midje :filter -slow'
 alias lt='lein with-profile test test'
 alias lr='lein repl'
 alias lc='lein cucumber'
+alias lp='/Users/reborg/prj/3rdparties/leiningen/bin/lein'
 la(){ lein cljsbuild auto $1; }
 
 # HASKELL
@@ -81,18 +79,20 @@ export MAVEN_OPTS="-Xmx512m -Duser.timezone=UTC"
 feature(){ git checkout -b feature-$1; }
 alias gst='git status'
 alias gbr='git branch'
+alias gw='git worktree'
 alias gco='git checkout'
 gci(){ git commit -m "$1"; }
 alias glog='git log --oneline --decorate --graph'
 alias gi='git-info.sh'
+alias gf='git fetch origin'
 alias gp='git pull --rebase'
 alias gdiff='git diff'
 
 # Aliased personal projects
 alias prj='cd /Users/reborg/prj'
-alias energy='cd /Users/reborg/prj/uswitch/energy'
 alias my='cd /Users/reborg/prj/my'
-alias uswitch='cd /Users/reborg/prj/uswitch'
+alias droit='cd /Users/reborg/prj/droit'
+alias scanner='cd /Users/reborg/Dropbox/Documents/scanner'
 alias book='cd /Users/reborg/prj/my/book'
 alias tracking='cd /Users/reborg/Dropbox/tracking'
 alias dot='cd /Users/reborg/prj/my/dot'
@@ -109,6 +109,7 @@ alias sara='cd /Users/reborg/Dropbox/Documents/sara'
 alias chess='cd /Users/reborg/Dropbox/notes/chess'
 alias job='cd /Users/reborg/Dropbox/Documents/job'
 alias coaching='cd /Users/reborg/Dropbox/Documents/coaching'
+sublime(){ open -a 'Sublime Text' $1; }
 
 alias zk=' /Users/reborg/prj/3rdparties/zookeper/bin/zkServer.sh start-foreground'
 
@@ -274,29 +275,13 @@ fi
 
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
-eval "$(u --completion-script-bash)"
-source <(kubectl completion bash)
+# testing https://remysharp.com/2018/08/23/cli-improved
+# alias cat='bat'
+alias ping='prettyping --nolegend'
+alias top="htop"
+alias du="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
 
-# added by Anaconda2 5.0.1 installer
-export PATH="/Users/reborg/anaconda2/bin:$PATH"
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home
+# eval "$(jenv init -)"
 
-# jenv
-export PATH="/Users/reborg/.jenv/shims:${PATH}"
-source "/usr/local/Cellar/jenv/0.4.4/libexec/libexec/../completions/jenv.bash"
-jenv rehash 2>/dev/null
-export JENV_LOADED=1
-unset JAVA_HOME
-jenv() {
-  typeset command
-  command="$1"
-  if [ "$#" -gt 0 ]; then
-    shift
-  fi
-
-  case "$command" in
-  enable-plugin|rehash|shell|shell-options)
-    eval `jenv "sh-$command" "$@"`;;
-  *)
-    command jenv "$command" "$@";;
-  esac
-}
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*

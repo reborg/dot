@@ -11,9 +11,9 @@ opencheat() {
     else
       echo "opening as markdown in $DEVBOX"
       if [[ $DEVBOX == "localhost" ]]; then
-        nvim /Users/reborg/Dropbox/notes/cheatsheets/"$maybeparam".md
+        vim /Users/reborg/Dropbox/notes/cheatsheets/"$maybeparam".md
       else
-        nvim /Users/reborg/Dropbox/notes/cheatsheets/"$maybeparam".md
+        vim /Users/reborg/Dropbox/notes/cheatsheets/"$maybeparam".md
       fi
     fi
 }

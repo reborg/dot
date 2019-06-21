@@ -22,6 +22,8 @@ set nocompatible
 " Installing from scratch?
 " ln -s /Users/reborg/prj/my/dot/rc/vimrc .vimrc
 " ln -s /Users/reborg/prj/my/dot/vim .vim
+" mkdir ~/prj/my/dot/vim
+" git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 " vim +BundleInstall +qall
 " =======================================
 "
@@ -39,6 +41,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-rhubarb'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'jnurmine/Zenburn.git'
 Bundle 'gabrielelana/vim-markdown'
 Plugin 'bling/vim-airline'
 Plugin 'L9'
@@ -62,16 +65,16 @@ Plugin 'guns/vim-sexp'
 Plugin 'tpope/vim-sexp-mappings-for-regular-people'
 Plugin 'guns/vim-clojure-static'
 Plugin 'jpalardy/vim-slime'
-Plugin 'neovim/node-host'
-Plugin 'snoe/clj-refactor.nvim'
 
-" Haskell
-" Plugin 'Shougo/vimproc.vim'
-" Plugin 'raichoo/haskell-vim'
+" Haskell Plugins
+"
+Plugin 'Shougo/vimproc.vim'
+Plugin 'raichoo/haskell-vim'
 " Plugin 'Twinside/vim-hoogle'
-" Plugin 'eagletmt/ghcmod-vim'
+Plugin 'eagletmt/ghcmod-vim'
 
-" Asciidoc
+" Asciidoc Here
+"
 " Plugin 'dagwieers/asciidoc-vim'
 Plugin 'mjakl/vim-asciidoc'
 " Plugin 'asciidoc/vim-asciidoc'
@@ -81,12 +84,16 @@ Plugin 'mjakl/vim-asciidoc'
 " Plugin 'dahu/vim-asciidoc'
 
 " other stuff
+"
+Plugin 'jceb/vim-orgmode'
+Plugin 'tpope/vim-speeddating'
 Plugin 'davidoc/taskpaper.vim'
 Plugin 'vim-scripts/BufOnly.vim'
 Plugin 'tyru/open-browser.vim'
 Plugin 'tyru/open-browser-github.vim'
 Plugin 'tommcdo/vim-lion.git'
 Plugin 'javier-lopez/sprunge.vim'
+Plugin 'hwayne/tla.vim'
 
 " My Exprimental plugins
 " Plugin 'https://github.com/MailOnline/vim-cljrefactor.git'
@@ -184,10 +191,11 @@ endif
 " Solarized
 syntax on
 set background=dark
-" set t_Co=256
+set t_Co=256
 " let g:solarized_termcolors=256
 " let g:solarized_contrast = "high"
 " let g:solarized_visibility= "high"
+" colorscheme zenburn
 colorscheme solarized
 let g:html_use_css = 1
 
@@ -197,10 +205,12 @@ let g:paredit_electric_return=0
 " au FileType arc call PareditInitBuffer()        " add another file type paredit control
 
 " setting for syntax for file types
-autocmd BufNewFile,BufRead *.pom set ft=taskpaper
+autocmd BufNewFile,BufRead *.pom set ft=markdown
 autocmd BufNewFile,BufRead *.json set ft=javascript
 autocmd BufNewFile,BufRead *.asciidoc set ft=asciidoc
 autocmd BufNewFile,BufRead *.dockerfile set ft=sh
+autocmd BufNewFile,BufRead *.txt set ft=org
+autocmd BufNewFile,BufRead *.dsds set ft=clojure
 
 autocmd BufNewFile,BufRead *.adoc set ft=asciidoc
 autocmd FileType asciidoc set nonumber
@@ -217,11 +227,26 @@ set shiftwidth=2
 set tabstop=2
 set expandtab
 
-" Useful expansions
+" Custom ligatures
 imap hh <Space>=><Space>
-imap kk <Esc>:w <cr>
+imap §n ¬
+imap §a ∧
+imap §o ∨
+imap §e ∃
+imap §f ∀
+imap §( ⟨
+imap §) ⟩
+
+" ESC alternatives
 imap jj <Esc>: <cr>
+
+" Save current file
+imap kk <Esc>:w <cr>
+
+" Asciidoc code snippet
 imap [so [source,clojure]<cr>----<cr>----<Esc>O
+
+" Github markdown Clojure snippet
 imap `clj ```clojure<cr>```<Esc>O
 
 " highlight line with cursor
@@ -334,7 +359,7 @@ let g:fuf_dir_exclude = '\v(^|[/\\])(\.(hg|git|bzr|svn)|CVS|Vendors|classes|comp
 " Won't show file matching the pattern below, filename or parts of the path
 let g:fuf_file_exclude = '\v\~$|\.(o|exe|dll|bak|orig|swp|wav|png|jpg|gif|class|log|map|DS_Store)$|(^|[/\\])(\.(hg|git|bzr|svn))|AAMakePDF|CVS|Vendors|classes|compiled|dist|logs|node_modules|out|select2|target|tmp($|[/\\])|\.(py[co])$'
 " fix fuzzyfinder color scheme for buffer list
-hi Pmenu guifg=lightgray guibg=darkgrey gui=NONE ctermfg=yellow ctermbg=black cterm=NONE
+" hi Pmenu guifg=lightgray guibg=darkgrey gui=NONE ctermfg=yellow ctermbg=black cterm=NONE
 
 " Fzf.vim
 nmap <leader>t  :Files<CR>
@@ -342,21 +367,40 @@ nmap <leader>b  :Buffers<CR>
 nmap <leader>gf :GFiles<CR>
 nmap <leader>gc :Commits<CR>
 
-let g:fzf_layout = { 'up': '~20%' }
+let g:fzf_layout = { 'up': '~30%' }
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
   \ 'ctrl-h': 'split',
   \ 'ctrl-k': 'vsplit' }
 
-command! -bang -nargs=* Rg
-  \ call fzf#vim#grep(
-  \   'rg --column --line-number --no-heading --color=always '.shellescape(<q-args>), 1,
-  \   <bang>0 ? fzf#vim#with_preview('up:60%')
-  \           : fzf#vim#with_preview('right:50%:hidden', '?'),
-  \   <bang>0)
-
 command! -bang -nargs=? -complete=dir Files
   \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
+
+command! -bang -nargs=* Ag
+  \ call fzf#vim#ag(<q-args>,
+  \                 <bang>0 ? fzf#vim#with_preview('up:60%')
+  \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
+  \                 <bang>0)
+
+command! -bang -nargs=* GGrep
+  \ call fzf#vim#grep(
+  \   'git grep --line-number '.shellescape(<q-args>), 0,
+  \   { 'dir': systemlist('git rev-parse --show-toplevel')[0] }, <bang>0)
+
+let g:fzf_colors =
+\ { 'fg':      ['fg', '-1'],
+  \ 'bg':      ['bg', '-1'],
+  \ 'hl':      ['fg', '230'],
+  \ 'fg+':     ['fg', '3', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', '233', 'CursorColumn'],
+  \ 'hl+':     ['fg', '229'],
+  \ 'info':    ['fg', '150'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', '110'],
+  \ 'pointer': ['fg', '167'],
+  \ 'marker':  ['fg', '174'],
+  \ 'spinner': ['fg', '150'],
+  \ 'header':  ['fg', 'Comment'] }
 
 " format xml file with xmllint
 map ,xml :%!xmllint --format --encode UTF-8 -<CR>
@@ -418,9 +462,9 @@ nnoremap <Leader>g+ :Silent Git stash<CR>:e<CR>
 nnoremap <Leader>g- :Silent Git stash pop<CR>:e<CR>
 
 " Haskell stuff
-" au BufEnter *.hs compiler ghc
+au BufEnter *.hs compiler ghc
 let g:haddock_browser = "/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
-" let g:ghc = "/usr/bin/ghc"
+let g:ghc = "/usr/local/bin/ghc"
 nmap <leader>= :TagbarToggle<CR>
 let g:tagbar_autofocus = 1
 
@@ -432,33 +476,8 @@ au FileType haskell map <LocalLeader>li :GhcModLint<cr>
 au FileType haskell map <LocalLeader>ex :GhcModExpand<cr>
 au FileType haskell map <LocalLeader>cl :GhcModTypeClear<cr>
 autocmd BufWritePost *.hs GhcModCheckAndLintAsync
+
 let &l:statusline = '%{empty(getqflist()) ? "[No Errors]" : "[Errors Found]"}' . (empty(&l:statusline) ? &statusline : &l:statusline)
-
-" Clojure stuff
-" let g:clojure_align_subforms = 1
-
-" syntastic
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
-" let g:syntastic_always_populate_loc_list = 0
-" let g:syntastic_auto_loc_list = 0
-" let g:syntastic_check_on_open = 0
-" let g:syntastic_check_on_wq = 0
-" map <silent> <Leader>e :Errors<CR>
-" map <Leader>s :SyntasticToggleMode<CR>
-
-" vim-hoogle
-" Hoogle the word under the cursor
-nnoremap <silent> <leader>hh :Hoogle<CR>
-" Hoogle and prompt for input
-nnoremap <leader>hH :Hoogle
-" Hoogle for detailed documentation (e.g. "Functor")
-nnoremap <silent> <leader>hi :HoogleInfo<CR>
-" Hoogle for detailed documentation and prompt for input
-nnoremap <leader>hI :HoogleInfo
-" Hoogle, close the Hoogle window
-nnoremap <silent> <leader>hc :HoogleClose<CR>
 
 " https://github.com/raichoo/haskell-vim
 let g:haskell_enable_quantification = 1         " to enable highlighting of forall
@@ -467,6 +486,9 @@ let g:haskell_enable_arrowsyntax = 1            " to enable highlighting of proc
 let g:haskell_enable_pattern_synonyms = 1       " to enable highlighting of pattern
 let g:haskell_enable_typeroles = 1              " to enable highlighting of type roles
 let g:haskell_enable_static_pointers = 1        " to enable highlighting of static
+
+" Clojure stuff
+" let g:clojure_align_subforms = 1
 
 " Toggle this for vim-sexp to not go into insert mode after wrapping something
 let g:sexp_insert_after_wrap = 1

@@ -25,7 +25,7 @@ CLOJURE_121="$M2_REPO/org/clojure/clojure/1.2.1/clojure-1.2.1.jar"
 # CLOJURE_JAR="$M2_REPO/org/clojure/clojure/1.7.0/clojure-1.7.0.jar"
 # CLOJURE_JAR="/Users/reborg/Downloads/clojure-1.6.0.jar"
 
-# Use the following to generate the completion file:
+# Uncomment line below to start basic repl. Use clojure below to generate the completion file.
 # exec java -cp "$CLOJURE_19" clojure.main
 # (def completions (keys (ns-publics (find-ns 'clojure.core)))) (with-open [f (java.io.BufferedWriter. (java.io.FileWriter. (str (System/getenv "HOME") "/.clj_completions")))] (.write f (apply str (interpose \newline completions))))
 
