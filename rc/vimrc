@@ -188,15 +188,31 @@ endif
 " ##################################################################
 " ##################################################################
 
-" Solarized
 syntax on
 set background=dark
-set t_Co=256
+
+colorscheme zenburn
+" colorscheme solarized
+
+" solarized custom
+" set t_Co=256
 " let g:solarized_termcolors=256
 " let g:solarized_contrast = "high"
 " let g:solarized_visibility= "high"
-" colorscheme zenburn
-colorscheme solarized
+
+" zenburn custom
+" let g:zenburn_high_Contrast = 1
+" let g:zenburn_alternate_Visual = 1
+colors zenburn
+
+" Other customs
+" highlight line with cursor
+set cursorline
+hi CursorLine    guibg=#434443  ctermbg=239 cterm=none
+hi Visual        guibg=#0f0f0f  ctermbg=241
+hi VisualNOS     guibg=#0f0f0f  ctermbg=241
+hi MatchParen    guifg=#f0f0c0  guibg=#383838 gui=bold  ctermfg=229 ctermbg=240 cterm=bold
+
 let g:html_use_css = 1
 
 " Paredit
@@ -249,11 +265,6 @@ imap [so [source,clojure]<cr>----<cr>----<Esc>O
 " Github markdown Clojure snippet
 imap `clj ```clojure<cr>```<Esc>O
 
-" highlight line with cursor
-set cursorline
-hi CursorLine ctermbg=17
-"hi CursorLine cterm=underline
-
 " remove search highlighting on hit return command mode
 map <Enter> :nohlsearch<Enter>
 
@@ -304,9 +315,6 @@ set nowritebackup
 "noremap! <Left> <Esc>
 "noremap  <Right> ""
 "noremap! <Right> <Esc>
-
-" display cursor line
-set cursorline
 
 " Specky configuration
 " http://www.vim.org/scripts/script.php?script_id=2286

@@ -281,7 +281,7 @@ alias ping='prettyping --nolegend'
 alias top="htop"
 alias du="ncdu --color dark -rr -x --exclude .git --exclude node_modules"
 
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home
 # eval "$(jenv init -)"
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
